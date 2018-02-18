@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let buildings = [
+        "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"
+    ]
+    
+    
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "hoboken")
@@ -60,12 +65,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return buildings.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MyCell
+        cell.buildingImages = buildings[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -75,6 +81,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 }
 
 class MyCell: UITableViewCell {
+    
+    var buildingImages: String? {
+        didSet {
+            guard let image = buildingImages else {return}
+            imagePhotoView.image = UIImage(named: image)
+        }
+    }
     
     let imagePhotoView: UIImageView = {
         let iv = UIImageView()
