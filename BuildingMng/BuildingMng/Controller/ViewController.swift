@@ -13,6 +13,17 @@ struct BuildingInfo {
     var title: String?
 }
 
+import UIKit
+
+extension UIImageView{
+    func addBlackGradientLayer(frame: CGRect, colors:[UIColor]){
+        let gradient = CAGradientLayer()
+        gradient.frame = frame
+        gradient.colors = colors.map{$0.cgColor}
+        self.layer.addSublayer(gradient)
+    }
+}
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let buildingInfo = [
@@ -84,9 +95,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MyCell
+        
         let information = buildingInfo[indexPath.row]
         cell.buildingImages = information
         cell.selectionStyle = .none
+
         return cell
     }
     
@@ -98,7 +111,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 180
     }
 
 }
@@ -117,14 +130,20 @@ class MyCell: UITableViewCell {
     
     let imagePhotoView: UIImageView = {
         let iv = UIImageView()
+        
         return iv
     }()
     
     let titleLabel: UILabel = {
         let lb = UILabel()
-        lb.textColor = .black
-        lb.backgroundColor = .blue
-        lb.font = UIFont.boldSystemFont(ofSize: 18)
+        lb.textColor = .white
+        lb.layer.shadowColor = UIColor.black.cgColor
+        lb.layer.shadowRadius = 3.0
+        lb.layer.shadowOpacity = 1.5
+        lb.layer.shadowOffset = CGSize(width: 4, height: 4)
+        lb.layer.masksToBounds = false
+        
+        lb.font = UIFont.boldSystemFont(ofSize: 27)
         return lb
     }()
     
@@ -137,9 +156,17 @@ class MyCell: UITableViewCell {
         
         [imagePhotoView, titleLabel].forEach({addSubview($0)})
         
-        imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: 150, height: 150)
+        let gradient = CAGradientLayer()
+        gradient.frame = imagePhotoView.bounds
+        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor, UIColor.black.cgColor, UIColor.clear.cgColor]
+        imagePhotoView.layer.mask = gradient
+        imagePhotoView.layer.addSublayer(gradient)
         
-        titleLabel.setAnchor(top: topAnchor, left: imagePhotoView.leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 155, paddingBottom: 0, paddingRight: 5, width: 150, height: 25)
+        imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        
+        
+        
+        titleLabel.setAnchor(top: nil, left: imagePhotoView.leftAnchor, bottom: imagePhotoView.bottomAnchor, right: imagePhotoView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 150, height: 30)
 
     }
     
