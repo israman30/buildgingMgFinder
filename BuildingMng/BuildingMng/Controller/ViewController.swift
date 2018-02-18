@@ -58,6 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(MyCell.self, forCellReuseIdentifier: "cell")
+        
         tableView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
     
@@ -85,6 +86,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MyCell
         let information = buildingInfo[indexPath.row]
         cell.buildingImages = information
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -138,6 +140,7 @@ class MyCell: UITableViewCell {
         imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: 150, height: 150)
         
         titleLabel.setAnchor(top: topAnchor, left: imagePhotoView.leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 155, paddingBottom: 0, paddingRight: 5, width: 150, height: 25)
+
     }
     
     required init?(coder aDecoder: NSCoder) {
