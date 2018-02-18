@@ -30,12 +30,18 @@ class ViewController: UIViewController {
         imageView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
      
         setView()
+        setNavBar()
 //        viewEffect()
     }
     
-    func setView(){
+    private func setView(){
         view.addSubview(tableView)
         tableView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+    }
+    
+    private func setNavBar(){
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Lux Appartments"
     }
     
     func viewEffect(){
