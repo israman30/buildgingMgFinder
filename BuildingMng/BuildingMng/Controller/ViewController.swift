@@ -92,7 +92,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailDisplayVC = DetailsVC()
         let detail: BuildingInfo = buildingInfo[indexPath.row]
-        detailDisplayVC.titleLbl = detail
+        detailDisplayVC.buildingInfoDetail = detail
         navigationController?.pushViewController(detailDisplayVC, animated: true)
     }
     
@@ -133,8 +133,9 @@ class MyCell: UITableViewCell {
     }
     
     func setView(){
-        addSubview(imagePhotoView)
-        addSubview(titleLabel)
+        
+        [imagePhotoView, titleLabel].forEach({addSubview($0)})
+        
         imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: 150, height: 150)
         
         titleLabel.setAnchor(top: topAnchor, left: imagePhotoView.leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 155, paddingBottom: 0, paddingRight: 5, width: 150, height: 25)
