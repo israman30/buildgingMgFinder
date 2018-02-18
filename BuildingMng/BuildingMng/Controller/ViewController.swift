@@ -74,7 +74,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     private func setNavBar(){
-        navigationItem.title = "Hoboken Lux Appartments Building"
+        
+        navigationItem.title = "Hoboken Lux Appartments"
+        
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedStringKey.font: UIFont(name:"Marker Felt", size:25.0)!, NSAttributedStringKey.foregroundColor:UIColor.black
+        ]
+        navigationController?.navigationBar.tintColor = .black
     }
     
     func viewEffect(){
