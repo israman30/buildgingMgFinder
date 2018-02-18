@@ -89,6 +89,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailDisplayVC = DetailsVC()
+        let detail: BuildingInfo = buildingInfo[indexPath.row]
+        detailDisplayVC.titleLbl = detail
+        navigationController?.pushViewController(detailDisplayVC, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
