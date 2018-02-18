@@ -43,8 +43,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     private func setNavBar(){
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Lux Appartments"
+//        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Hoboken Lux Appartments Building"
     }
     
     func viewEffect(){
@@ -60,7 +60,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
