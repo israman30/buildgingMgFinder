@@ -8,10 +8,24 @@
 
 import UIKit
 
+struct BuildingInfo {
+    var imagePhoto: String?
+    var title: String?
+}
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let buildings = [
-        "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"
+    let buildingInfo = [
+        BuildingInfo(imagePhoto: "one", title: "first building"),
+        BuildingInfo(imagePhoto: "two", title: "second building"),
+        BuildingInfo(imagePhoto: "three", title: "third building"),
+        BuildingInfo(imagePhoto: "four", title: "fourth building"),
+        BuildingInfo(imagePhoto: "five", title: "fifth building"),
+        BuildingInfo(imagePhoto: "six", title: "six building"),
+        BuildingInfo(imagePhoto: "seven", title: "seventh building"),
+        BuildingInfo(imagePhoto: "eight", title: "eight building"),
+        BuildingInfo(imagePhoto: "nine", title: "nine building"),
+        BuildingInfo(imagePhoto: "ten", title: "tenth building")
     ]
     
     
@@ -65,12 +79,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return buildings.count
+        return buildingInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MyCell
-        cell.buildingImages = buildings[indexPath.row]
+        let information = buildingInfo[indexPath.row]
+        cell.buildingImages = information
         return cell
     }
     
@@ -82,25 +97,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 class MyCell: UITableViewCell {
     
-    var buildingImages: String? {
+    var buildingImages: BuildingInfo? {
         didSet {
-            guard let image = buildingImages else {return}
+            guard let image = buildingImages?.imagePhoto else {return}
             imagePhotoView.image = UIImage(named: image)
+            
+            guard let title = buildingImages?.title else {return}
+            titleLabel.text = title
         }
     }
     
     let imagePhotoView: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .red
         return iv
     }()
     
     let titleLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "Luxury Apartment Building"
         lb.textColor = .black
         lb.backgroundColor = .blue
-        lb.font = UIFont.boldSystemFont(ofSize: 15)
+        lb.font = UIFont.boldSystemFont(ofSize: 18)
         return lb
     }()
     
@@ -114,7 +130,7 @@ class MyCell: UITableViewCell {
         addSubview(titleLabel)
         imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 5, paddingBottom: 5, paddingRight: 0, width: 150, height: 150)
         
-        titleLabel.setAnchor(top: topAnchor, left: imagePhotoView.leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 155, paddingBottom: 0, paddingRight: 5)
+        titleLabel.setAnchor(top: topAnchor, left: imagePhotoView.leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 5, paddingLeft: 155, paddingBottom: 0, paddingRight: 5, width: 150, height: 25)
     }
     
     required init?(coder aDecoder: NSCoder) {
