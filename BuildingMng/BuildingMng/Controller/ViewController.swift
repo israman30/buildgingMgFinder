@@ -61,8 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
     
-    private func setNavBar(){
-//        navigationController?.navigationBar.prefersLargeTitles = true
+    private func setNavBar(){g
         navigationItem.title = "Hoboken Lux Appartments Building"
     }
     
