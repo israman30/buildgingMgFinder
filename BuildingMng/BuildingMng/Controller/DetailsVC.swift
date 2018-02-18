@@ -12,6 +12,7 @@ class DetailsVC: UIViewController {
     
     let imagePhotoView: UIImageView = {
         let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
         return iv
     }()
     
@@ -21,6 +22,24 @@ class DetailsVC: UIViewController {
         lb.font = UIFont.boldSystemFont(ofSize: 25)
         return lb
     }()
+    
+    let addressLabelBuilding: UILabel = {
+        let lb = UILabel()
+        lb.text = "building address"
+        lb.textColor = .darkGray
+        return lb
+    }()
+    
+    let addressBuildingBtn: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = .red
+        btn.addTarget(self, action: #selector(addressAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func addressAction(){
+        print("Adress Work")
+    }
     
     var buildingInfoDetail: BuildingInfo?
     
@@ -39,11 +58,16 @@ class DetailsVC: UIViewController {
     func setDetailView(){
         view.backgroundColor = .white
         
-        [imagePhotoView, titleLabelBuilding].forEach({view.addSubview($0)})
+        [imagePhotoView, titleLabelBuilding, addressBuildingBtn].forEach({view.addSubview($0)})
+        addressBuildingBtn.addSubview(addressLabelBuilding)
         
         imagePhotoView.setAnchor(top: view.safeTopAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 500)
         
         titleLabelBuilding.setAnchor(top: imagePhotoView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 510, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 50)
+        
+        addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
+        
+        addressLabelBuilding.setAnchor(top: addressBuildingBtn.topAnchor, left: addressBuildingBtn.leftAnchor, bottom: addressBuildingBtn.bottomAnchor, right: addressBuildingBtn.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
     }
 }
 
