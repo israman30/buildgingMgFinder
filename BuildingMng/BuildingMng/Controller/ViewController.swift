@@ -16,23 +16,26 @@ class ViewController: UIViewController {
         iv.contentMode = .scaleAspectFill
         return iv
     }()
-
-    let imageBlurView: UIBlurEffect = {
-        let iv = UIBlurEffect()
-        
-        return iv
+    
+    let tableView: UITableView = {
+        let tv = UITableView()
+        return tv
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         view.backgroundColor = .red
         view.addSubview(imageView)
         imageView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
      
-        viewEffect()
+        setView()
+//        viewEffect()
+    }
+    
+    func setView(){
+        view.addSubview(tableView)
+        tableView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
     
     func viewEffect(){
@@ -41,7 +44,6 @@ class ViewController: UIViewController {
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(blurEffectView)
-        
     }
 
 
