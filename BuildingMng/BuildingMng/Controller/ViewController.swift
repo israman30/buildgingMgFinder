@@ -15,14 +15,7 @@ struct BuildingInfo {
 
 import UIKit
 
-extension UIImageView{
-    func addBlackGradientLayer(frame: CGRect, colors:[UIColor]){
-        let gradient = CAGradientLayer()
-        gradient.frame = frame
-        gradient.colors = colors.map{$0.cgColor}
-        self.layer.addSublayer(gradient)
-    }
-}
+
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -63,6 +56,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         setNavBar()
 //        viewEffect()
     }
+    
+    
     
     private func setView(){
         view.addSubview(tableView)
@@ -168,7 +163,7 @@ class MyCell: UITableViewCell {
         imagePhotoView.layer.mask = gradient
         imagePhotoView.layer.addSublayer(gradient)
         
-        imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 5, paddingBottom: 0, paddingRight: 5)
+        imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 0, paddingRight: 5)
         
         titleLabel.setAnchor(top: nil, left: imagePhotoView.leftAnchor, bottom: imagePhotoView.bottomAnchor, right: imagePhotoView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 150, height: 35)
 
