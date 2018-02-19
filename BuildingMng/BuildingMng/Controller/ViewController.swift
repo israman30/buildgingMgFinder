@@ -57,8 +57,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        viewEffect()
     }
     
-    
-    
     private func setView(){
         view.addSubview(tableView)
         tableView.delegate = self
