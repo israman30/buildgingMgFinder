@@ -74,6 +74,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     private func setNavBar(){
+        navigationController?.navigationBar.barTintColor = .white
         
         navigationItem.title = "Hoboken Lux Appartments"
         
