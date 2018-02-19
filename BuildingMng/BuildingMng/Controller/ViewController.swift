@@ -137,7 +137,6 @@ class MyCell: UITableViewCell {
     
     let imagePhotoView: UIImageView = {
         let iv = UIImageView()
-        
         return iv
     }()
     
@@ -169,9 +168,7 @@ class MyCell: UITableViewCell {
         imagePhotoView.layer.mask = gradient
         imagePhotoView.layer.addSublayer(gradient)
         
-        imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        
-        
+        imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 5, paddingBottom: 0, paddingRight: 5)
         
         titleLabel.setAnchor(top: nil, left: imagePhotoView.leftAnchor, bottom: imagePhotoView.bottomAnchor, right: imagePhotoView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 150, height: 35)
 
