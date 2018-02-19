@@ -81,7 +81,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedStringKey.font: UIFont(name:"Marker Felt", size:25.0)!, NSAttributedStringKey.foregroundColor:UIColor.black
         ]
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = .darkGray
     }
     
     func viewEffect(){
