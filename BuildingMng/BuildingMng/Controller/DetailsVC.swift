@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class DetailsVC: UIViewController {
     
@@ -38,7 +39,19 @@ class DetailsVC: UIViewController {
     }()
     
     @objc func addressAction(){
-        print("Adress Work")
+        let latitude:CLLocationDegrees = 40.756352
+        let longitude:CLLocationDegrees = -74.033755
+        
+        let regionDistance:CLLocationDistance = 1000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate:regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+        
+        let placemark = MKPlacemark(coordinate: coordinates)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "Place choosen"
+        mapItem.openInMaps(launchOptions: options)
     }
     
     var buildingInfoDetail: BuildingInfo?

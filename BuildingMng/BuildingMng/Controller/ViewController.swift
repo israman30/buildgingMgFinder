@@ -15,8 +15,6 @@ struct BuildingInfo {
 
 import UIKit
 
-
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let buildingInfo = [
