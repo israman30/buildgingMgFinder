@@ -147,7 +147,7 @@ class MyCell: UITableViewCell {
         lb.layer.shadowColor = UIColor.black.cgColor
         lb.layer.shadowRadius = 3.0
         lb.layer.shadowOpacity = 1.5
-        lb.layer.shadowOffset = CGSize(width: 4, height: 4)
+        lb.layer.shadowOffset = CGSize(width: 4, height: 5)
         lb.layer.masksToBounds = false
         
         lb.font = UIFont.boldSystemFont(ofSize: 27)
@@ -173,7 +173,7 @@ class MyCell: UITableViewCell {
         
         
         
-        titleLabel.setAnchor(top: nil, left: imagePhotoView.leftAnchor, bottom: imagePhotoView.bottomAnchor, right: imagePhotoView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 150, height: 30)
+        titleLabel.setAnchor(top: nil, left: imagePhotoView.leftAnchor, bottom: imagePhotoView.bottomAnchor, right: imagePhotoView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 150, height: 35)
 
     }
     
