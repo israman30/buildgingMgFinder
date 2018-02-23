@@ -11,6 +11,7 @@ import UIKit
 struct BuildingInfo {
     var imagePhoto: String?
     var title: String?
+    var address: String?
 }
 
 import UIKit
@@ -18,16 +19,16 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let buildingInfo = [
-        BuildingInfo(imagePhoto: "one", title: "first building"),
-        BuildingInfo(imagePhoto: "two", title: "second building"),
-        BuildingInfo(imagePhoto: "three", title: "third building"),
-        BuildingInfo(imagePhoto: "four", title: "fourth building"),
-        BuildingInfo(imagePhoto: "five", title: "fifth building"),
-        BuildingInfo(imagePhoto: "six", title: "six building"),
-        BuildingInfo(imagePhoto: "seven", title: "seventh building"),
-        BuildingInfo(imagePhoto: "eight", title: "eight building"),
-        BuildingInfo(imagePhoto: "nine", title: "nine building"),
-        BuildingInfo(imagePhoto: "ten", title: "tenth building")
+        BuildingInfo(imagePhoto: "one", title: "first building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "two", title: "second building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "three", title: "third building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "four", title: "fourth building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "five", title: "fifth building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "six", title: "six building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "seven", title: "seventh building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "eight", title: "eight building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "nine", title: "nine building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "ten", title: "tenth building", address: "1100 Jefferson street, Hoboken NJ 03070")
     ]
     
     
