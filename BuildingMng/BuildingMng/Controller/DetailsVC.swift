@@ -38,8 +38,6 @@ class DetailsVC: UIViewController {
         return btn
     }()
     
-    
-    
     var buildingInfoDetail: BuildingInfo?
     
     override func viewDidLoad() {
@@ -57,6 +55,7 @@ class DetailsVC: UIViewController {
         setDetailView()
     }
     
+    // MARK: - This block handles the location when use tap the address detail
     @objc func addressAction(){
         let latitude:CLLocationDegrees = 40.756352
         let longitude:CLLocationDegrees = -74.033755
