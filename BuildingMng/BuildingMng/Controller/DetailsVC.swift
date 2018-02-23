@@ -51,7 +51,7 @@ class DetailsVC: UIViewController {
         
         guard let address = buildingInfoDetail?.address else {return}
         addressLabelBuilding.text = address
-        print(buildingInfoDetail?.address ?? 0)
+        print(buildingInfoDetail?.address ?? 1)
         setDetailView()
     }
     
