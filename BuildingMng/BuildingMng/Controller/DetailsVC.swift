@@ -13,7 +13,7 @@ class DetailsVC: UIViewController {
     
     let imagePhotoView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleAspectFill
         return iv
     }()
     
@@ -74,9 +74,9 @@ class DetailsVC: UIViewController {
         [imagePhotoView, titleLabelBuilding, addressBuildingBtn].forEach({view.addSubview($0)})
         addressBuildingBtn.addSubview(addressLabelBuilding)
         
-        imagePhotoView.setAnchor(top: view.safeTopAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 500)
+        imagePhotoView.setAnchor(top: view.safeTopAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 300)
         
-        titleLabelBuilding.setAnchor(top: imagePhotoView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 510, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 50)
+        titleLabelBuilding.setAnchor(top: imagePhotoView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 310, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 50)
         
         addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
         
