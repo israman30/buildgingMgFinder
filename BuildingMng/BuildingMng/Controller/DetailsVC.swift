@@ -9,7 +9,9 @@
 import UIKit
 import MapKit
 
+
 class DetailsVC: UIViewController {
+    
     
     let imagePhotoView: UIImageView = {
         let iv = UIImageView()
@@ -41,10 +43,24 @@ class DetailsVC: UIViewController {
         return btn
     }()
     
+    let scrollView: UIScrollView = {
+        let cv = UIScrollView()
+        return cv
+    }()
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     var buildingInfoDetail: BuildingInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
         
         guard let image = buildingInfoDetail?.imagePhoto else {return}
         imagePhotoView.image = UIImage(named: image)
@@ -86,16 +102,18 @@ class DetailsVC: UIViewController {
     func setDetailView(){
         view.backgroundColor = .white
         
-        [imagePhotoView, titleLabelBuilding, addressBuildingBtn].forEach({view.addSubview($0)})
+        [imagePhotoView, titleLabelBuilding, addressBuildingBtn, scrollView].forEach({view.addSubview($0)})
         addressBuildingBtn.addSubview(addressLabelBuilding)
         
-        imagePhotoView.setAnchor(top: view.safeTopAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 300)
+        imagePhotoView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
         
-        titleLabelBuilding.setAnchor(top: imagePhotoView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 310, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
+        titleLabelBuilding.setAnchor(top: imagePhotoView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 410, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
         
         addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 35, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
         addressLabelBuilding.setAnchor(top: addressBuildingBtn.topAnchor, left: addressBuildingBtn.leftAnchor, bottom: addressBuildingBtn.bottomAnchor, right: addressBuildingBtn.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
+        
+        scrollView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
 }
 
