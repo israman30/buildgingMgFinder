@@ -38,21 +38,7 @@ class DetailsVC: UIViewController {
         return btn
     }()
     
-    @objc func addressAction(){
-        let latitude:CLLocationDegrees = 40.756352
-        let longitude:CLLocationDegrees = -74.033755
-        
-        let regionDistance:CLLocationDistance = 1000
-        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
-        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
-        
-        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate:regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
-        
-        let placemark = MKPlacemark(coordinate: coordinates)
-        let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = "Place choosen"
-        mapItem.openInMaps(launchOptions: options)
-    }
+    
     
     var buildingInfoDetail: BuildingInfo?
     
@@ -69,6 +55,30 @@ class DetailsVC: UIViewController {
         addressLabelBuilding.text = address
         print(buildingInfoDetail?.address ?? 0)
         setDetailView()
+    }
+    
+    @objc func addressAction(){
+        let latitude:CLLocationDegrees = 40.756352
+        let longitude:CLLocationDegrees = -74.033755
+        
+        guard let address = buildingInfoDetail?.address else {return}
+        let geo = CLGeocoder()
+        geo.geocodeAddressString(address) { (placemark, error) in
+            guard let placemarker = placemark,
+                let location = placemark?.first?.location else {return}
+            print(placemarker, location)
+        }
+        
+        let regionDistance:CLLocationDistance = 1000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate:regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+        
+        let placemark = MKPlacemark(coordinate: coordinates)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = address
+        mapItem.openInMaps(launchOptions: options)
     }
     
     func setDetailView(){
