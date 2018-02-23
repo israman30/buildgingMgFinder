@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let buildingInfo = [
         BuildingInfo(imagePhoto: "one", title: "first building", address: "1100 Jefferson street, Hoboken NJ 03070"),
-        BuildingInfo(imagePhoto: "two", title: "second building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "two", title: "second building", address: "PILSENER HAUS & BIERGARTEN, 1422 GRAND STREET, HOBOKEN, NJ 07030"),
         BuildingInfo(imagePhoto: "three", title: "third building", address: "1100 Jefferson street, Hoboken NJ 03070"),
         BuildingInfo(imagePhoto: "four", title: "fourth building", address: "1100 Jefferson street, Hoboken NJ 03070"),
         BuildingInfo(imagePhoto: "five", title: "fifth building", address: "1100 Jefferson street, Hoboken NJ 03070"),
