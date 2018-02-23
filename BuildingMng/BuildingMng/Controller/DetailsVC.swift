@@ -20,6 +20,7 @@ class DetailsVC: UIViewController {
     let titleLabelBuilding: UILabel = {
         let lb = UILabel()
         lb.textColor = .black
+        lb.backgroundColor = .blue
         lb.font = UIFont.boldSystemFont(ofSize: 25)
         return lb
     }()
@@ -28,12 +29,14 @@ class DetailsVC: UIViewController {
         let lb = UILabel()
         lb.text = "building address"
         lb.textColor = .darkGray
+        lb.numberOfLines = 2
+        lb.backgroundColor = .red
+        lb.font = UIFont.systemFont(ofSize: 15)
         return lb
     }()
     
     let addressBuildingBtn: UIButton = {
         let btn = UIButton()
-        btn.backgroundColor = .red
         btn.addTarget(self, action: #selector(addressAction), for: .touchUpInside)
         return btn
     }()
@@ -90,9 +93,9 @@ class DetailsVC: UIViewController {
         
         titleLabelBuilding.setAnchor(top: imagePhotoView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 310, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 50)
         
-        addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
+        addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
-        addressLabelBuilding.setAnchor(top: addressBuildingBtn.topAnchor, left: addressBuildingBtn.leftAnchor, bottom: addressBuildingBtn.bottomAnchor, right: addressBuildingBtn.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0)
+        addressLabelBuilding.setAnchor(top: addressBuildingBtn.topAnchor, left: addressBuildingBtn.leftAnchor, bottom: addressBuildingBtn.bottomAnchor, right: addressBuildingBtn.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
     }
 }
 
