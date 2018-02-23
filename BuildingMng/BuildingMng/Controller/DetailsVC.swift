@@ -21,7 +21,7 @@ class DetailsVC: UIViewController {
         let lb = UILabel()
         lb.textColor = .black
         lb.backgroundColor = .blue
-        lb.font = UIFont.boldSystemFont(ofSize: 25)
+        lb.font = UIFont.boldSystemFont(ofSize: 26)
         return lb
     }()
     
@@ -31,7 +31,7 @@ class DetailsVC: UIViewController {
         lb.textColor = .darkGray
         lb.numberOfLines = 2
         lb.backgroundColor = .red
-        lb.font = UIFont.systemFont(ofSize: 15)
+        lb.font = UIFont.systemFont(ofSize: 18)
         return lb
     }()
     
@@ -91,9 +91,9 @@ class DetailsVC: UIViewController {
         
         imagePhotoView.setAnchor(top: view.safeTopAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 300)
         
-        titleLabelBuilding.setAnchor(top: imagePhotoView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 310, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 50)
+        titleLabelBuilding.setAnchor(top: imagePhotoView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 310, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
         
-        addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+        addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 35, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
         addressLabelBuilding.setAnchor(top: addressBuildingBtn.topAnchor, left: addressBuildingBtn.leftAnchor, bottom: addressBuildingBtn.bottomAnchor, right: addressBuildingBtn.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
     }
