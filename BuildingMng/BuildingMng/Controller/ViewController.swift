@@ -26,14 +26,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         BuildingInfo(imagePhoto: "ten", title: "tenth building", address: "1100 Jefferson street, Hoboken NJ 03070")
     ]
     
-    
-    let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.image = UIImage(named: "hoboken")
-        iv.contentMode = .scaleAspectFill
-        return iv
-    }()
-    
     let tableView: UITableView = {
         let tv = UITableView()
         return tv
@@ -41,14 +33,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .red
-        view.addSubview(imageView)
-        imageView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
      
         setView()
         setNavBar()
-//        viewEffect()
     }
     
     private func setView(){
@@ -69,14 +56,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             NSAttributedStringKey.font: UIFont(name:"Marker Felt", size:25.0)!, NSAttributedStringKey.foregroundColor:UIColor.black
         ]
         navigationController?.navigationBar.tintColor = .darkGray
-    }
-    
-    func viewEffect(){
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(blurEffectView)
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
