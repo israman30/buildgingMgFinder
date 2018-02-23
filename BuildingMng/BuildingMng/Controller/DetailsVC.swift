@@ -65,6 +65,9 @@ class DetailsVC: UIViewController {
         guard let title = buildingInfoDetail?.title else {return}
         titleLabelBuilding.text = title
         
+        guard let address = buildingInfoDetail?.address else {return}
+        addressLabelBuilding.text = address
+        print(buildingInfoDetail?.address ?? 0)
         setDetailView()
     }
     
