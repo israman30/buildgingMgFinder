@@ -38,6 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         setNavBar()
     }
     
+    // MARK: - Setting the table view
     private func setView(){
         view.addSubview(tableView)
         tableView.delegate = self
@@ -47,6 +48,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
     
+    //MARK: - Setting the navbar controller
     private func setNavBar(){
         navigationController?.navigationBar.barTintColor = .white
         
@@ -58,6 +60,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationController?.navigationBar.tintColor = .darkGray
     }
 
+    // MARK: - DATA SOURCE & DELEGATES
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -76,6 +79,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    // Sub.MARK: - Passing data to detail VC
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailDisplayVC = DetailsVC()
         let detail: BuildingInfo = buildingInfo[indexPath.row]
