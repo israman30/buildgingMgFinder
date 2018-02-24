@@ -141,7 +141,6 @@ class MyCell: UITableViewCell {
         imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 8, paddingRight: 5)
         
         titleLabel.setAnchor(top: nil, left: imagePhotoView.leftAnchor, bottom: imagePhotoView.bottomAnchor, right: imagePhotoView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: -6, paddingRight: 10, width: 150, height: 35)
-
     }
     
     required init?(coder aDecoder: NSCoder) {

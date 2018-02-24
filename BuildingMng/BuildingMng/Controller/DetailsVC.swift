@@ -9,9 +9,7 @@
 import UIKit
 import MapKit
 
-
 class DetailsVC: UIViewController {
-    
     
     let imagePhotoView: UIImageView = {
         let iv = UIImageView()
@@ -52,10 +50,7 @@ class DetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.view.backgroundColor = .clear
+        setNavBarDetail()
         
         guard let image = buildingInfoDetail?.imagePhoto else {return}
         imagePhotoView.image = UIImage(named: image)
@@ -94,10 +89,20 @@ class DetailsVC: UIViewController {
         mapItem.openInMaps(launchOptions: options)
     }
     
-    func setDetailView(){
+    private func setNavBarDetail(){
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+    }
+    
+    private func setDetailView(){
         view.backgroundColor = .white
         
-        [imagePhotoView, titleLabelBuilding, addressBuildingBtn].forEach({view.addSubview($0)})
+        [imagePhotoView,
+         titleLabelBuilding,
+         addressBuildingBtn].forEach({view.addSubview($0)})
+        
         addressBuildingBtn.addSubview(addressLabelBuilding)
         
         imagePhotoView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
