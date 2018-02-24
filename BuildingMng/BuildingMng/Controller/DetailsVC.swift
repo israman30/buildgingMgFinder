@@ -43,11 +43,6 @@ class DetailsVC: UIViewController {
         return btn
     }()
     
-    let scrollView: UIScrollView = {
-        let cv = UIScrollView()
-        return cv
-    }()
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -102,7 +97,7 @@ class DetailsVC: UIViewController {
     func setDetailView(){
         view.backgroundColor = .white
         
-        [imagePhotoView, titleLabelBuilding, addressBuildingBtn, scrollView].forEach({view.addSubview($0)})
+        [imagePhotoView, titleLabelBuilding, addressBuildingBtn].forEach({view.addSubview($0)})
         addressBuildingBtn.addSubview(addressLabelBuilding)
         
         imagePhotoView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
@@ -113,7 +108,6 @@ class DetailsVC: UIViewController {
         
         addressLabelBuilding.setAnchor(top: addressBuildingBtn.topAnchor, left: addressBuildingBtn.leftAnchor, bottom: addressBuildingBtn.bottomAnchor, right: addressBuildingBtn.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
         
-        scrollView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
 }
 
