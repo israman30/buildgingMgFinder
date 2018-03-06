@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         BuildingInfo(imagePhoto: "rivington", title: "The RIVINGTON", address: "1130 Grand St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "observer", title: "OBSERVER PARK", address: "51 Garden St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "harlow", title: "HARLOW", address: "1330 Willow Ave, Hoboken, NJ 07030"),
-        BuildingInfo(imagePhoto: "six", title: "six building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "sovereign", title: "The SOVEREIGN", address: "2 14th St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "seven", title: "seventh building", address: "1100 Jefferson street, Hoboken NJ 03070"),
         BuildingInfo(imagePhoto: "eight", title: "eight building", address: "1100 Jefferson street, Hoboken NJ 03070"),
         BuildingInfo(imagePhoto: "nine", title: "nine building", address: "1100 Jefferson street, Hoboken NJ 03070"),
