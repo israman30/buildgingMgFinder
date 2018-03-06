@@ -14,7 +14,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let buildingInfo = [
-        BuildingInfo(imagePhoto: "one", title: "first building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "artisan", title: "The ARTISAN\nseries", address: "1100 Jefferson St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "two", title: "second building", address: "PILSENER HAUS & BIERGARTEN, 1422 GRAND STREET, HOBOKEN, NJ 07030"),
         BuildingInfo(imagePhoto: "three", title: "third building", address: "1100 Jefferson street, Hoboken NJ 03070"),
         BuildingInfo(imagePhoto: "four", title: "fourth building", address: "1100 Jefferson street, Hoboken NJ 03070"),
@@ -116,10 +116,11 @@ class MyCell: UITableViewCell {
         lb.layer.shadowColor = UIColor.black.cgColor
         lb.layer.shadowRadius = 3.0
         lb.layer.shadowOpacity = 1.5
+        lb.numberOfLines = 2
         lb.layer.shadowOffset = CGSize(width: 4, height: 5)
         lb.layer.masksToBounds = false
         
-        lb.font = UIFont.boldSystemFont(ofSize: 27)
+        lb.font = UIFont.boldSystemFont(ofSize: 24)
         return lb
     }()
     
@@ -140,7 +141,7 @@ class MyCell: UITableViewCell {
         
         imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 8, paddingRight: 5)
         
-        titleLabel.setAnchor(top: nil, left: imagePhotoView.leftAnchor, bottom: imagePhotoView.bottomAnchor, right: imagePhotoView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: -6, paddingRight: 10, width: 150, height: 35)
+        titleLabel.setAnchor(top: nil, left: imagePhotoView.leftAnchor, bottom: imagePhotoView.bottomAnchor, right: imagePhotoView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: -6, paddingRight: 10, width: 150, height: 40)
     }
     
     required init?(coder aDecoder: NSCoder) {
