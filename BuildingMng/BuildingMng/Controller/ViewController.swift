@@ -15,9 +15,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let buildingInfo = [
         BuildingInfo(imagePhoto: "artisan", title: "The ARTISAN series", address: "1100 Jefferson St, Hoboken, NJ 07030"),
-        BuildingInfo(imagePhoto: "two", title: "second building", address: "PILSENER HAUS & BIERGARTEN, 1422 GRAND STREET, HOBOKEN, NJ 07030"),
-        BuildingInfo(imagePhoto: "three", title: "third building", address: "1100 Jefferson street, Hoboken NJ 03070"),
-        BuildingInfo(imagePhoto: "four", title: "fourth building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "jordan", title: "The JORDAN", address: "1200 Clinton St, Hoboken, NJ 07030"),
+        BuildingInfo(imagePhoto: "rivington", title: "The RIVINGTON", address: "1130 Grand St, Hoboken, NJ 07030"),
+        BuildingInfo(imagePhoto: "observer", title: "OBSERVER PARK", address: "51 Garden St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "five", title: "fifth building", address: "1100 Jefferson street, Hoboken NJ 03070"),
         BuildingInfo(imagePhoto: "six", title: "six building", address: "1100 Jefferson street, Hoboken NJ 03070"),
         BuildingInfo(imagePhoto: "seven", title: "seventh building", address: "1100 Jefferson street, Hoboken NJ 03070"),
