@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         BuildingInfo(imagePhoto: "sovereign", title: "The SOVEREIGN", address: "2 14th St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "south", title: "The South Independence", address: "2 12th St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "van", title: "The Vanguard at the Shipyard", address: "1201 Hudson St, Hoboken, NJ 07030"),
-        BuildingInfo(imagePhoto: "nine", title: "nine building", address: "1100 Jefferson street, Hoboken NJ 03070"),
+        BuildingInfo(imagePhoto: "vine", title: "VINE", address: "900 Monroe St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "ten", title: "tenth building", address: "1100 Jefferson street, Hoboken NJ 03070")
     ]
     
