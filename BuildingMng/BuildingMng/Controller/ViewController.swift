@@ -28,7 +28,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         BuildingInfo(imagePhoto: "lex", title: "The LEXINGTON", address: "619 Adams St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "river", title: "RIVER STREET", address: "333 River St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "grand", title: "GRAND ADAMS", address: "300 Grand St, Hoboken, NJ 07030"),
-        BuildingInfo(imagePhoto: "77", title: "77 PARK AVENUE", address: "77 Park Ave, Hoboken, NJ 07030")
+        BuildingInfo(imagePhoto: "77", title: "77 PARK AVENUE", address: "77 Park Ave, Hoboken, NJ 07030"),
+        BuildingInfo(imagePhoto: "max", title: "MAXWELL'S", address: "1039 Washington St, Hoboken, NJ 07030")
     ]
     
     let tableView: UITableView = {
