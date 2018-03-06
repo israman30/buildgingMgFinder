@@ -14,7 +14,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let buildingInfo = [
-        BuildingInfo(imagePhoto: "artisan", title: "The ARTISAN\nseries", address: "1100 Jefferson St, Hoboken, NJ 07030"),
+        BuildingInfo(imagePhoto: "artisan", title: "The ARTISAN series", address: "1100 Jefferson St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "two", title: "second building", address: "PILSENER HAUS & BIERGARTEN, 1422 GRAND STREET, HOBOKEN, NJ 07030"),
         BuildingInfo(imagePhoto: "three", title: "third building", address: "1100 Jefferson street, Hoboken NJ 03070"),
         BuildingInfo(imagePhoto: "four", title: "fourth building", address: "1100 Jefferson street, Hoboken NJ 03070"),
@@ -119,8 +119,7 @@ class MyCell: UITableViewCell {
         lb.numberOfLines = 2
         lb.layer.shadowOffset = CGSize(width: 4, height: 5)
         lb.layer.masksToBounds = false
-        
-        lb.font = UIFont.boldSystemFont(ofSize: 24)
+        lb.font = UIFont.boldSystemFont(ofSize: 27)
         return lb
     }()
     
