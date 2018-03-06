@@ -9,13 +9,17 @@
 import UIKit
 import MapKit
 
-class DetailsVC: UIViewController {
-    
-    let imagePhotoView: UIImageView = {
+class Helper {
+    static let imagePhotoView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         return iv
     }()
+}
+
+class DetailsVC: UIViewController {
+    
+    let imageBuildingPhotoDetail = Helper.imagePhotoView
     
     let titleLabelBuilding: UILabel = {
         let lb = UILabel()
@@ -53,7 +57,7 @@ class DetailsVC: UIViewController {
         setNavBarDetail()
         
         guard let image = buildingInfoDetail?.imagePhoto else {return}
-        imagePhotoView.image = UIImage(named: image)
+        imageBuildingPhotoDetail.image = UIImage(named: image)
 
         guard let title = buildingInfoDetail?.title else {return}
         titleLabelBuilding.text = title
@@ -99,15 +103,15 @@ class DetailsVC: UIViewController {
     private func setDetailView(){
         view.backgroundColor = .white
         
-        [imagePhotoView,
+        [imageBuildingPhotoDetail,
          titleLabelBuilding,
          addressBuildingBtn].forEach({view.addSubview($0)})
         
         addressBuildingBtn.addSubview(addressLabelBuilding)
         
-        imagePhotoView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
+        imageBuildingPhotoDetail.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
         
-        titleLabelBuilding.setAnchor(top: imagePhotoView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 410, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
+        titleLabelBuilding.setAnchor(top: imageBuildingPhotoDetail.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 410, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
         
         addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 35, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
