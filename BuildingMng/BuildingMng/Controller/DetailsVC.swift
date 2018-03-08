@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class Helper {
+class ViewHelper {
     static let imagePhotoView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -32,15 +32,16 @@ class Helper {
 
 class DetailsVC: UIViewController {
     
-    let imageBuildingPhotoDetail = Helper.imagePhotoView
-    let titleLabelBuilding = Helper.titleLabelBuilding
-    let lineDividerView = Helper.lineDividerView
+    let imageBuildingPhotoDetail = ViewHelper.imagePhotoView
+    let titleLabelBuilding = ViewHelper.titleLabelBuilding
+    let lineDividerView = ViewHelper.lineDividerView
 
     let addressLabelBuilding: UILabel = {
         let lb = UILabel()
         lb.text = "building address"
         lb.textColor = .darkGray
         lb.numberOfLines = 2
+        lb.textAlignment = .center
         lb.font = UIFont.systemFont(ofSize: 18)
         return lb
     }()
@@ -124,7 +125,7 @@ class DetailsVC: UIViewController {
         
         addressLabelBuilding.setAnchor(top: addressBuildingBtn.topAnchor, left: addressBuildingBtn.leftAnchor, bottom: addressBuildingBtn.bottomAnchor, right: addressBuildingBtn.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
         
-        lineDividerView.setAnchor(top: addressBuildingBtn.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 100, height: 1)
+        lineDividerView.setAnchor(top: addressBuildingBtn.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 100, height: 1.5)
     }
 }
 
