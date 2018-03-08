@@ -9,8 +9,6 @@
 import UIKit
 import UIKit
 
-
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let buildingInfo = [
@@ -87,10 +85,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Sub.MARK: - Passing data to detail VC
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailDisplayVC = DetailsVC()
-        let detail: BuildingInfo = buildingInfo[indexPath.row]
-        detailDisplayVC.buildingInfoDetail = detail
-        navigationController?.pushViewController(detailDisplayVC, animated: true)
+        if indexPath.row == 0 {
+            
+            let detailDisplayVC = DetailsVC()
+            let detail: BuildingInfo = buildingInfo[indexPath.row]
+            detailDisplayVC.buildingInfoDetail = detail
+            navigationController?.pushViewController(detailDisplayVC, animated: true)
+        } else if indexPath.row == 2 {
+            let detailDisplayVC = DetailsVC()
+            let detail: BuildingInfo = buildingInfo[indexPath.row]
+            detailDisplayVC.buildingInfoDetail = detail
+            navigationController?.pushViewController(detailDisplayVC, animated: true)
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
