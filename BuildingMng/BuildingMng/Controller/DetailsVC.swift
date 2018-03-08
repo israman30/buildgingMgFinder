@@ -15,26 +15,32 @@ class Helper {
         iv.contentMode = .scaleAspectFill
         return iv
     }()
+    
+    static let titleLabelBuilding: UILabel = {
+        let lb = UILabel()
+        lb.textColor = .black
+        lb.font = UIFont.boldSystemFont(ofSize: 26)
+        return lb
+    }()
+    
+    static let lineDividerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
+    }()
 }
 
 class DetailsVC: UIViewController {
     
     let imageBuildingPhotoDetail = Helper.imagePhotoView
-    
-    let titleLabelBuilding: UILabel = {
-        let lb = UILabel()
-        lb.textColor = .black
-        lb.backgroundColor = .blue
-        lb.font = UIFont.boldSystemFont(ofSize: 26)
-        return lb
-    }()
-    
+    let titleLabelBuilding = Helper.titleLabelBuilding
+    let lineDividerView = Helper.lineDividerView
+
     let addressLabelBuilding: UILabel = {
         let lb = UILabel()
         lb.text = "building address"
         lb.textColor = .darkGray
         lb.numberOfLines = 2
-        lb.backgroundColor = .red
         lb.font = UIFont.systemFont(ofSize: 18)
         return lb
     }()
@@ -105,7 +111,8 @@ class DetailsVC: UIViewController {
         
         [imageBuildingPhotoDetail,
          titleLabelBuilding,
-         addressBuildingBtn].forEach({view.addSubview($0)})
+         addressBuildingBtn,
+         lineDividerView].forEach({view.addSubview($0)})
         
         addressBuildingBtn.addSubview(addressLabelBuilding)
         
@@ -117,6 +124,7 @@ class DetailsVC: UIViewController {
         
         addressLabelBuilding.setAnchor(top: addressBuildingBtn.topAnchor, left: addressBuildingBtn.leftAnchor, bottom: addressBuildingBtn.bottomAnchor, right: addressBuildingBtn.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
         
+        lineDividerView.setAnchor(top: addressBuildingBtn.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 20, paddingBottom: 0, paddingRight: 20, width: 100, height: 1)
     }
 }
 
