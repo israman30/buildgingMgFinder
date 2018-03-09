@@ -9,7 +9,13 @@
 import UIKit
 import UIKit
 
+struct Artisan {
+    var name: String?
+}
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let artisanBuilding = [Artisan(name: "Artisan")]
     
     let buildingInfo = [
         BuildingInfo(imagePhoto: "artisan", title: "The ARTISAN series", address: "1100 Jefferson St, Hoboken, NJ 07030"),
@@ -85,18 +91,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Sub.MARK: - Passing data to detail VC
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        
+        if indexPath.section == 0 {print("Yay")}
             
-            let detailDisplayVC = DetailsVC()
-            let detail: BuildingInfo = buildingInfo[indexPath.row]
-            detailDisplayVC.buildingInfoDetail = detail
-            navigationController?.pushViewController(detailDisplayVC, animated: true)
-        } else if indexPath.row == 2 {
-            let detailDisplayVC = DetailsVC()
-            let detail: BuildingInfo = buildingInfo[indexPath.row]
-            detailDisplayVC.buildingInfoDetail = detail
-            navigationController?.pushViewController(detailDisplayVC, animated: true)
-        }
+        let detailDisplayVC = DetailsVC()
+        let detail: BuildingInfo = buildingInfo[indexPath.row]
+        detailDisplayVC.buildingInfoDetail = detail
+        navigationController?.pushViewController(detailDisplayVC, animated: true)
         
     }
     
