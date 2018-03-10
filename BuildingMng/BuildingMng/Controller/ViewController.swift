@@ -9,13 +9,7 @@
 import UIKit
 import UIKit
 
-struct Artisan {
-    var name: String?
-}
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    let artisanBuilding = [Artisan(name: "Artisan")]
     
     let buildingInfo = [
         BuildingInfo(imagePhoto: "artisan", title: "The ARTISAN series", address: "1100 Jefferson St, Hoboken, NJ 07030"),
@@ -79,9 +73,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return buildingInfo.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return "test"
+        }
+        return "title"
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MyCell
-        
         let information = buildingInfo[indexPath.row]
         cell.buildingImages = information
         cell.selectionStyle = .none
@@ -91,8 +91,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Sub.MARK: - Passing data to detail VC
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if indexPath.section == 0 {print("Yay")}
             
         let detailDisplayVC = DetailsVC()
         let detail: BuildingInfo = buildingInfo[indexPath.row]
