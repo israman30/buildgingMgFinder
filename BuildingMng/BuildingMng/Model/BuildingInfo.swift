@@ -9,7 +9,9 @@
 import UIKit
 
 struct BuildingInfo {
+    
     var imagePhoto: String?
     var title: String?
     var address: String?
+        
 }

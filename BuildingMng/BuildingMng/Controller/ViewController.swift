@@ -12,7 +12,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let buildingInfo = [
-        BuildingInfo(imagePhoto: "artisan", title: "The ARTISAN series", address: "1100 Jefferson St, Hoboken, NJ 07030"),
+        BuildingInfo(imagePhoto: "artisan", title: "The ARTISAN, Jefferson St.", address: "1100 Jefferson St, Hoboken, NJ 07030"),
+        BuildingInfo(imagePhoto: "madison", title: "The ARTISAN, Madison St.", address: "1101 Madison St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "jordan", title: "The JORDAN", address: "1200 Clinton St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "rivington", title: "The RIVINGTON", address: "1130 Grand St, Hoboken, NJ 07030"),
         BuildingInfo(imagePhoto: "observer", title: "OBSERVER PARK", address: "51 Garden St, Hoboken, NJ 07030"),
@@ -77,7 +78,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if section == 1 {
             return "test"
         }
-        return "title"
+        return "Luxury Hoboke"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
