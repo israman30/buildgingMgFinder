@@ -61,8 +61,6 @@ class DetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        setNavBarDetail()
-        
         guard let image = buildingInfoDetail?.imagePhoto else {return}
         imageBuildingPhotoDetail.image = UIImage(named: image)
 

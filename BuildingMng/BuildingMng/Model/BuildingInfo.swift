@@ -16,7 +16,7 @@ struct BuildingInfo {
     
     static let shared = BuildingInfo()
     
-    func setData()-> [BuildingInfo]{
+    func setData(completion: @escaping()->())-> [BuildingInfo]{
         let buildingInfo = [
             BuildingInfo(imagePhoto: "artisan", title: "The ARTISAN, Jefferson St.", address: "1100 Jefferson St, Hoboken, NJ 07030"),
             BuildingInfo(imagePhoto: "madison", title: "The ARTISAN, Madison St.", address: "1101 Madison St, Hoboken, NJ 07030"),
@@ -39,8 +39,6 @@ struct BuildingInfo {
             BuildingInfo(imagePhoto: "max", title: "MAXWELL'S", address: "1039 Washington St, Hoboken, NJ 07030")
         ]
         return buildingInfo
-
     }
-    
-    
+
 }
