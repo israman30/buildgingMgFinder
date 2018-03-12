@@ -61,7 +61,7 @@ class DetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNavBarDetail()
+//        setNavBarDetail()
         
         guard let image = buildingInfoDetail?.imagePhoto else {return}
         imageBuildingPhotoDetail.image = UIImage(named: image)
@@ -117,7 +117,7 @@ class DetailsVC: UIViewController {
         
         addressBuildingBtn.addSubview(addressLabelBuilding)
         
-        imageBuildingPhotoDetail.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
+        imageBuildingPhotoDetail.setAnchor(top: view.safeTopAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
         
         titleLabelBuilding.setAnchor(top: imageBuildingPhotoDetail.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 410, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
         
