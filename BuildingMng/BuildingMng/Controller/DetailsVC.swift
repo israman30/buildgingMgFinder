@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import SafariServices
 
 class ViewHelper {
     static let imagePhotoView: UIImageView = {
@@ -53,13 +54,17 @@ class DetailsVC: UIViewController {
     }()
     
     let contactBuildingBtn: UIButton = {
-        let btn = UIButton()
+        let btn = UIButton(type: .system)
         btn.setTitle("Contact", for: .normal)
         btn.backgroundColor = .red
         btn.addTarget(self, action: #selector(contactAction), for: .touchUpInside)
         return btn
     }()
     
+    @objc func contactAction(){
+        let safariVC = SFSafariViewController(url: URL(string: "https://www.google.com")!)
+        present(safariVC, animated: true, completion: nil)
+    }
     
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -83,9 +88,7 @@ class DetailsVC: UIViewController {
         setDetailView()
     }
     
-    @objc func contactAction(){
-        print(buildingInfoDetail?.contact)
-    }
+    
     
     // MARK: - This block handles the location when use tap the address detail
     @objc func addressAction(){
