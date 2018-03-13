@@ -60,9 +60,7 @@ class DetailsVC: UIViewController {
         return btn
     }()
     
-    @objc func contactAction(){
-        print("Conact")
-    }
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -83,6 +81,10 @@ class DetailsVC: UIViewController {
         addressLabelBuilding.text = address
         print(buildingInfoDetail?.address ?? 1)
         setDetailView()
+    }
+    
+    @objc func contactAction(){
+        print(buildingInfoDetail?.contact)
     }
     
     // MARK: - This block handles the location when use tap the address detail
