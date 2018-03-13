@@ -52,6 +52,18 @@ class DetailsVC: UIViewController {
         return btn
     }()
     
+    let contactBuildingBtn: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Contact", for: .normal)
+        btn.backgroundColor = .red
+        btn.addTarget(self, action: #selector(contactAction), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func contactAction(){
+        print("Conact")
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -111,7 +123,8 @@ class DetailsVC: UIViewController {
         [imageBuildingPhotoDetail,
          titleLabelBuilding,
          addressBuildingBtn,
-         lineDividerView].forEach({view.addSubview($0)})
+         lineDividerView,
+         contactBuildingBtn].forEach({view.addSubview($0)})
         
         addressBuildingBtn.addSubview(addressLabelBuilding)
         
@@ -124,6 +137,8 @@ class DetailsVC: UIViewController {
         addressLabelBuilding.setAnchor(top: addressBuildingBtn.topAnchor, left: addressBuildingBtn.leftAnchor, bottom: addressBuildingBtn.bottomAnchor, right: addressBuildingBtn.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
         
         lineDividerView.setAnchor(top: addressBuildingBtn.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 100, height: 1.5)
+        
+        contactBuildingBtn.setAnchor(top: lineDividerView.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 10, width: 80, height: 20)
     }
 }
 
