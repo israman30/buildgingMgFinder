@@ -8,9 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     let searchBar = UISearchBar()
+    
+    var filterArray = [BuildingInfo]()
+    
+    var showResults = false
     
     var buildingInfo: [BuildingInfo]!
     
@@ -58,7 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func setSearchBar(){
         searchBar.showsCancelButton = false
         searchBar.placeholder = "search your favorite"
-//        searchBar.delegate = self
+        searchBar.delegate = self
         searchBar.barStyle = .blackTranslucent
         navigationItem.titleView = searchBar
     }
@@ -69,11 +74,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if showResults {
+            return filterArray.count
+        }
         return buildingInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MyCell
+        if showResults {
+            cell.titleLabel.text = filterArray[indexPath.row].title
+            return cell
+        }
         let information = buildingInfo[indexPath.row]
         cell.buildingImages = information
         cell.selectionStyle = .none
@@ -83,7 +95,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Sub.MARK: - Passing data to detail VC
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
         let detailDisplayVC = DetailsVC()
         let detail: BuildingInfo = buildingInfo[indexPath.row]
         detailDisplayVC.buildingInfoDetail = detail
@@ -97,6 +108,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 190
+    }
+    
+    // MARK: - SearchBar Delegates Block Functions
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterArray = buildingInfo.filter({ (b) -> Bool in
+            guard let text = searchBar.text else {return false}
+            return b.title!.lowercased().contains(text.lowercased())
+        })
+        if searchText != "" {
+            showResults = true
+            self.tableView.reloadData()
+        } else {
+            showResults = false
+            self.tableView.reloadData()
+        }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        showResults = true
+        searchBar.endEditing(true)
+        self.tableView.reloadData()
     }
 
 }
