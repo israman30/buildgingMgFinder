@@ -102,9 +102,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let view = UIView()
+//        view.backgroundColor = .yellow
+//        return view
+//    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Hoboken Luxury"
+        let label = UILabel()
+        label.text = "Hoboken Luxury"
+        let text: String = label.text!
+        return text
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 190
