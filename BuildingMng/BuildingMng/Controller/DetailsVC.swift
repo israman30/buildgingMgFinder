@@ -56,7 +56,16 @@ class DetailsVC: UIViewController {
     let contactBuildingBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Contact", for: .normal)
-        btn.backgroundColor = .red
+        btn.setTitleColor(.white, for: .normal)
+        btn.backgroundColor = .lightGray
+        btn.layer.borderWidth = 0.5
+        btn.layer.borderColor = UIColor.gray.cgColor
+        btn.layer.cornerRadius = 5
+        btn.layer.shadowColor = UIColor.black.cgColor
+        btn.layer.shadowRadius = 0.5
+        btn.layer.shadowOpacity = 0.5
+        btn.layer.shadowOffset = CGSize(width: 4, height: 5)
+        btn.layer.masksToBounds = false
         btn.addTarget(self, action: #selector(contactAction), for: .touchUpInside)
         return btn
     }()
