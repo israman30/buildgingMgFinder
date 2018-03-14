@@ -62,10 +62,10 @@ class DetailsVC: UIViewController {
     }()
     
     @objc func contactAction(){
-        let safariVC = SFSafariViewController(url: URL(string: "https://www.google.com")!)
+        guard let webSite = buildingInfoDetail?.contact else {return}
+        let safariVC = SFSafariViewController(url: URL(string: webSite)!)
         present(safariVC, animated: true, completion: nil)
     }
-    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -84,11 +84,9 @@ class DetailsVC: UIViewController {
         
         guard let address = buildingInfoDetail?.address else {return}
         addressLabelBuilding.text = address
-        print(buildingInfoDetail?.address ?? 1)
+        print(buildingInfoDetail?.contact ?? 1)
         setDetailView()
     }
-    
-    
     
     // MARK: - This block handles the location when use tap the address detail
     @objc func addressAction(){
@@ -143,7 +141,7 @@ class DetailsVC: UIViewController {
         
         lineDividerView.setAnchor(top: addressBuildingBtn.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 100, height: 1.5)
         
-        contactBuildingBtn.setAnchor(top: lineDividerView.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 0, paddingRight: 10, width: 80, height: 20)
+        contactBuildingBtn.setAnchor(top: lineDividerView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 80, height: 20)
     }
 }
 
