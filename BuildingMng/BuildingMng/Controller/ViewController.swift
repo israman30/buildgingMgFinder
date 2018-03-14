@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    let searchBar = UISearchBar()
+    
     var buildingInfo: [BuildingInfo]!
     
     let tableView: UITableView = {
@@ -21,6 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         setView()
         setNavBar()
+        setSearchBar()
         buildingInfo = BuildingInfo.shared.setData {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -43,12 +46,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private func setNavBar(){
         navigationController?.navigationBar.barTintColor = .white
         
-        navigationItem.title = "Hoboken Lux Appartments"
+        navigationItem.title = "Hoboken Luxury"
         
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedStringKey.font: UIFont(name:"Marker Felt", size:25.0)!, NSAttributedStringKey.foregroundColor:UIColor.black
         ]
         navigationController?.navigationBar.tintColor = .black
+    }
+    
+    // MARK: - Set search bar controller
+    func setSearchBar(){
+        searchBar.showsCancelButton = false
+        searchBar.placeholder = "search your favorite"
+//        searchBar.delegate = self
+        searchBar.barStyle = .blackTranslucent
+        navigationItem.titleView = searchBar
     }
 
     // MARK: - DATA SOURCE & DELEGATES
