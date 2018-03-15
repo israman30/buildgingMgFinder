@@ -82,12 +82,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MyCell
+        let building: BuildingInfo
         if showResults {
-            cell.titleLabel.text = filterArray[indexPath.row].title
-            return cell
+            building = filterArray[indexPath.row]
+        } else {
+            building = buildingInfo[indexPath.row]
         }
-        let information = buildingInfo[indexPath.row]
-        cell.buildingImages = information
+        cell.titleLabel.text = building.title
+        cell.imagePhotoView.image = UIImage(named: building.imagePhoto!)
         cell.selectionStyle = .none
 
         return cell
@@ -96,10 +98,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // Sub.MARK: - Passing data to detail VC
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailDisplayVC = DetailsVC()
-        let detail: BuildingInfo = buildingInfo[indexPath.row]
+        var detail: BuildingInfo = buildingInfo[indexPath.row]
+        if showResults {
+            detail = filterArray[indexPath.row]
+        }
         detailDisplayVC.buildingInfoDetail = detail
         navigationController?.pushViewController(detailDisplayVC, animated: true)
-        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -109,7 +113,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return text
     }
     
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 190
     }
@@ -118,7 +121,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filterArray = buildingInfo.filter({ (b) -> Bool in
             guard let text = searchBar.text else {return false}
-            return b.title!.lowercased().contains(text.lowercased())
+            return b.title!.lowercased().contains(text.lowercased()) && (b.imagePhoto?.lowercased().contains(text.lowercased()))!
         })
         if searchText != "" {
             showResults = true
