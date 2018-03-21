@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: - Set search bar controller
     func setSearchBar(){
         searchBar.showsCancelButton = false
-        searchBar.placeholder = "search your favorite"
+        searchBar.placeholder = "search for your favorite"
         searchBar.delegate = self
         searchBar.barStyle = .blackTranslucent
         navigationItem.titleView = searchBar
