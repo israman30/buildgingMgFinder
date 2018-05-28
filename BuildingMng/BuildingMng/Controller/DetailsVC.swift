@@ -21,14 +21,14 @@ class ViewHelper {
     
     static let titleLabelBuilding: UILabel = {
         let lb = UILabel()
-        lb.textColor = .black
-        lb.font = UIFont.boldSystemFont(ofSize: 26)
+        lb.textColor = .white
+        lb.font = UIFont.boldSystemFont(ofSize: 22)
         return lb
     }()
     
     static let lineDividerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
         return view
     }()
 }
@@ -42,7 +42,7 @@ class DetailsVC: UIViewController {
     let addressLabelBuilding: UILabel = {
         let lb = UILabel()
         lb.text = "building address"
-        lb.textColor = .darkGray
+        lb.textColor = .white
         lb.numberOfLines = 2
         lb.textAlignment = .center
         lb.font = UIFont.systemFont(ofSize: 18)
@@ -59,8 +59,9 @@ class DetailsVC: UIViewController {
         let btn = UIButton(type: .system)
         btn.setTitle("Contact", for: .normal)
         btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = .lightGray
-        btn.layer.cornerRadius = 5
+        btn.layer.borderWidth = 3
+        btn.layer.borderColor = UIColor.white.cgColor
+        btn.layer.cornerRadius = 10
         btn.layer.masksToBounds = false
         btn.addTarget(self, action: #selector(contactAction), for: .touchUpInside)
         return btn
@@ -140,7 +141,7 @@ class DetailsVC: UIViewController {
         
         titleLabelBuilding.setAnchor(top: imageBuildingPhotoDetail.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 450, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
         
-        addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 35, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+        addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 25, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
         addressLabelBuilding.setAnchor(top: addressBuildingBtn.topAnchor, left: addressBuildingBtn.leftAnchor, bottom: addressBuildingBtn.bottomAnchor, right: addressBuildingBtn.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
         
