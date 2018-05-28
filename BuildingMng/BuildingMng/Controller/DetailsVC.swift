@@ -45,7 +45,7 @@ class DetailsVC: UIViewController {
         lb.textColor = .white
         lb.numberOfLines = 2
         lb.textAlignment = .center
-        lb.font = UIFont.systemFont(ofSize: 18)
+        lb.font = UIFont.systemFont(ofSize: 16)
         return lb
     }()
     
@@ -139,7 +139,7 @@ class DetailsVC: UIViewController {
         
         imageBuildingPhotoDetail.setAnchor(top: view.safeTopAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
         
-        titleLabelBuilding.setAnchor(top: imageBuildingPhotoDetail.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 450, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
+        titleLabelBuilding.setAnchor(top: imageBuildingPhotoDetail.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 460, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
         
         addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 25, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
