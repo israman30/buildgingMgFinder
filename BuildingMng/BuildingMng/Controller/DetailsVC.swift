@@ -22,6 +22,12 @@ class ViewHelper {
     static let titleLabelBuilding: UILabel = {
         let lb = UILabel()
         lb.textColor = .white
+        lb.layer.shadowColor = UIColor.black.cgColor
+        lb.layer.shadowRadius = 3.0
+        lb.layer.shadowOpacity = 1.5
+        lb.numberOfLines = 2
+        lb.layer.shadowOffset = CGSize(width: 4, height: 5)
+        lb.layer.masksToBounds = false
         lb.font = UIFont.boldSystemFont(ofSize: 22)
         return lb
     }()
@@ -43,8 +49,13 @@ class DetailsVC: UIViewController {
         let lb = UILabel()
         lb.text = "building address"
         lb.textColor = .white
+        lb.layer.shadowColor = UIColor.black.cgColor
+        lb.layer.shadowRadius = 3.0
+        lb.layer.shadowOpacity = 1.5
         lb.numberOfLines = 2
-        lb.textAlignment = .center
+        lb.layer.shadowOffset = CGSize(width: 4, height: 5)
+        lb.layer.masksToBounds = false
+        lb.numberOfLines = 2
         lb.font = UIFont.systemFont(ofSize: 16)
         return lb
     }()
@@ -145,7 +156,7 @@ class DetailsVC: UIViewController {
         
         addressLabelBuilding.setAnchor(top: addressBuildingBtn.topAnchor, left: addressBuildingBtn.leftAnchor, bottom: addressBuildingBtn.bottomAnchor, right: addressBuildingBtn.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
         
-        lineDividerView.setAnchor(top: addressBuildingBtn.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 100, height: 1.5)
+        lineDividerView.setAnchor(top: addressBuildingBtn.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 100, height: 1.5)
         
         contactBuildingBtn.setAnchor(top: lineDividerView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 80, height: 40)
     }
