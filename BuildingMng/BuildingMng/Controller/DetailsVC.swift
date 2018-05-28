@@ -138,7 +138,7 @@ class DetailsVC: UIViewController {
         
         imageBuildingPhotoDetail.setAnchor(top: view.safeTopAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
         
-        titleLabelBuilding.setAnchor(top: imageBuildingPhotoDetail.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 550, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
+        titleLabelBuilding.setAnchor(top: imageBuildingPhotoDetail.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 450, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
         
         addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 35, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
