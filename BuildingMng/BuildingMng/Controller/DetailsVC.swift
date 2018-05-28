@@ -9,11 +9,13 @@
 import UIKit
 import MapKit
 import SafariServices
+import CoreLocation
 
 class ViewHelper {
     static let imagePhotoView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
         return iv
     }()
     
@@ -58,13 +60,7 @@ class DetailsVC: UIViewController {
         btn.setTitle("Contact", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .lightGray
-        btn.layer.borderWidth = 0.5
-        btn.layer.borderColor = UIColor.gray.cgColor
         btn.layer.cornerRadius = 5
-        btn.layer.shadowColor = UIColor.black.cgColor
-        btn.layer.shadowRadius = 0.5
-        btn.layer.shadowOpacity = 0.5
-        btn.layer.shadowOffset = CGSize(width: 4, height: 5)
         btn.layer.masksToBounds = false
         btn.addTarget(self, action: #selector(contactAction), for: .touchUpInside)
         return btn
@@ -93,7 +89,7 @@ class DetailsVC: UIViewController {
         
         guard let address = buildingInfoDetail?.address else {return}
         addressLabelBuilding.text = address
-        print(buildingInfoDetail?.contact ?? 1)
+        print(buildingInfoDetail?.address ?? 1)
         setDetailView()
     }
     
@@ -140,9 +136,9 @@ class DetailsVC: UIViewController {
         
         addressBuildingBtn.addSubview(addressLabelBuilding)
         
-        imageBuildingPhotoDetail.setAnchor(top: view.safeTopAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
+        imageBuildingPhotoDetail.setAnchor(top: view.safeTopAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
         
-        titleLabelBuilding.setAnchor(top: imageBuildingPhotoDetail.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 410, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
+        titleLabelBuilding.setAnchor(top: imageBuildingPhotoDetail.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 550, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
         
         addressBuildingBtn.setAnchor(top: titleLabelBuilding.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 35, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
@@ -150,7 +146,7 @@ class DetailsVC: UIViewController {
         
         lineDividerView.setAnchor(top: addressBuildingBtn.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 40, paddingLeft: 30, paddingBottom: 0, paddingRight: 30, width: 100, height: 1.5)
         
-        contactBuildingBtn.setAnchor(top: lineDividerView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 80, height: 20)
+        contactBuildingBtn.setAnchor(top: lineDividerView.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 80, height: 40)
     }
 }
 

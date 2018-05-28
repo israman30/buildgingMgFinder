@@ -23,7 +23,7 @@ struct BuildingInfo {
             BuildingInfo(imagePhoto: "madison", title: "The ARTISAN, Madison St.", address: "1101 Madison St, Hoboken, NJ 07030", contact: "https://www.theartisannj.com"),
             BuildingInfo(imagePhoto: "grand-1", title: "The ARTISAN, Grand St.", address: "1330 Grand St, Hoboken, NJ 07030", contact: "https://www.theartisannj.com"),
             BuildingInfo(imagePhoto: "clinton", title: "The ARTISAN, Clinton St.", address: "1400 Clinton St, Hoboken, NJ 07030", contact: "https://www.theartisannj.com"),
-            BuildingInfo(imagePhoto: "jordan", title: "The JORDAN", address: "1200 Clinton St, Hoboken, NJ 07030", contact: "https://thejordanhoboken.com/"),
+            BuildingInfo(imagePhoto: "jordan", title: "The JORDAN", address: "1200 CLINTON ST, HOBOKEN, NJ 07030", contact: "https://thejordanhoboken.com/"),
             BuildingInfo(imagePhoto: "rivington", title: "The RIVINGTON", address: "1130 Grand St, Hoboken, NJ 07030", contact: "https://www.rivingtonhoboken.com/"),
             BuildingInfo(imagePhoto: "observer", title: "OBSERVER PARK", address: "51 Garden St, Hoboken, NJ 07030", contact: "https://liveobserverpark.com/"),
             BuildingInfo(imagePhoto: "harlow", title: "HARLOW", address: "1330 Willow Ave, Hoboken, NJ 07030", contact: "http://rentharlow.com/"),
