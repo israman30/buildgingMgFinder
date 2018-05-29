@@ -70,11 +70,15 @@ class DetailsVC: UIViewController {
         let btn = UIButton(type: .system)
         btn.setTitle("Contact", for: .normal)
         btn.setTitleColor(.white, for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.layer.borderWidth = 3
         btn.layer.borderColor = UIColor.white.cgColor
         btn.layer.cornerRadius = 10
         btn.layer.masksToBounds = false
+        btn.layer.shadowColor = UIColor.black.cgColor
+        btn.layer.shadowRadius = 3.0
+        btn.layer.shadowOpacity = 1.5
+        btn.layer.shadowOffset = CGSize(width: 4, height: 5)
         btn.addTarget(self, action: #selector(contactAction), for: .touchUpInside)
         return btn
     }()
@@ -104,7 +108,6 @@ class DetailsVC: UIViewController {
         addressLabelBuilding.text = address
         print(buildingInfoDetail?.address ?? 1)
         setDetailView()
-        setNavBarDetail()
     }
     
     // MARK: - This block handles the location when use tap the address detail
@@ -130,13 +133,6 @@ class DetailsVC: UIViewController {
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = address
         mapItem.openInMaps(launchOptions: options)
-    }
-    
-    private func setNavBarDetail(){
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.view.backgroundColor = .clear
     }
     
     private func setDetailView(){
