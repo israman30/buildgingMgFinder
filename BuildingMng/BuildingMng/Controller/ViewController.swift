@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class ViewController: UIViewController {
 
     let searchBar = UISearchBar()
     
@@ -66,76 +66,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchBar.delegate = self
         searchBar.barStyle = .blackTranslucent
         navigationItem.titleView = searchBar
-    }
-
-    // MARK: - DATA SOURCE & DELEGATES
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if showResults {
-            return filterArray.count
-        }
-        return buildingInfo.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! MyCell
-        let building: BuildingInfo
-        if showResults {
-            building = filterArray[indexPath.row]
-        } else {
-            building = buildingInfo[indexPath.row]
-        }
-        cell.titleLabel.text = building.title
-        cell.imagePhotoView.image = UIImage(named: building.imagePhoto!)
-        cell.selectionStyle = .none
-
-        return cell
-    }
-    
-    // Sub.MARK: - Passing data to detail VC
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailDisplayVC = DetailsVC()
-        var detail: BuildingInfo = buildingInfo[indexPath.row]
-        if showResults {
-            detail = filterArray[indexPath.row]
-        }
-        detailDisplayVC.buildingInfoDetail = detail
-        navigationController?.pushViewController(detailDisplayVC, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let label = UILabel()
-        label.text = "Hoboken Luxury"
-        let text: String = label.text!
-        return text
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190
-    }
-    
-    // MARK: - SearchBar Delegates Block Functions
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filterArray = buildingInfo.filter({ (b) -> Bool in
-            guard let text = searchBar.text else {return false}
-            return b.title!.lowercased().contains(text.lowercased()) && (b.imagePhoto?.lowercased().contains(text.lowercased()))!
-        })
-        
-        showResults = searchText != "" ? true : false
-        self.tableView.reloadData()
-    }
-    
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        searchBar.endEditing(true)
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        showResults = true
-        searchBar.endEditing(true)
-        self.tableView.reloadData()
     }
 
 }
