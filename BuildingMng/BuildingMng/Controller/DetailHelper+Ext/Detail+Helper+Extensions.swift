@@ -11,33 +11,13 @@ import MapKit
 import CoreLocation
 import SafariServices
 
-class ViewHelper {
-    static let imagePhotoView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        return iv
-    }()
-    
-    static let titleLabelBuilding: UILabel = {
-        let lb = UILabel()
-        lb.textColor = .white
-        lb.layer.shadowColor = UIColor.black.cgColor
-        lb.layer.shadowRadius = 3.0
-        lb.layer.shadowOpacity = 1.5
-        lb.numberOfLines = 2
-        lb.layer.shadowOffset = CGSize(width: 4, height: 5)
-        lb.layer.masksToBounds = false
-        lb.font = UIFont.boldSystemFont(ofSize: 22)
-        return lb
-    }()
-    
-    static let lineDividerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        return view
-    }()
-}
+/* ================= INFO ===================
+ 
+ Deatil View Controller Extension and Helper class
+ - MapKit & Core Location
+ - Safari Services
+ 
+ ============================================ */
 
 extension DetailsVC {
     
@@ -72,4 +52,32 @@ extension DetailsVC {
         mapItem.openInMaps(launchOptions: options)
     }
     
+}
+
+class ViewHelper {
+    static let imagePhotoView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        return iv
+    }()
+    
+    static let titleLabelBuilding: UILabel = {
+        let lb = UILabel()
+        lb.textColor = .white
+        lb.layer.shadowColor = UIColor.black.cgColor
+        lb.layer.shadowRadius = 3.0
+        lb.layer.shadowOpacity = 1.5
+        lb.numberOfLines = 2
+        lb.layer.shadowOffset = CGSize(width: 4, height: 5)
+        lb.layer.masksToBounds = false
+        lb.font = UIFont.boldSystemFont(ofSize: 22)
+        return lb
+    }()
+    
+    static let lineDividerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
 }
