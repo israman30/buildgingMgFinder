@@ -16,6 +16,7 @@
 		8D9AD9162038BE8F0045A06C /* ConstrainsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AD9152038BE8E0045A06C /* ConstrainsExtension.swift */; };
 		8D9AD91B20390C520045A06C /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AD91A20390C520045A06C /* DetailsVC.swift */; };
 		8DB47A3A20BCE6950043126B /* MainViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB47A3920BCE6950043126B /* MainViewController+Extensions.swift */; };
+		8DB47A3D20BCE87D0043126B /* Detail+Helper+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB47A3C20BCE87D0043126B /* Detail+Helper+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8D9AD9152038BE8E0045A06C /* ConstrainsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstrainsExtension.swift; sourceTree = "<group>"; };
 		8D9AD91A20390C520045A06C /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		8DB47A3920BCE6950043126B /* MainViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Extensions.swift"; sourceTree = "<group>"; };
+		8DB47A3C20BCE87D0043126B /* Detail+Helper+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail+Helper+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +78,10 @@
 		8D9AD9172038BF210045A06C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8DB47A3820BCE6510043126B /* MainVCExt */,
 				8D9AD9052037B7890045A06C /* ViewController.swift */,
 				8D9AD91A20390C520045A06C /* DetailsVC.swift */,
+				8DB47A3820BCE6510043126B /* MainVCExt */,
+				8DB47A3B20BCE85B0043126B /* DetailHelper+Ext */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -106,6 +109,14 @@
 				8DB47A3920BCE6950043126B /* MainViewController+Extensions.swift */,
 			);
 			path = MainVCExt;
+			sourceTree = "<group>";
+		};
+		8DB47A3B20BCE85B0043126B /* DetailHelper+Ext */ = {
+			isa = PBXGroup;
+			children = (
+				8DB47A3C20BCE87D0043126B /* Detail+Helper+Extensions.swift */,
+			);
+			path = "DetailHelper+Ext";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 			files = (
 				8D9AD9062037B7890045A06C /* ViewController.swift in Sources */,
 				8D9AD91B20390C520045A06C /* DetailsVC.swift in Sources */,
+				8DB47A3D20BCE87D0043126B /* Detail+Helper+Extensions.swift in Sources */,
 				8D781C84204057780080E66C /* BuildingInfo.swift in Sources */,
 				8DB47A3A20BCE6950043126B /* MainViewController+Extensions.swift in Sources */,
 				8D30B95B2058401A0042B568 /* MyCell.swift in Sources */,

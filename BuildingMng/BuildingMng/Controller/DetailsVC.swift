@@ -7,37 +7,6 @@
 //
 
 import UIKit
-import MapKit
-import SafariServices
-import CoreLocation
-
-class ViewHelper {
-    static let imagePhotoView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        return iv
-    }()
-    
-    static let titleLabelBuilding: UILabel = {
-        let lb = UILabel()
-        lb.textColor = .white
-        lb.layer.shadowColor = UIColor.black.cgColor
-        lb.layer.shadowRadius = 3.0
-        lb.layer.shadowOpacity = 1.5
-        lb.numberOfLines = 2
-        lb.layer.shadowOffset = CGSize(width: 4, height: 5)
-        lb.layer.masksToBounds = false
-        lb.font = UIFont.boldSystemFont(ofSize: 22)
-        return lb
-    }()
-    
-    static let lineDividerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        return view
-    }()
-}
 
 class DetailsVC: UIViewController {
     
@@ -83,12 +52,6 @@ class DetailsVC: UIViewController {
         return btn
     }()
     
-    @objc func contactAction(){
-        guard let webSite = buildingInfoDetail?.contact else {return}
-        let safariVC = SFSafariViewController(url: URL(string: webSite)!)
-        present(safariVC, animated: true, completion: nil)
-    }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -108,31 +71,6 @@ class DetailsVC: UIViewController {
         addressLabelBuilding.text = address
         print(buildingInfoDetail?.address ?? 1)
         setDetailView()
-    }
-    
-    // MARK: - This block handles the location when use tap the address detail
-    @objc func addressAction(){
-        let latitude:CLLocationDegrees = 40.756352
-        let longitude:CLLocationDegrees = -74.033755
-        
-        guard let address = buildingInfoDetail?.address else {return}
-        let geo = CLGeocoder()
-        geo.geocodeAddressString(address) { (placemark, error) in
-            guard let placemarker = placemark,
-                let location = placemark?.first?.location else {return}
-            print(placemarker, location)
-        }
-        
-        let regionDistance:CLLocationDistance = 1000
-        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
-        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
-        
-        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate:regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
-        
-        let placemark = MKPlacemark(coordinate: coordinates)
-        let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = address
-        mapItem.openInMaps(launchOptions: options)
     }
     
     private func setDetailView(){
