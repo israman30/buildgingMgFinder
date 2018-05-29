@@ -123,13 +123,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             guard let text = searchBar.text else {return false}
             return b.title!.lowercased().contains(text.lowercased()) && (b.imagePhoto?.lowercased().contains(text.lowercased()))!
         })
-        if searchText != "" {
-            showResults = true
-            self.tableView.reloadData()
-        } else {
-            showResults = false
-            self.tableView.reloadData()
-        }
+        
+        showResults = searchText != "" ? true : false
+        self.tableView.reloadData()
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

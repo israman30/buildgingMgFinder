@@ -73,7 +73,7 @@ class DetailsVC: UIViewController {
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.layer.borderWidth = 3
         btn.layer.borderColor = UIColor.white.cgColor
-        btn.layer.cornerRadius = 10
+        btn.layer.cornerRadius = 8
         btn.layer.masksToBounds = false
         btn.layer.shadowColor = UIColor.black.cgColor
         btn.layer.shadowRadius = 3.0
