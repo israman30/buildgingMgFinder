@@ -70,6 +70,7 @@ class DetailsVC: UIViewController {
         let btn = UIButton(type: .system)
         btn.setTitle("Contact", for: .normal)
         btn.setTitleColor(.white, for: .normal)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         btn.layer.borderWidth = 3
         btn.layer.borderColor = UIColor.white.cgColor
         btn.layer.cornerRadius = 10
@@ -103,6 +104,7 @@ class DetailsVC: UIViewController {
         addressLabelBuilding.text = address
         print(buildingInfoDetail?.address ?? 1)
         setDetailView()
+        setNavBarDetail()
     }
     
     // MARK: - This block handles the location when use tap the address detail
