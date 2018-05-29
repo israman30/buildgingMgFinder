@@ -71,6 +71,7 @@ class DetailsVC: UIViewController {
         addressLabelBuilding.text = address
         print(buildingInfoDetail?.address ?? 1)
         setDetailView()
+        
     }
     
     private func setDetailView(){

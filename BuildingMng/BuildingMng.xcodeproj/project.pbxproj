@@ -64,12 +64,9 @@
 		8D9AD9022037B7890045A06C /* BuildingMng */ = {
 			isa = PBXGroup;
 			children = (
-				8D9AD9032037B7890045A06C /* AppDelegate.swift */,
 				8D9AD9192038BF3D0045A06C /* Model */,
 				8D9AD9182038BF310045A06C /* View */,
 				8D9AD9172038BF210045A06C /* Controller */,
-				8D9AD90A2037B7890045A06C /* Assets.xcassets */,
-				8D9AD90C2037B7890045A06C /* LaunchScreen.storyboard */,
 				8D9AD90F2037B7890045A06C /* Info.plist */,
 			);
 			path = BuildingMng;
@@ -78,6 +75,7 @@
 		8D9AD9172038BF210045A06C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8D9AD9032037B7890045A06C /* AppDelegate.swift */,
 				8D9AD9052037B7890045A06C /* ViewController.swift */,
 				8D9AD91A20390C520045A06C /* DetailsVC.swift */,
 				8DB47A3820BCE6510043126B /* MainVCExt */,
@@ -89,6 +87,8 @@
 		8D9AD9182038BF310045A06C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8D9AD90A2037B7890045A06C /* Assets.xcassets */,
+				8D9AD90C2037B7890045A06C /* LaunchScreen.storyboard */,
 				8D9AD9152038BE8E0045A06C /* ConstrainsExtension.swift */,
 				8D30B95A2058401A0042B568 /* MyCell.swift */,
 			);

@@ -51,6 +51,7 @@ extension DetailsVC {
         mapItem.name = address
         mapItem.openInMaps(launchOptions: options)
     }
+
     
 }
 
