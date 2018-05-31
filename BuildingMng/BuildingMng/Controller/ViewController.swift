@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [
                         NSAttributedStringKey.font: UIFont(name:"Marker Felt", size:25.0)!, NSAttributedStringKey.foregroundColor:UIColor.black
                     ]
-        navigationItem.title = "Hoboken Lux"
+        navigationItem.title = "Hob Lux"
         navigationController?.navigationBar.tintColor = .white
         
     }

@@ -31,13 +31,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         cell.imagePhotoView.image = UIImage(named: buildingInfo[indexPath.item].imagePhoto!)
         cell.layer.cornerRadius = 15
         
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0, height: 0.0)
-        cell.layer.shadowRadius = 15.0
-        cell.layer.shadowOpacity = 0.8
-        cell.layer.masksToBounds = false
-        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
-        
         return cell
     }
     
@@ -53,7 +46,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         let detailVC = DetailsVC()
         detailVC.buildingInfoDetail = buildingInfo[indexPath.item]
         navigationController?.pushViewController(detailVC, animated: true)
-//        present(detailVC, animated: true, completion: nil)
     }
 
     
