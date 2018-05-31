@@ -42,6 +42,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         return UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = DetailsVC()
+        present(detailVC, animated: true, completion: nil)
+    }
 
     
     
