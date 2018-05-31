@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MyCell: UITableViewCell {
+class MyCell: UICollectionViewCell {
     
     var buildingImages: BuildingInfo? {
         didSet {
@@ -39,9 +39,10 @@ class MyCell: UITableViewCell {
         return lb
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setView()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .blue
+//        setView()
     }
     
     func setView(){
