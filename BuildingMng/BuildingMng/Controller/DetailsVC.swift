@@ -61,16 +61,16 @@ class DetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-//        guard let image = buildingInfoDetail?.imagePhoto else {return}
-//        imageBuildingPhotoDetail.image = UIImage(named: image)
-//
-//        guard let title = buildingInfoDetail?.title else {return}
-//        titleLabelBuilding.text = title
-//
-//        guard let address = buildingInfoDetail?.address else {return}
-//        addressLabelBuilding.text = address
-//        print(buildingInfoDetail?.address ?? 1)
-//        setDetailView()
+        guard let image = buildingInfoDetail?.imagePhoto else {return}
+        imageBuildingPhotoDetail.image = UIImage(named: image)
+
+        guard let title = buildingInfoDetail?.title else {return}
+        titleLabelBuilding.text = title
+
+        guard let address = buildingInfoDetail?.address else {return}
+        addressLabelBuilding.text = address
+        print(buildingInfoDetail?.address ?? 1)
+        setDetailView()
         
     }
     
