@@ -38,7 +38,7 @@ class MyCell: UICollectionViewCell {
         lb.numberOfLines = 2
         lb.layer.shadowOffset = CGSize(width: 4, height: 5)
         lb.layer.masksToBounds = false
-        lb.font = UIFont.boldSystemFont(ofSize: 24)
+        lb.font = UIFont.boldSystemFont(ofSize: 18)
         return lb
     }()
     
@@ -59,7 +59,7 @@ class MyCell: UICollectionViewCell {
         
         imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 8, paddingRight: 5)
         
-        titleLabel.setAnchor(top: nil, left: imagePhotoView.leftAnchor, bottom: imagePhotoView.bottomAnchor, right: imagePhotoView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: -8, paddingRight: 10, width: 150, height: 45)
+        titleLabel.setAnchor(top: nil, left: imagePhotoView.leftAnchor, bottom: imagePhotoView.bottomAnchor, right: imagePhotoView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 8, paddingRight: 10, width: 150, height: 45)
     }
     
     required init?(coder aDecoder: NSCoder) {
