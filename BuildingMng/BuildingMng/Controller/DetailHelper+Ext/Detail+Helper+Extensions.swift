@@ -60,6 +60,7 @@ class ViewHelper {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
+        iv.layer.masksToBounds = true
         return iv
     }()
     

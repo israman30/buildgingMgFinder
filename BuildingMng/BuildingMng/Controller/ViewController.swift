@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MapKit
 
 class ViewController: UIViewController {
     
@@ -18,8 +18,13 @@ class ViewController: UIViewController {
         layout.minimumLineSpacing = 16
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .red
+        cv.backgroundColor = .clear
         return cv
+    }()
+    
+    let mapView: MKMapView = {
+        let map = MKMapView()
+        return map
     }()
     
     override func viewDidLoad() {
@@ -36,10 +41,13 @@ class ViewController: UIViewController {
     // MARK: - Setting the table view
     private func setView(){
         view.backgroundColor = .white
+        view.addSubview(mapView)
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(MyCell.self, forCellWithReuseIdentifier: "cell")
+        
+        mapView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         
         collectionView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: view.frame.height / 2, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }

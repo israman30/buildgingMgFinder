@@ -23,6 +23,9 @@ class MyCell: UICollectionViewCell {
     
     let imagePhotoView: UIImageView = {
         let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.layer.cornerRadius = 15
+        iv.layer.masksToBounds = true
         return iv
     }()
     
@@ -41,8 +44,7 @@ class MyCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .blue
-//        setView()
+        setView()
     }
     
     func setView(){
