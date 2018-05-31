@@ -54,14 +54,16 @@ class ViewController: UIViewController {
     
     //MARK: - Setting the navbar controller
     private func setNavBar(){
-        navigationController?.navigationBar.barTintColor = .white
-        
-        navigationItem.title = "Hoboken Luxury"
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
         
         navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedStringKey.font: UIFont(name:"Marker Felt", size:25.0)!, NSAttributedStringKey.foregroundColor:UIColor.black
-        ]
-        navigationController?.navigationBar.tintColor = .black
+                        NSAttributedStringKey.font: UIFont(name:"Marker Felt", size:25.0)!, NSAttributedStringKey.foregroundColor:UIColor.black
+                    ]
+        navigationItem.title = "Hoboken Lux"
+        navigationController?.navigationBar.tintColor = .white
+        
     }
     
 

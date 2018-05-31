@@ -52,6 +52,13 @@ class DetailsVC: UIViewController {
         return btn
     }()
     
+    let backButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("back", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        return btn
+    }()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -85,7 +92,7 @@ class DetailsVC: UIViewController {
         
         addressBuildingBtn.addSubview(addressLabelBuilding)
         
-        imageBuildingPhotoDetail.setAnchor(top: view.safeTopAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
+        imageBuildingPhotoDetail.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
         
         titleLabelBuilding.setAnchor(top: imageBuildingPhotoDetail.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 460, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, width: 0, height: 35)
         

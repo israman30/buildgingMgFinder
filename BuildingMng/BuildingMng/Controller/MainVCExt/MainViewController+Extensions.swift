@@ -45,7 +45,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = DetailsVC()
         detailVC.buildingInfoDetail = buildingInfo[indexPath.item]
-        present(detailVC, animated: true, completion: nil)
+        navigationController?.pushViewController(detailVC, animated: true)
+//        present(detailVC, animated: true, completion: nil)
     }
 
     
