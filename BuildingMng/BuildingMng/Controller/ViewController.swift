@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     
     var buildingInfo: [BuildingInfo]!
     
+    let locationManager = CLLocationManager()
+    var coordinates = CLLocationCoordinate2D()
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 16
@@ -31,6 +34,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setView()
         setNavBar()
+        setMapView()
         buildingInfo = BuildingInfo.shared.setData {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -67,6 +71,45 @@ class ViewController: UIViewController {
     }
     
 
+}
+
+extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    func setMapView(){
+        mapView.delegate = self
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        guard let coords = locationManager.location?.coordinate else {return}
+        
+        let region = MKCoordinateRegionMakeWithDistance(coords, 500, 500)
+        mapView.setRegion(region, animated: true)
+        
+        coordinates = coords
+        
+        let annotation = MKPointAnnotation()
+        annotation.title = "One"
+        annotation.subtitle = "description"
+        annotation.coordinate = coordinates
+        mapView.addAnnotation(annotation)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+        
+        pin.canShowCallout = true
+        
+        pin.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        
+        return pin
+    }
+    
+    
 }
 
 
