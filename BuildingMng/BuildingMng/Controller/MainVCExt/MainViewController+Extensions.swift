@@ -26,23 +26,21 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyCell
-
-        
-        // MARK: - Using ternary operator to replace the above block of code
         
 //        cell.titleLabel.text = buildingInfo[indexPath.item].title
 //        cell.imagePhotoView.image = UIImage(named: buildingInfo[indexPath.item].imagePhoto!)
         cell.backgroundColor = .blue
+        cell.layer.cornerRadius = 15
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 400)
+        return CGSize(width: 200, height: 280)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
     }
     
 
