@@ -119,6 +119,16 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
         
         let theVine = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.749530, longitude: -74.037482))//40.749530, -74.037482
         
+        let theLex = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.745516, longitude: -74.035069))//40.745516, -74.035069
+        
+        let riverSt = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.739933, longitude: -74.028038))//40.739933, -74.028038
+        
+        let grandAdams = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.741382, longitude: -74.035820))//40.741382, -74.035820
+        
+        let ssPark = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.736879, longitude: -74.033470))//40.736879, -74.033470
+        
+        let maxwell = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.749239, longitude: -74.023640))//40.749239, -74.023640
+        
         [pin,
          artisan,
          artisanClinton,
@@ -131,7 +141,12 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
          theSovereign,
          southIndepence,
          theVanguard,
-         theVine].forEach { mapView.addAnnotation($0) }
+         theVine,
+         theLex,
+         riverSt,
+         grandAdams,
+         ssPark,
+         maxwell].forEach { mapView.addAnnotation($0) }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
