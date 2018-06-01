@@ -21,7 +21,7 @@ class CustomTabBarController: UITabBarController {
         let galleryVC = GalleryVC()
         let secondTabVC = UINavigationController(rootViewController: galleryVC)
         secondTabVC.title = "gallery"
-        nav.tabBarItem.image = UIImage(named: "galleries")
+        secondTabVC.tabBarItem.image = UIImage(named: "galleries")
         
         viewControllers = [nav, secondTabVC]
     }
