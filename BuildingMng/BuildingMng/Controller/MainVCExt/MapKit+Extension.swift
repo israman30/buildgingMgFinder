@@ -86,7 +86,6 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
         
         annotationView.transform = transform
         
-        
         return annotationView
     }
     
