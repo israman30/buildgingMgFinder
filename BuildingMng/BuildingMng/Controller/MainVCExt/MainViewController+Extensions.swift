@@ -35,7 +35,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         cell.layer.shadowOpacity = 1
         cell.layer.shadowOffset = CGSize.zero
         cell.layer.shadowOpacity = 0.40
-        cell.layer.shadowRadius = 15
+        cell.layer.shadowRadius = 10
         cell.layer.shadowPath = UIBezierPath(rect: cell.bounds).cgPath
         cell.layer.shouldRasterize = false
         
@@ -55,8 +55,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         detailVC.buildingInfoDetail = buildingInfo[indexPath.item]
         navigationController?.pushViewController(detailVC, animated: true)
     }
-
-    
     
 }
 

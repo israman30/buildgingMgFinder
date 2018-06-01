@@ -9,11 +9,19 @@
 import UIKit
 import MapKit
 
+/* ================= INFO ===================
+ 
+ Map Kit Controller Extension
+ - Data Source and Delegates
+ - CLLocation and Annotation
+ 
+ ============================================ */
+
 extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
     
     func setMapView(){
         let coordinate = CLLocationCoordinate2D(latitude: 40.7356, longitude: -74.0291)
-        let region = MKCoordinateRegionMakeWithDistance(coordinate, 2100, 2100)
+        let region = MKCoordinateRegionMakeWithDistance(coordinate, 2500, 2500)
         
         mapView.setRegion(region, animated: true)
         
