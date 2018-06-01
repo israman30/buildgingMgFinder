@@ -34,7 +34,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOpacity = 1
         cell.layer.shadowOffset = CGSize.zero
-        cell.layer.shadowOpacity = 12
+        cell.layer.shadowOpacity = 0.40
         cell.layer.shadowRadius = 15
         cell.layer.shadowPath = UIBezierPath(rect: cell.bounds).cgPath
         cell.layer.shouldRasterize = false
