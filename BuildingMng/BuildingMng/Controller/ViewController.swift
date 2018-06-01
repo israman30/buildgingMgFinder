@@ -13,8 +13,9 @@ class ViewController: UIViewController {
     
     var buildingInfo: [BuildingInfo]!
     
-    let locationManager = CLLocationManager()
-    var coordinates = CLLocationCoordinate2D()
+//    let locationManager = CLLocationManager()
+//    var coordinates = CLLocationCoordinate2D()
+    var pin: AnnotationPin!
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -73,41 +74,63 @@ class ViewController: UIViewController {
 
 }
 
+class AnnotationPin:NSObject, MKAnnotation {
+    var title: String?
+    var subtitle: String?
+    var coordinate: CLLocationCoordinate2D
+    init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D){
+        self.title = title
+        self.subtitle = subtitle
+        self.coordinate = coordinate
+    }
+}
+
 extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
     
     func setMapView(){
-        mapView.delegate = self
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        let coordinate = CLLocationCoordinate2D(latitude: 40.7356, longitude: -74.0291)
+        let region = MKCoordinateRegionMakeWithDistance(coordinate, 1900, 1900)
         
-        guard let coords = locationManager.location?.coordinate else {return}
-        
-        let region = MKCoordinateRegionMakeWithDistance(coords, 500, 500)
         mapView.setRegion(region, animated: true)
         
-        coordinates = coords
+        pin = AnnotationPin(title: "Hoboken", subtitle: "Path train station", coordinate: coordinate)
         
-        let annotation = MKPointAnnotation()
-        annotation.title = "One"
-        annotation.subtitle = "description"
-        annotation.coordinate = coordinates
-        mapView.addAnnotation(annotation)
+        mapView.addAnnotation(pin)
     }
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation is MKUserLocation {
-            return nil
-        }
-        
-        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-        
-        pin.canShowCallout = true
-        
-        pin.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        
-        return pin
-    }
+//    func setMapView(){
+//        mapView.delegate = self
+//        locationManager.delegate = self
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//
+//        guard let coords = locationManager.location?.coordinate else {return}
+//
+//        let region = MKCoordinateRegionMakeWithDistance(coords, 500, 500)
+//        mapView.setRegion(region, animated: true)
+//
+//        coordinates = coords
+//
+//        let annotation = MKPointAnnotation()
+//        annotation.title = "One"
+//        annotation.subtitle = "description"
+//        annotation.coordinate = coordinates
+//        mapView.addAnnotation(annotation)
+//    }
+//
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        if annotation is MKUserLocation {
+//            return nil
+//        }
+//
+//        let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+//
+//        pin.canShowCallout = true
+//
+//        pin.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+//
+//        return pin
+//    }
     
     
 }
