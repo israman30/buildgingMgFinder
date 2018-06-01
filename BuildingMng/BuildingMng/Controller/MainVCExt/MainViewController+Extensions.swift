@@ -31,6 +31,14 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         cell.imagePhotoView.image = UIImage(named: buildingInfo[indexPath.item].imagePhoto!)
         cell.layer.cornerRadius = 15
         
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOpacity = 1
+        cell.layer.shadowOffset = CGSize.zero
+        cell.layer.shadowOpacity = 12
+        cell.layer.shadowRadius = 15
+        cell.layer.shadowPath = UIBezierPath(rect: cell.bounds).cgPath
+        cell.layer.shouldRasterize = false
+        
         return cell
     }
     
@@ -39,7 +47,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

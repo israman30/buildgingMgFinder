@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 16
+        layout.minimumLineSpacing = 12
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .clear
