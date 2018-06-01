@@ -21,7 +21,7 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
     
     func setMapView(){
         let coordinate = CLLocationCoordinate2D(latitude: 40.7356, longitude: -74.0291)
-        let region = MKCoordinateRegionMakeWithDistance(coordinate, 2500, 2500)
+        let region = MKCoordinateRegionMakeWithDistance(coordinate, 2700, 2700)
         
         mapView.setRegion(region, animated: true)
         

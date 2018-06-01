@@ -15,8 +15,15 @@ class CustomTabBarController: UITabBarController {
         
         let vc = ViewController()
         let nav = UINavigationController(rootViewController: vc)
+        nav.title = "main"
+        nav.tabBarItem.image = UIImage(named: "home")
         
-        viewControllers = [nav]
+        let galleryVC = GalleryVC()
+        let secondTabVC = UINavigationController(rootViewController: galleryVC)
+        secondTabVC.title = "gallery"
+        nav.tabBarItem.image = UIImage(named: "galleries")
+        
+        viewControllers = [nav, secondTabVC]
     }
 }
 

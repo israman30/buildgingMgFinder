@@ -11,6 +11,7 @@
 		8D4EBD4E20C17B0D00897BA9 /* MapKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EBD4D20C17B0D00897BA9 /* MapKit+Extension.swift */; };
 		8D4EBD5020C17BC600897BA9 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EBD4F20C17BC600897BA9 /* AnnotationPin.swift */; };
 		8D4EBD5220C1CACE00897BA9 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EBD5120C1CACE00897BA9 /* CustomTabBarController.swift */; };
+		8D4EBD5420C1CF8400897BA9 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EBD5320C1CF8400897BA9 /* GalleryVC.swift */; };
 		8D781C84204057780080E66C /* BuildingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D781C83204057780080E66C /* BuildingInfo.swift */; };
 		8D9AD9042037B7890045A06C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AD9032037B7890045A06C /* AppDelegate.swift */; };
 		8D9AD9062037B7890045A06C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AD9052037B7890045A06C /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		8D4EBD4D20C17B0D00897BA9 /* MapKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKit+Extension.swift"; sourceTree = "<group>"; };
 		8D4EBD4F20C17BC600897BA9 /* AnnotationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPin.swift; sourceTree = "<group>"; };
 		8D4EBD5120C1CACE00897BA9 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		8D4EBD5320C1CF8400897BA9 /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
 		8D781C83204057780080E66C /* BuildingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingInfo.swift; sourceTree = "<group>"; };
 		8D9AD9002037B7890045A06C /* BuildingMng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildingMng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D9AD9032037B7890045A06C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				8D9AD9032037B7890045A06C /* AppDelegate.swift */,
 				8D4EBD5120C1CACE00897BA9 /* CustomTabBarController.swift */,
+				8D4EBD5320C1CF8400897BA9 /* GalleryVC.swift */,
 				8D9AD9052037B7890045A06C /* ViewController.swift */,
 				8D9AD91A20390C520045A06C /* DetailsVC.swift */,
 				8DB47A3820BCE6510043126B /* MainVCExt */,
@@ -206,6 +209,7 @@
 				8DB47A3A20BCE6950043126B /* MainViewController+Extensions.swift in Sources */,
 				8D4EBD5220C1CACE00897BA9 /* CustomTabBarController.swift in Sources */,
 				8D30B95B2058401A0042B568 /* MyCell.swift in Sources */,
+				8D4EBD5420C1CF8400897BA9 /* GalleryVC.swift in Sources */,
 				8D4EBD5020C17BC600897BA9 /* AnnotationPin.swift in Sources */,
 				8D4EBD4E20C17B0D00897BA9 /* MapKit+Extension.swift in Sources */,
 				8D9AD9042037B7890045A06C /* AppDelegate.swift in Sources */,
