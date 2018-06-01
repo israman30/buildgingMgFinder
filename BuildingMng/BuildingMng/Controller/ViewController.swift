@@ -103,13 +103,35 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
         
         let artisanMadison = AnnotationPin(title: "Artisan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.751405, longitude: -74.035204))//40.751405, -74.035204
         
-//        mapView.addAnnotation(pin)
-//        mapView.addAnnotation(artisan)
-//        mapView.addAnnotation(artisanClinton)
-//        mapView.addAnnotation(artisanGrand)
-//        mapView.addAnnotation(artisanMadison)
+        let theJordan = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.752703, longitude: -74.031684))//40.752703, -74.031684
         
-        [pin, artisan, artisanClinton, artisanGrand, artisanMadison].forEach({mapView.addAnnotation($0)})
+        let theRivington = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.751631, longitude: -74.032527))//40.751631, -74.032527
+        
+        let observerPark = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.736261, longitude: -74.032839))//40.736261, -74.032839
+        
+        let theHarllow = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.754042, longitude: -74.029977))//40.754042, -74.029977
+        
+        let theSovereign = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.753264, longitude: -74.023899))//40.753264, -74.023899
+        
+        let southIndepence = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.751143, longitude: -74.024499))//40.751143, -74.024499
+        
+        let theVanguard = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.751655, longitude: -74.025251))//40.751655, -74.025251
+        
+        let theVine = AnnotationPin(title: "The Jordan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.749530, longitude: -74.037482))//40.749530, -74.037482
+        
+        [pin,
+         artisan,
+         artisanClinton,
+         artisanGrand,
+         artisanMadison,
+         theJordan,
+         theRivington,
+         observerPark,
+         theHarllow,
+         theSovereign,
+         southIndepence,
+         theVanguard,
+         theVine].forEach { mapView.addAnnotation($0) }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
