@@ -95,7 +95,38 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
         
         pin = AnnotationPin(title: "Hoboken", subtitle: "Path train station", coordinate: coordinate)
         
-        mapView.addAnnotation(pin)
+        let artisan = AnnotationPin(title: "Artisan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.752310, longitude: -74.035034)) //40.751352, -74.035034
+        
+        let artisanClinton = AnnotationPin(title: "Artisan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.754650, longitude: -74.030796)) //40.754650, -74.030796
+        
+        let artisanGrand = AnnotationPin(title: "Artisan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.754474, longitude: -74.031651))//40.754474, -74.031651
+        
+        let artisanMadison = AnnotationPin(title: "Artisan", subtitle: "Jefferson", coordinate: CLLocationCoordinate2D(latitude: 40.751405, longitude: -74.035204))//40.751405, -74.035204
+        
+//        mapView.addAnnotation(pin)
+//        mapView.addAnnotation(artisan)
+//        mapView.addAnnotation(artisanClinton)
+//        mapView.addAnnotation(artisanGrand)
+//        mapView.addAnnotation(artisanMadison)
+        
+        [pin, artisan, artisanClinton, artisanGrand, artisanMadison].forEach({mapView.addAnnotation($0)})
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if !(annotation is MKPointAnnotation) {
+            return nil
+        }
+
+        let annotationView = MKAnnotationView(annotation: pin, reuseIdentifier: "pinH")
+        annotationView.image = UIImage(named: "ap")
+
+        let transform = CGAffineTransform(translationX: 0.1, y: 0.1)
+
+        annotationView.transform = transform
+        
+
+        return annotationView
     }
     
 //    func setMapView(){
