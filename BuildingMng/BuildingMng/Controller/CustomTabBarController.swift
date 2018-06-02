@@ -20,19 +20,19 @@ class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Main view controller
+        // MARK: - Main view controller
         let vc = ViewController()
         let nav = UINavigationController(rootViewController: vc)
         nav.title = "main"
         nav.tabBarItem.image = UIImage(named: "home")
         
-        // Grallery viewcontroller
+        // MARK: - Grallery viewcontroller
         let galleryVC = GalleryVC()
         let secondTabVC = UINavigationController(rootViewController: galleryVC)
         secondTabVC.title = "gallery"
         secondTabVC.tabBarItem.image = UIImage(named: "galleries")
         
-        // Information view controller
+        // MARK: - Information view controller
         let info = InformationVC()
         let thirdVC = UINavigationController(rootViewController: info)
         thirdVC.title = "info"
@@ -42,12 +42,31 @@ class CustomTabBarController: UITabBarController {
         
         tabBar.isTranslucent = false
         
-        // Custom border view on top of tab bar
+        // MARK: - Custom border view on top of tab bar
         let border = CALayer()
         border.frame = CGRect(x: 0, y: 0, width: 1000, height: 0.5)
         border.backgroundColor = UIColor(red: 229/255, green: 231/255, blue: 235/255, alpha: 1).cgColor
         tabBar.layer.addSublayer(border)
         tabBar.clipsToBounds = true
+        
+        // MARK: - We specify the space between the border and the tab bar items
+        guard let items = tabBar.items else {return}
+        
+        items.forEach { (item) in
+            item.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -1, right: 0)
+        }
+    }
+}
+
+extension UITabBarController {
+    
+    func setNewTabBarController(viewController: UIViewController, itemImage: String, title: String)->UINavigationController{
+        let viewController = viewController
+        let navController = UINavigationController(rootViewController: viewController)
+        navController.tabBarItem.image = UIImage(named: itemImage)
+        navController.title = title
+        
+        return navController
     }
 }
 
