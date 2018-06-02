@@ -27,16 +27,10 @@ class CustomTabBarController: UITabBarController {
         nav.tabBarItem.image = UIImage(named: "home")
         
         // MARK: - Grallery viewcontroller
-        let galleryVC = GalleryVC()
-        let secondTabVC = UINavigationController(rootViewController: galleryVC)
-        secondTabVC.title = "gallery"
-        secondTabVC.tabBarItem.image = UIImage(named: "galleries")
+        let secondTabVC = setTabBarController(viewController: GalleryVC(), itemImage: "galleries", title: "gallery")
         
         // MARK: - Information view controller
-        let info = InformationVC()
-        let thirdVC = UINavigationController(rootViewController: info)
-        thirdVC.title = "info"
-        thirdVC.tabBarItem.image = UIImage(named: "information")
+        let thirdVC = setTabBarController(viewController: InformationVC(), itemImage: "information", title: "info")
         
         viewControllers = [nav, secondTabVC, thirdVC]
         
@@ -49,18 +43,12 @@ class CustomTabBarController: UITabBarController {
         tabBar.layer.addSublayer(border)
         tabBar.clipsToBounds = true
         
-        // MARK: - We specify the space between the border and the tab bar items
-        guard let items = tabBar.items else {return}
-        
-        items.forEach { (item) in
-            item.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -1, right: 0)
-        }
     }
 }
 
 extension UITabBarController {
     
-    func setNewTabBarController(viewController: UIViewController, itemImage: String, title: String)->UINavigationController{
+    func setTabBarController(viewController: UIViewController, itemImage: String, title: String)->UINavigationController{
         let viewController = viewController
         let navController = UINavigationController(rootViewController: viewController)
         navController.tabBarItem.image = UIImage(named: itemImage)
