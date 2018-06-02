@@ -31,6 +31,8 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let cell = "cell"
     
+    var galleryInfo: [Gallery]!
+    
     let tableView: UITableView = {
         let tv = UITableView()
         tv.rowHeight = 40
@@ -41,6 +43,12 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        galleryInfo = Gallery.sharedGallery.setGalleryPhotos {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
         setTableView()
     }
     
@@ -56,12 +64,12 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return galleryInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cell)
-        cell?.textLabel?.text = "gallery text"
+        cell?.textLabel?.text = galleryInfo[indexPath.row].title
         return cell!
     }
     
