@@ -8,12 +8,32 @@
 
 import UIKit
 
+/*
+ 
+ class Gallery {
+ 
+     var title: String?
+     var gallery: [String]?
+     init(title: String, gallery: [String]){
+        self.title = title
+        self.gallery = gallery
+    }
+ 
+ }
+ 
+ let gallery1 = Gallery()
+ gallery1.name = "Artisan"
+ gallery1.gallery = ["p1", "p2", "p3", "p4"]
+ 
+ */
+
 class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let cell = "cell"
     
     let tableView: UITableView = {
         let tv = UITableView()
+        tv.rowHeight = 40
         return tv
     }()
     
@@ -41,6 +61,7 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cell)
+        cell?.textLabel?.text = "gallery text"
         return cell!
     }
     
