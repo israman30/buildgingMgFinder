@@ -9,8 +9,12 @@
 import UIKit
 
 class GalleryDisplay: UIViewController {
+    
+    var displayGalleries: BuildingGallery?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        print(displayGalleries ?? 0)
     }
 }

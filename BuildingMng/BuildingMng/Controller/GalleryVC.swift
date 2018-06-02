@@ -31,7 +31,7 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let cell = "cell"
     
-    var galleryInfo: [Gallery]!
+    var galleryInfo: [BuildingGallery]!
     
     let tableView: UITableView = {
         let tv = UITableView()
@@ -43,13 +43,14 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        galleryInfo = Gallery.sharedGallery.setGalleryPhotos {
+        galleryInfo = BuildingGallery.sharedGallery.setGalleryPhotos {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
         
         setTableView()
+
     }
     
     // MARK: - Set table view list gallery
@@ -76,6 +77,7 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let galleryDisplay = GalleryDisplay()
+        galleryDisplay.displayGalleries = galleryInfo[indexPath.row]
         navigationController?.pushViewController(galleryDisplay, animated: true)
     }
     

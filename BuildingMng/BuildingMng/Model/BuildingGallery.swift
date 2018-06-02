@@ -8,16 +8,17 @@
 
 import UIKit
 
-struct Gallery {
+struct BuildingGallery {
     
     var title: String?
     var gallery: [String]?
     
-    static let sharedGallery = Gallery()
+    static let sharedGallery = BuildingGallery()
     
-    func setGalleryPhotos(completion: @escaping()->())-> [Gallery]{
+    func setGalleryPhotos(completion: @escaping()->())-> [BuildingGallery]{
         let buildingGallery = [
-            Gallery(title: "Artisan", gallery: ["arttisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"])
+            BuildingGallery(title: "Artisan", gallery: ["arttisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"]),
+            BuildingGallery(title: "Artisan", gallery: ["arttisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"])
         ]
         
         return buildingGallery
