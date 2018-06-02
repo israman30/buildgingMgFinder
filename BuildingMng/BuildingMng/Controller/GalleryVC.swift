@@ -63,6 +63,7 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
     
+    // MARK: - Delegates and Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return galleryInfo.count
     }
@@ -73,5 +74,9 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let galleryDisplay = GalleryDisplay()
+        navigationController?.pushViewController(galleryDisplay, animated: true)
+    }
     
 }
