@@ -15,23 +15,25 @@ import UIKit
  
  ============================================ */
 
-
 class CustomTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Main view controller
         let vc = ViewController()
         let nav = UINavigationController(rootViewController: vc)
         nav.title = "main"
         nav.tabBarItem.image = UIImage(named: "home")
         
+        // Grallery viewcontroller
         let galleryVC = GalleryVC()
         let secondTabVC = UINavigationController(rootViewController: galleryVC)
         secondTabVC.title = "gallery"
         secondTabVC.tabBarItem.image = UIImage(named: "galleries")
         
-        let info = UIViewController()
+        // Information view controller
+        let info = InformationVC()
         let thirdVC = UINavigationController(rootViewController: info)
         thirdVC.title = "info"
         thirdVC.tabBarItem.image = UIImage(named: "information")
