@@ -22,8 +22,6 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     private let displayCell = "displayCell"
     
     var displayGalleries: BuildingGallery?
-    var photos = [BuildingGallery]()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,17 +48,18 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: displayCell, for: indexPath) as! DisplayCell
-        cell.imageView.image = UIImage(named: (displayGalleries?.gallery![indexPath.row])!)
+        let gallery = displayGalleries?.gallery
+        cell.imageView.image = UIImage(named: gallery![indexPath.row])
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 345, height: 450)
+        return CGSize(width: 345, height: 500)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 50)
+        return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 40)
     }
 }
 
@@ -71,7 +70,7 @@ class DisplayCell: UICollectionViewCell {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.layer.masksToBounds = true
-        iv.backgroundColor = .yellow
+        iv.layer.cornerRadius = 10
         return iv
     }()
     
