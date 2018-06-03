@@ -22,12 +22,15 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     private let displayCell = "displayCell"
     
     var displayGalleries: BuildingGallery?
+    var photos = [BuildingGallery]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         setView()
+        
     }
     
     func setView(){
@@ -41,6 +44,7 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return (displayGalleries?.gallery?.count)!
     }
     

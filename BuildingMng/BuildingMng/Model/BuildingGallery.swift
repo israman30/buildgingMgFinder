@@ -18,7 +18,7 @@ struct BuildingGallery {
     func setGalleryPhotos(completion: @escaping()->())-> [BuildingGallery]{
         let buildingGallery = [
             BuildingGallery(title: "Artisan", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"]),
-            BuildingGallery(title: "Artisan", gallery: ["arttisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"])
+            BuildingGallery(title: "Artisan", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"])
         ]
         
         return buildingGallery
