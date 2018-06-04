@@ -50,7 +50,6 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
         setTableView()
-
     }
     
     // MARK: - Set table view list gallery
