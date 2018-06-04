@@ -15,7 +15,7 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         layout.minimumLineSpacing = 12
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .blue
+        cv.backgroundColor = .white
         return cv
     }()
     
@@ -51,6 +51,12 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         let gallery = displayGalleries?.gallery
         cell.imageView.image = UIImage(named: gallery![indexPath.row])
         
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 5, height: 5)
+        cell.layer.shadowRadius = 5
+        cell.layer.shadowOpacity = 0.5
+        
+        
         return cell
     }
     
@@ -84,13 +90,6 @@ class DisplayCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-
-
-
-
-
-
 
 
 

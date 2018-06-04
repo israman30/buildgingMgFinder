@@ -62,6 +62,9 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         
         tableView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.tintColor = .black
     }
     
     // MARK: - Delegates and Data Source
