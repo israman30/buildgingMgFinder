@@ -35,7 +35,7 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let tableView: UITableView = {
         let tv = UITableView()
-        tv.rowHeight = 40
+        tv.rowHeight = 50
         return tv
     }()
     
