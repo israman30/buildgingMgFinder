@@ -58,7 +58,7 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(GalleryCell.self, forCellReuseIdentifier: cell)
-        
+        tableView.separatorStyle = .none
         
         tableView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         
@@ -76,6 +76,7 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         cell.titleLabel.text = galleryInfo[indexPath.row].title
         
+        cell.selectionStyle = .none
         
         return cell
     }
@@ -92,11 +93,11 @@ class GalleryCell: UITableViewCell {
     
     let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = . clear
+        view.backgroundColor = . white
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOffset = CGSize(width: 5, height: 5)
         view.layer.shadowRadius = 5
-        view.layer.shadowOpacity = 0.5
+        view.layer.shadowOpacity = 0.2
         return view
     }()
     
@@ -116,6 +117,10 @@ class GalleryCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: "cell")
+        setGalleryTableViewCell()
+    }
+    
+    private func setGalleryTableViewCell(){
         addSubview(containerView)
         containerView.addSubview(titleLabel)
         containerView.addSubview(descriptionLabel)
