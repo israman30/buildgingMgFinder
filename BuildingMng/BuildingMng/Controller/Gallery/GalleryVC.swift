@@ -53,7 +53,7 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     // MARK: - Set table view list gallery
-    func setTableView(){
+    fileprivate func setTableView(){
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -98,20 +98,24 @@ class GalleryCell: UITableViewCell {
         view.layer.shadowOffset = CGSize(width: 5, height: 5)
         view.layer.shadowRadius = 5
         view.layer.shadowOpacity = 0.2
+        view.layer.cornerRadius = 2
         return view
     }()
     
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.font = UIFont.boldSystemFont(ofSize: 25)
+        label.numberOfLines = 2
         return label
     }()
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.text = "hola mundo en espaniol, porque me gusta el espanol"
+        label.numberOfLines = 2
         return label
     }()
     
@@ -128,6 +132,8 @@ class GalleryCell: UITableViewCell {
         containerView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
         
         titleLabel.setAnchor(top: containerView.topAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 20)
+        
+        descriptionLabel.setAnchor(top: titleLabel.topAnchor, left: titleLabel.leftAnchor, bottom: containerView.bottomAnchor, right: titleLabel.rightAnchor, paddingTop: 5, paddingLeft: 0, paddingBottom: 10, paddingRight: 0)
         
     }
     
