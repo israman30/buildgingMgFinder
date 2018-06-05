@@ -79,6 +79,18 @@ class DetailsVC: UIViewController {
         print(buildingInfoDetail?.address ?? 1)
         setDetailView()
         
+        navBarSetUp()
+    }
+    
+    fileprivate func navBarSetUp(){
+        let shareIcon = UIImage(named: "share")
+        let rightBarButton = UIBarButtonItem(image: shareIcon, style: .plain, target: self, action: #selector(shareButton))
+        navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    @objc func shareButton(){
+        print("Bar button work!")
+        // TODO: Add a share action sheet or alert
     }
     
     private func setDetailView(){
