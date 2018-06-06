@@ -68,6 +68,7 @@ class DetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
         guard let image = buildingInfoDetail?.imagePhoto else {return}
         imageBuildingPhotoDetail.image = UIImage(named: image)
 
@@ -86,11 +87,6 @@ class DetailsVC: UIViewController {
         let shareIcon = UIImage(named: "share")
         let rightBarButton = UIBarButtonItem(image: shareIcon, style: .plain, target: self, action: #selector(shareButton))
         navigationItem.rightBarButtonItem = rightBarButton
-    }
-    
-    @objc func shareButton(){
-        print("Bar button work!")
-        // TODO: Add a share action sheet or alert
     }
     
     private func setDetailView(){

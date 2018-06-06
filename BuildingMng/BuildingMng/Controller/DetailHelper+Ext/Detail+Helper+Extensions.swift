@@ -21,6 +21,13 @@ import SafariServices
 
 extension DetailsVC {
     
+    // MARK: - Share button action
+    @objc func shareButton(){
+        let activityVC = UIActivityViewController(activityItems: [imageBuildingPhotoDetail, titleLabelBuilding], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = view
+        present(activityVC, animated: true, completion: nil)
+    }
+    
     @objc func contactAction(){
         guard let webSite = buildingInfoDetail?.contact else {return}
         let safariVC = SFSafariViewController(url: URL(string: webSite)!)
@@ -51,7 +58,6 @@ extension DetailsVC {
         mapItem.name = address
         mapItem.openInMaps(launchOptions: options)
     }
-
     
 }
 
