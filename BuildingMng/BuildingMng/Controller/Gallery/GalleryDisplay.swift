@@ -12,7 +12,7 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 5
+        layout.minimumLineSpacing = 0
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
@@ -66,7 +66,7 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
     }
 }
 
