@@ -29,6 +29,10 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         
         setView()
         
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
     }
     
     func setView(){
@@ -52,17 +56,11 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         let gallery = displayGalleries?.gallery
         cell.imageView.image = UIImage(named: gallery![indexPath.row])
         
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOffset = CGSize(width: 5, height: 5)
-        cell.layer.shadowRadius = 5
-        cell.layer.shadowOpacity = 0.5
-        
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 500)
+        return CGSize(width: view.frame.width, height: view.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -77,7 +75,6 @@ class DisplayCell: UICollectionViewCell {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.layer.masksToBounds = true
-        iv.layer.cornerRadius = 10
         return iv
     }()
     
