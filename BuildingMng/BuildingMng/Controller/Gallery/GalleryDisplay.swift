@@ -16,6 +16,7 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
+        
         return cv
     }()
     
@@ -25,7 +26,6 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
         setView()
         
