@@ -10,13 +10,12 @@ import UIKit
 
 class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    let collectionView: UICollectionView = {
+    fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
-        
         return cv
     }()
     
@@ -53,8 +52,8 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: displayCell, for: indexPath) as! DisplayCell
-        let gallery = displayGalleries?.gallery
-        cell.imageView.image = UIImage(named: gallery![indexPath.row])
+        let gallery = UIImage(named: (displayGalleries?.gallery![indexPath.item])!)
+        cell.imageView.image = gallery
         
         return cell
     }
@@ -69,6 +68,16 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
 }
 
 class DisplayCell: UICollectionViewCell {
+    
+    var imagesGallery: BuildingGallery? {
+        didSet {
+            // TODO
+//            guard let gallery = imagesGallery?.gallery else {return}
+//            gallery.forEach { (e) in
+//                imageView.image = UIImage(named: e)
+//            }
+        }
+    }
     
     let imageView: UIImageView = {
         let iv = UIImageView()

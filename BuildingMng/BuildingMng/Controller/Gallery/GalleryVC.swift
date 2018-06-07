@@ -74,9 +74,8 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cell) as! GalleryCell
         
-        cell.titleLabel.text = galleryInfo[indexPath.row].title
-        cell.descriptionLabel.text = galleryInfo[indexPath.row].address
-        
+        let galleryList = galleryInfo[indexPath.row]
+        cell.titleGallery = galleryList        
         cell.selectionStyle = .none
         
         return cell
@@ -91,6 +90,16 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 }
 
 class GalleryCell: UITableViewCell {
+    
+    var titleGallery: BuildingGallery? {
+        didSet {
+            guard let title = titleGallery?.title else {return}
+            titleLabel.text = title
+            
+            guard let address = titleGallery?.address else {return}
+            descriptionLabel.text = address
+        }
+    }
     
     let containerView: UIView = {
         let view = UIView()

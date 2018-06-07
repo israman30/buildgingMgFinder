@@ -26,9 +26,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyCell
-        
-        cell.titleLabel.text = buildingInfo[indexPath.item].title
-        cell.imagePhotoView.image = UIImage(named: buildingInfo[indexPath.item].imagePhoto!)
+        let collectionBuilding = buildingInfo[indexPath.item]
+        cell.buildingImages = collectionBuilding
         cell.layer.cornerRadius = 15
         
         cell.layer.shadowColor = UIColor.black.cgColor
