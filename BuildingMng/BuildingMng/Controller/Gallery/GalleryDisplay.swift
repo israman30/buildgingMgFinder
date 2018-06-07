@@ -22,8 +22,8 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     fileprivate let pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPage = 0
-        pc.currentPageIndicatorTintColor = .gray
-        pc.pageIndicatorTintColor = .white
+        pc.currentPageIndicatorTintColor = .darkGray
+        pc.pageIndicatorTintColor = .lightGray
         pc.backgroundColor = .clear
         pc.isUserInteractionEnabled = false
         pc.translatesAutoresizingMaskIntoConstraints = false
@@ -38,21 +38,23 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         super.viewDidLoad()
         
         setView()
-        
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        navBarForGalleryViewController()
         
         pageControl.numberOfPages = (displayGalleries?.gallery?.count)!
     }
     
+    func navBarForGalleryViewController(){
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    // MARK: - Page controller active when scrollViewWillEndDragging call
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         let xPoint = targetContentOffset.pointee.x
         
         pageControl.currentPage = Int(xPoint/view.frame.width)
-        
-//        print(xPoint, view.frame.width, xPoint/view.frame.width)
     }
     
     func setView(){
@@ -106,7 +108,7 @@ class DisplayCell: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         iv.layer.masksToBounds = true
         return iv

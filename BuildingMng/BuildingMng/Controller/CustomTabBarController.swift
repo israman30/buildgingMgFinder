@@ -20,6 +20,8 @@ class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBar.tintColor = .black
+        
         // MARK: - Main view controller
         let vc = ViewController()
         let nav = UINavigationController(rootViewController: vc)
@@ -42,7 +44,6 @@ class CustomTabBarController: UITabBarController {
         border.backgroundColor = UIColor(red: 229/255, green: 231/255, blue: 235/255, alpha: 1).cgColor
         tabBar.layer.addSublayer(border)
         tabBar.clipsToBounds = true
-        
     }
 }
 

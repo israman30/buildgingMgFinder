@@ -18,13 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-//        let vc = ViewController()
-//        let nav = UINavigationController(rootViewController: vc)
-//        window?.rootViewController = nav
         
         window?.rootViewController = CustomTabBarController()
         
-        UITabBar.appearance().tintColor = UIColor(red: 70/255, green: 146/255, blue: 250/255, alpha: 1)
+        UITabBar.appearance().tintColor = .black
         
         return true
     }
