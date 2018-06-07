@@ -19,6 +19,17 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         return cv
     }()
     
+    fileprivate let pageControl: UIPageControl = {
+        let pc = UIPageControl()
+        pc.currentPage = 0
+//        pc.numberOfPages = 4
+        pc.currentPageIndicatorTintColor = .blue
+        pc.pageIndicatorTintColor = .red
+        pc.backgroundColor = .clear
+        pc.translatesAutoresizingMaskIntoConstraints = false
+        return pc
+    }()
+    
     private let displayCell = "displayCell"
     
     var displayGalleries: BuildingGallery?
@@ -32,10 +43,12 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
+        pageControl.numberOfPages = (displayGalleries?.gallery?.count)!
     }
     
     func setView(){
         view.addSubview(collectionView)
+        view.addSubview(pageControl)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.isPagingEnabled = true
@@ -43,6 +56,9 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         collectionView.register(DisplayCell.self, forCellWithReuseIdentifier: displayCell)
         
         collectionView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        
+        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
