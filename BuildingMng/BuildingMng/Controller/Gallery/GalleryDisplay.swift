@@ -43,13 +43,14 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         pageControl.numberOfPages = (displayGalleries?.gallery?.count)!
     }
     
+    // MARK: - Set navbar 
     func navBarForGalleryViewController(){
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
     }
     
-    // MARK: - Page controller active when scrollViewWillEndDragging call
+    // MARK: - Page controller is active when collectionView Paging calls scrollViewWillEndDragging
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         let xPoint = targetContentOffset.pointee.x
@@ -72,6 +73,7 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
+    // MARK: - Delegates and Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return (displayGalleries?.gallery?.count)!
@@ -83,6 +85,15 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         cell.imageView.image = gallery
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let displayPhotoGallery = DisplayGalleryPhoto()
+        displayPhotoGallery.photoDisplay = displayGalleries?.gallery![indexPath.item]
+//        navigationController?.pushViewController(displayPhotoGallery, animated: true)
+        displayPhotoGallery.modalTransitionStyle = .crossDissolve
+        displayPhotoGallery.modalPresentationStyle = .overCurrentContext
+        present(displayPhotoGallery, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
