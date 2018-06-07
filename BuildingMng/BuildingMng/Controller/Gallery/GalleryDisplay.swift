@@ -22,10 +22,10 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     fileprivate let pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPage = 0
-//        pc.numberOfPages = 4
-        pc.currentPageIndicatorTintColor = .blue
-        pc.pageIndicatorTintColor = .red
+        pc.currentPageIndicatorTintColor = .gray
+        pc.pageIndicatorTintColor = .white
         pc.backgroundColor = .clear
+        pc.isUserInteractionEnabled = false
         pc.translatesAutoresizingMaskIntoConstraints = false
         return pc
     }()
@@ -44,6 +44,15 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         navigationController?.navigationBar.shadowImage = UIImage()
         
         pageControl.numberOfPages = (displayGalleries?.gallery?.count)!
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let xPoint = targetContentOffset.pointee.x
+        
+        pageControl.currentPage = Int(xPoint/view.frame.width)
+        
+//        print(xPoint, view.frame.width, xPoint/view.frame.width)
     }
     
     func setView(){
