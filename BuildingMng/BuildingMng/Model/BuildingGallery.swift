@@ -41,11 +41,11 @@ struct BuildingGallery {
             
             BuildingGallery(title: "RIVER STREET", gallery: ["river2", "river3", "river4", "river5", "river6"], address: "333 River St, Hoboken, NJ 07030"),
             
-            BuildingGallery(title: "GRAND ADAMS", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "300 Grand St, Hoboken, NJ 07030"),
+            BuildingGallery(title: "GRAND ADAMS", gallery: ["grand2", "grand3", "grand4", "grand5"], address: "300 Grand St, Hoboken, NJ 07030"),
             
-            BuildingGallery(title: "77 PARK AVENUE", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "77 Park Ave, Hoboken, NJ 07030"),
+            BuildingGallery(title: "77 PARK AVENUE", gallery: ["park1", "park2", "park3", "park4", "park5", "park6"], address: "77 Park Ave, Hoboken, NJ 07030"),
             
-            BuildingGallery(title: "MAXWELL'S", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "1039 Washington St, Hoboken, NJ 07030")
+            BuildingGallery(title: "MAXWELL'S", gallery: ["max1", "max2"], address: "1039 Washington St, Hoboken, NJ 07030")
         ]
         
         return buildingGallery
