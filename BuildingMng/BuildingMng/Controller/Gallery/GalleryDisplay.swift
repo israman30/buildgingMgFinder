@@ -41,6 +41,7 @@ class GalleryDisplay: UIViewController {
         setView()
         navBarForGalleryViewController()
         
+        
         pageControl.numberOfPages = (displayGalleries?.gallery?.count)!
     }
     
@@ -76,75 +77,9 @@ class GalleryDisplay: UIViewController {
     
 }
 
-// MARK: - Delegates and Data Source Extension Methods
-extension GalleryDisplay: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return (displayGalleries?.gallery?.count)!
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: displayCell, for: indexPath) as! DisplayCell
-        let gallery = UIImage(named: (displayGalleries?.gallery![indexPath.item])!)
-        cell.imageView.image = gallery
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let displayPhotoGallery = DisplayGalleryPhoto()
-        displayPhotoGallery.photoDisplay = displayGalleries?.gallery![indexPath.item]
-        displayPhotoGallery.modalTransitionStyle = .crossDissolve
-        displayPhotoGallery.modalPresentationStyle = .overCurrentContext
-        
-        navigationController?.pushViewController(displayPhotoGallery, animated: true)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
-    }
-    
-}
 
-class DisplayCell: UICollectionViewCell {
-    
-    var imagesGallery: BuildingGallery? {
-        didSet {
-            // TODO
-//            guard let gallery = imagesGallery?.gallery else {return}
-//            gallery.forEach { (e) in
-//                imageView.image = UIImage(named: e)
-//            }
-        }
-    }
-    
-    let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.clipsToBounds = true
-        iv.layer.masksToBounds = true
-        return iv
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setGalleryDetails()
-    }
-    
-    private func setGalleryDetails(){
-        addSubview(imageView)
-        imageView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+
+
 
 
 

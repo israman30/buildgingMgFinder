@@ -8,28 +8,9 @@
 
 import UIKit
 
-/*
- 
- class Gallery {
- 
-     var title: String?
-     var gallery: [String]?
-     init(title: String, gallery: [String]){
-        self.title = title
-        self.gallery = gallery
-    }
- 
- }
- 
- let gallery1 = Gallery()
- gallery1.name = "Artisan"
- gallery1.gallery = ["p1", "p2", "p3", "p4"]
- 
- */
-
-class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class GalleryVC: UIViewController {
     
-    private let cell = "cell"
+    let cell = "cell"
     
     var galleryInfo: [BuildingGallery]!
     
@@ -51,13 +32,13 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
         setTableView()
+        setDelegatesGalleryViewController()
     }
     
     // MARK: - Set table view list gallery
     fileprivate func setTableView(){
         view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
+        
         tableView.register(GalleryCell.self, forCellReuseIdentifier: cell)
         tableView.separatorStyle = .none
         
@@ -67,88 +48,8 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         navigationController?.navigationBar.tintColor = .black
     }
     
-    // MARK: - Delegates and Data Source
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return galleryInfo.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cell) as! GalleryCell
-        
-        let galleryList = galleryInfo[indexPath.row]
-        cell.titleGallery = galleryList        
-        cell.selectionStyle = .none
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let galleryDisplay = GalleryDisplay()
-        galleryDisplay.displayGalleries = galleryInfo[indexPath.row]
-        navigationController?.pushViewController(galleryDisplay, animated: true)
-    }
-    
 }
 
-class GalleryCell: UITableViewCell {
-    
-    var titleGallery: BuildingGallery? {
-        didSet {
-            guard let title = titleGallery?.title else {return}
-            titleLabel.text = title
-            
-            guard let address = titleGallery?.address else {return}
-            descriptionLabel.text = address
-        }
-    }
-    
-    let containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = . white
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOffset = CGSize(width: 5, height: 5)
-        view.layer.shadowRadius = 5
-        view.layer.shadowOpacity = 0.2
-        view.layer.cornerRadius = 2
-        return view
-    }()
-    
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.numberOfLines = 2
-        return label
-    }()
-    
-    let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .darkGray
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.text = "hola mundo en espaniol, porque me gusta el espanol"
-        label.numberOfLines = 2
-        return label
-    }()
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: "cell")
-        setGalleryTableViewCell()
-    }
-    
-    private func setGalleryTableViewCell(){
-        addSubview(containerView)
-        containerView.addSubview(titleLabel)
-        containerView.addSubview(descriptionLabel)
-        
-        containerView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
-        
-        titleLabel.setAnchor(top: containerView.topAnchor, left: containerView.leftAnchor, bottom: nil, right: containerView.rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 0, paddingRight: 30)
-        
-        descriptionLabel.setAnchor(top: titleLabel.topAnchor, left: titleLabel.leftAnchor, bottom: containerView.bottomAnchor, right: titleLabel.rightAnchor, paddingTop: 15, paddingLeft: 0, paddingBottom: 10, paddingRight: 0)
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+
+
+

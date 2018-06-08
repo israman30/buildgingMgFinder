@@ -62,3 +62,5 @@ extension DisplayGalleryPhoto: UIScrollViewDelegate {
         scrollView.zoomScale = 1
     }
 }
+
+

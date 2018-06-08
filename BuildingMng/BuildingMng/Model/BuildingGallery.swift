@@ -51,7 +51,6 @@ struct BuildingGallery {
         return buildingGallery
     }
     
-    
 }
 
 
