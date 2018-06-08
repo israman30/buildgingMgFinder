@@ -30,16 +30,16 @@ struct BuildingGallery {
             
             BuildingGallery(title: "THE SOVEREIGN", gallery: ["sov1", "sov2", "sov3", "sov4", "sov5"], address: "2 14th St, Hoboken, NJ 07030"),
             
-            BuildingGallery(title: "THE SOUTH INDEPENCE", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "2 12th St, Hoboken, NJ 07030"),
+            BuildingGallery(title: "THE SOUTH INDEPENCE", gallery: ["south1", "south2", "south3", "south4", "south5", "south6"], address: "2 12th St, Hoboken, NJ 07030"),
             
-            BuildingGallery(title: "The VANGUARD at the SHIPYARD", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "1201 Hudson St, Hoboken, NJ 07030"),
+            BuildingGallery(title: "The VANGUARD at the SHIPYARD", gallery: ["van1", "van2", "van3", "van4", "van5"], address: "1201 Hudson St, Hoboken, NJ 07030"),
             
-            BuildingGallery(title: "VINE", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "900 Monroe St, Hoboken, NJ 07030"),
-            BuildingGallery(title: "COURT YARD", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "800 Jefferson St, Hoboken, NJ 07030"),
+            BuildingGallery(title: "VINE", gallery: ["vine1", "vine2", "vine3", "vine4", "vine5", "vine6"], address: "900 Monroe St, Hoboken, NJ 07030"),
+            BuildingGallery(title: "COURT YARD", gallery: ["court1", "court2", "court3", "court4", "court5", "court6", "court7"], address: "800 Jefferson St, Hoboken, NJ 07030"),
             
-            BuildingGallery(title: "The LEXINGTON", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "619 Adams St, Hoboken, NJ 07030"),
+            BuildingGallery(title: "The LEXINGTON", gallery: ["lex1", "lex2", "lex3", "lex4", "lex5", "lex6", "lex7"], address: "619 Adams St, Hoboken, NJ 07030"),
             
-            BuildingGallery(title: "RIVER STREET", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "333 River St, Hoboken, NJ 07030"),
+            BuildingGallery(title: "RIVER STREET", gallery: ["river2", "river3", "river4", "river5", "river6"], address: "333 River St, Hoboken, NJ 07030"),
             
             BuildingGallery(title: "GRAND ADAMS", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "300 Grand St, Hoboken, NJ 07030"),
             
