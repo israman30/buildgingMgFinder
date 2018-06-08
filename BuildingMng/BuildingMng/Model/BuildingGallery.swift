@@ -28,7 +28,7 @@ struct BuildingGallery {
             
             BuildingGallery(title: "HARLLOW", gallery: ["hard1", "hard2", "hard3", "hard4", "hard5", "hard6", "hard7", "hard8", "hard9", "hard10"], address: "1330 Willow Ave, Hoboken, NJ 07030"),
             
-            BuildingGallery(title: "THE SOVEREIGN", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "2 14th St, Hoboken, NJ 07030"),
+            BuildingGallery(title: "THE SOVEREIGN", gallery: ["sov1", "sov2", "sov3", "sov4", "sov5"], address: "2 14th St, Hoboken, NJ 07030"),
             
             BuildingGallery(title: "THE SOUTH INDEPENCE", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "2 12th St, Hoboken, NJ 07030"),
             
