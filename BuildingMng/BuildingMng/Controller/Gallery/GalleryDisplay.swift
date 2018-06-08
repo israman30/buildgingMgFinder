@@ -16,6 +16,7 @@ class GalleryDisplay: UIViewController {
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .white
+        cv.showsHorizontalScrollIndicator = false
         return cv
     }()
     
@@ -73,12 +74,11 @@ class GalleryDisplay: UIViewController {
         pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
-    
 }
 
+// MARK: - Delegates and Data Source Extension Methods
 extension GalleryDisplay: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    // MARK: - Delegates and Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return (displayGalleries?.gallery?.count)!
@@ -97,9 +97,8 @@ extension GalleryDisplay: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         displayPhotoGallery.photoDisplay = displayGalleries?.gallery![indexPath.item]
         displayPhotoGallery.modalTransitionStyle = .crossDissolve
         displayPhotoGallery.modalPresentationStyle = .overCurrentContext
-        //        present(displayPhotoGallery, animated: true, completion: nil)
+        
         navigationController?.pushViewController(displayPhotoGallery, animated: true)
-        //        navigationController?.pushViewController(displayPhotoGallery, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -36,6 +36,7 @@ class GalleryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let tableView: UITableView = {
         let tv = UITableView()
         tv.rowHeight = 150
+        tv.showsVerticalScrollIndicator = false
         return tv
     }()
     
