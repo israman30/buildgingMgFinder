@@ -71,11 +71,9 @@
 			isa = PBXGroup;
 			children = (
 				8D4EBD5320C1CF8400897BA9 /* GalleryVC.swift */,
-				8DAB900E20CB001C008D3CB6 /* GalleryCell.swift */,
 				8D82066520C2F59A0000CF17 /* GalleryDisplay.swift */,
-				8DAB901020CB0117008D3CB6 /* DisplayCell.swift */,
 				8DAB900C20C9A6E1008D3CB6 /* DisplayGalleryPhoto.swift */,
-				8DAB901220CB0178008D3CB6 /* Gallery+Helper+Extensions.swift */,
+				8DAB901420CB0525008D3CB6 /* Extensions */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -85,6 +83,7 @@
 			children = (
 				8D9AD9052037B7890045A06C /* ViewController.swift */,
 				8D9AD91A20390C520045A06C /* DetailsVC.swift */,
+				8DB47A3B20BCE85B0043126B /* DetailHelper+Ext */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -133,7 +132,6 @@
 				8D43A96220C4E3A8002BE494 /* Home */,
 				8D43A96120C4E335002BE494 /* Gallery */,
 				8DB47A3820BCE6510043126B /* MainVCExt */,
-				8DB47A3B20BCE85B0043126B /* DetailHelper+Ext */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,6 +143,8 @@
 				8D9AD90C2037B7890045A06C /* LaunchScreen.storyboard */,
 				8D9AD9152038BE8E0045A06C /* ConstrainsExtension.swift */,
 				8D30B95A2058401A0042B568 /* MyCell.swift */,
+				8DAB900E20CB001C008D3CB6 /* GalleryCell.swift */,
+				8DAB901020CB0117008D3CB6 /* DisplayCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +157,14 @@
 				8D4EBD4F20C17BC600897BA9 /* AnnotationPin.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8DAB901420CB0525008D3CB6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8DAB901220CB0178008D3CB6 /* Gallery+Helper+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8DB47A3820BCE6510043126B /* MainVCExt */ = {
