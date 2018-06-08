@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
+class GalleryDisplay: UIViewController {
     
     fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -73,6 +73,11 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
+    
+}
+
+extension GalleryDisplay: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     // MARK: - Delegates and Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -92,9 +97,9 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         displayPhotoGallery.photoDisplay = displayGalleries?.gallery![indexPath.item]
         displayPhotoGallery.modalTransitionStyle = .crossDissolve
         displayPhotoGallery.modalPresentationStyle = .overCurrentContext
-//        present(displayPhotoGallery, animated: true, completion: nil)
+        //        present(displayPhotoGallery, animated: true, completion: nil)
         navigationController?.pushViewController(displayPhotoGallery, animated: true)
-//        navigationController?.pushViewController(displayPhotoGallery, animated: true)
+        //        navigationController?.pushViewController(displayPhotoGallery, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -104,6 +109,7 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
     }
+    
 }
 
 class DisplayCell: UICollectionViewCell {

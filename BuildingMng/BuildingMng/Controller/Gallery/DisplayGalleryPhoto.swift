@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DisplayGalleryPhoto: UIViewController, UIScrollViewDelegate {
+class DisplayGalleryPhoto: UIViewController {
     
     var photoDisplay: String?
     
@@ -29,19 +29,12 @@ class DisplayGalleryPhoto: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.9)
         
-        scrollView.delegate = self
-        scrollView.maximumZoomScale = 10
-        scrollView.minimumZoomScale = 1
-        scrollView.zoomScale = 1
-        
         guard let photo = photoDisplay else {return}
         imageView.image = UIImage(named: photo)
         
+        scrollViewSetUpWithDelegates()
+        
         setPhoto()
-    }
-    
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
     }
     
     func setPhoto(){
@@ -51,5 +44,21 @@ class DisplayGalleryPhoto: UIViewController, UIScrollViewDelegate {
         scrollView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: -90, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: view.frame.height)
         
         imageView.setAnchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: scrollView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: view.frame.height)
+    }
+}
+
+// MARK: - Scroll View Extension SetUp
+extension DisplayGalleryPhoto: UIScrollViewDelegate {
+    
+    // MARK: scroll view detail display photo zoom in - out
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
+    
+    fileprivate func scrollViewSetUpWithDelegates(){
+        scrollView.delegate = self
+        scrollView.maximumZoomScale = 10
+        scrollView.minimumZoomScale = 1
+        scrollView.zoomScale = 1
     }
 }
