@@ -77,11 +77,16 @@ class DetailsVC: UIViewController {
 
         guard let address = buildingInfoDetail?.address else {return}
         addressLabelBuilding.text = address
-        print(buildingInfoDetail?.address ?? 1)
+        
         setDetailView()
         
         navBarSetUp()
     }
+    
+}
+
+// MARK: - Detail View Controller Set Main View Extension
+extension DetailsVC {
     
     fileprivate func navBarSetUp(){
         let shareIcon = UIImage(named: "share")
@@ -89,7 +94,7 @@ class DetailsVC: UIViewController {
         navigationItem.rightBarButtonItem = rightBarButton
     }
     
-    private func setDetailView(){
+    fileprivate func setDetailView(){
         view.backgroundColor = .white
         
         [imageBuildingPhotoDetail,

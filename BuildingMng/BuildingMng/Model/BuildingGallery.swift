@@ -22,7 +22,7 @@ struct BuildingGallery {
             
             BuildingGallery(title: "JORDAN", gallery: ["jord1", "jord2", "jord3", "jord4", "jord5", "jord6", "jord7", "jord8", "jord9", "jord10"], address: "1200 CLINTON ST, HOBOKEN, NJ 07030"),
             
-            BuildingGallery(title: "THE RIVINGTON", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "1130 Grand St, Hoboken, NJ 07030"),
+            BuildingGallery(title: "THE RIVINGTON", gallery: ["riv1", "riv2", "riv3", "riv5", "riv6", "riv7"], address: "1130 Grand St, Hoboken, NJ 07030"),
             
             BuildingGallery(title: "OBSERVER PARK", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "51 Garden St, Hoboken, NJ 07030"),
             

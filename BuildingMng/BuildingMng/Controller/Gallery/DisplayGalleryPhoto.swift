@@ -37,7 +37,7 @@ class DisplayGalleryPhoto: UIViewController {
         setPhoto()
     }
     
-    func setPhoto(){
+    fileprivate func setPhoto(){
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
         

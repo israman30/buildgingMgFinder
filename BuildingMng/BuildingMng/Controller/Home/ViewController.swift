@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Setting the table view
-    private func setView(){
+    fileprivate func setView(){
         view.backgroundColor = .white
         view.addSubview(mapView)
         view.addSubview(collectionView)
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Setting the navbar controller
-    private func setNavBar(){
+    fileprivate func setNavBar(){
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()

@@ -45,7 +45,7 @@ class GalleryDisplay: UIViewController {
     }
     
     // MARK: - Set navbar 
-    func navBarForGalleryViewController(){
+    fileprivate func navBarForGalleryViewController(){
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -59,7 +59,7 @@ class GalleryDisplay: UIViewController {
         pageControl.currentPage = Int(xPoint/view.frame.width)
     }
     
-    func setView(){
+    fileprivate func setView(){
         view.addSubview(collectionView)
         view.addSubview(pageControl)
         collectionView.delegate = self
