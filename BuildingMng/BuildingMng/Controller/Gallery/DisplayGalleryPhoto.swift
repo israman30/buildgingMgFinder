@@ -14,7 +14,6 @@ class DisplayGalleryPhoto: UIViewController, UIScrollViewDelegate {
     
     let scrollView: UIScrollView = {
         let sv = UIScrollView()
-        sv.backgroundColor = .red
         return sv
     }()
     
@@ -25,18 +24,6 @@ class DisplayGalleryPhoto: UIViewController, UIScrollViewDelegate {
         iv.backgroundColor = .yellow
         return iv
     }()
-    
-    lazy var dismissButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("close", for: .normal)
-        btn.setTitleColor(.black, for: .normal)
-        btn.addTarget(self, action: #selector(dimissViewController), for: .touchUpInside)
-        return btn
-    }()
-    
-    @objc func dimissViewController(){
-        dismiss(animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,12 +47,9 @@ class DisplayGalleryPhoto: UIViewController, UIScrollViewDelegate {
     func setPhoto(){
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
-        imageView.addSubview(dismissButton)
         
-        scrollView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 180, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: 400)
+        scrollView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: -90, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: view.frame.height)
         
         imageView.setAnchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: scrollView.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: view.frame.width, height: view.frame.height)
-        
-        dismissButton.setAnchor(top: nil, left: imageView.leftAnchor, bottom: imageView.bottomAnchor, right: imageView.rightAnchor, paddingTop: 0, paddingLeft: 30, paddingBottom: 10, paddingRight: 30, width: 30, height: 20)
     }
 }

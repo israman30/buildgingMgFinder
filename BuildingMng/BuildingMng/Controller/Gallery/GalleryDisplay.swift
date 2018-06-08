@@ -90,10 +90,11 @@ class GalleryDisplay: UIViewController, UICollectionViewDelegateFlowLayout, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let displayPhotoGallery = DisplayGalleryPhoto()
         displayPhotoGallery.photoDisplay = displayGalleries?.gallery![indexPath.item]
-//        navigationController?.pushViewController(displayPhotoGallery, animated: true)
         displayPhotoGallery.modalTransitionStyle = .crossDissolve
         displayPhotoGallery.modalPresentationStyle = .overCurrentContext
-        present(displayPhotoGallery, animated: true, completion: nil)
+//        present(displayPhotoGallery, animated: true, completion: nil)
+        navigationController?.pushViewController(displayPhotoGallery, animated: true)
+//        navigationController?.pushViewController(displayPhotoGallery, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
