@@ -83,7 +83,7 @@
 			children = (
 				8D9AD9052037B7890045A06C /* ViewController.swift */,
 				8D9AD91A20390C520045A06C /* DetailsVC.swift */,
-				8DB47A3B20BCE85B0043126B /* DetailHelper+Ext */,
+				8DB47A3820BCE6510043126B /* Extensions */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -131,7 +131,6 @@
 				8D43A96320C4E3D6002BE494 /* Info */,
 				8D43A96220C4E3A8002BE494 /* Home */,
 				8D43A96120C4E335002BE494 /* Gallery */,
-				8DB47A3820BCE6510043126B /* MainVCExt */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,21 +166,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		8DB47A3820BCE6510043126B /* MainVCExt */ = {
-			isa = PBXGroup;
-			children = (
-				8DB47A3920BCE6950043126B /* MainViewController+Extensions.swift */,
-				8D4EBD4D20C17B0D00897BA9 /* MapKit+Extension.swift */,
-			);
-			path = MainVCExt;
-			sourceTree = "<group>";
-		};
-		8DB47A3B20BCE85B0043126B /* DetailHelper+Ext */ = {
+		8DB47A3820BCE6510043126B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				8DB47A3C20BCE87D0043126B /* Detail+Helper+Extensions.swift */,
+				8DB47A3920BCE6950043126B /* MainViewController+Extensions.swift */,
+				8D4EBD4D20C17B0D00897BA9 /* MapKit+Extension.swift */,
 			);
-			path = "DetailHelper+Ext";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
