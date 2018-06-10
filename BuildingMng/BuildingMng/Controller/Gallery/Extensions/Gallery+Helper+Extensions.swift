@@ -33,8 +33,10 @@ extension GalleryVC: UITableViewDelegate, UITableViewDataSource  {
         return cell
     }
     
-    @objc func favoriteAction(){
+    @objc func favoriteAction(sender: UIButton){
         print("Favorite button")
+        let index = galleryInfo[sender.tag]
+        print(index)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
