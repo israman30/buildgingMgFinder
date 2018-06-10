@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK: - Gallery View Controller Delegates and Data Source Extension Methods
+// MARK: - Gallery Main View Controller Delegates and Data Source Extension Methods
 extension GalleryVC: UITableViewDelegate, UITableViewDataSource  {
     
     func setDelegatesGalleryViewController() {
@@ -33,6 +33,7 @@ extension GalleryVC: UITableViewDelegate, UITableViewDataSource  {
         return cell
     }
     
+    // MARK: - Favorite button action tapped block
     @objc func favoriteAction(sender: UIButton){
         print("Favorite button")
         let index = galleryInfo[sender.tag]
@@ -47,7 +48,7 @@ extension GalleryVC: UITableViewDelegate, UITableViewDataSource  {
     
 }
 
-// MARK: - Delegates and Data Source Extension Methods
+// MARK: - Gallery Display Delegates and Data Source Extension Methods
 extension GalleryDisplay: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
