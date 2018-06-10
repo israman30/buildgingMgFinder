@@ -41,8 +41,8 @@ class GalleryDisplay: UIViewController {
         setView()
         navBarForGalleryViewController()
         
-        
-        pageControl.numberOfPages = (displayGalleries?.gallery?.count)!
+        guard let display = (displayGalleries?.gallery?.count) else { return }
+        pageControl.numberOfPages = display
     }
     
     // MARK: - Set navbar 
