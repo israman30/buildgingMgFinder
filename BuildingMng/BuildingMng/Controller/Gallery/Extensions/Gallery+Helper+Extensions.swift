@@ -27,7 +27,14 @@ extension GalleryVC: UITableViewDelegate, UITableViewDataSource  {
         cell.titleGallery = galleryList
         cell.selectionStyle = .none
         
+        cell.favoriteButton.tag = indexPath.item
+        cell.favoriteButton.addTarget(self, action: #selector(favoriteAction), for: .touchUpInside)
+        
         return cell
+    }
+    
+    @objc func favoriteAction(){
+        print("Favorite button")
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
