@@ -49,9 +49,11 @@ class GalleryCell: UITableViewCell {
     }()
     
     let favoriteButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("fav", for: .normal)
-        btn.backgroundColor = .red
+        let btn = UIButton()
+//        btn.setTitle("fav", for: .normal)
+        btn.setImage(UIImage(named: "heart"), for: .normal)
+        btn.setTitleColor(.black, for: .normal)
+//        btn.backgroundColor = .red
         return btn
     }()
     
