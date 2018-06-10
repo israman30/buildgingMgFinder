@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D30B95B2058401A0042B568 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D30B95A2058401A0042B568 /* MyCell.swift */; };
+		8D478F1420CDA3BF00442F2F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D478F1320CDA3BF00442F2F /* FavoritesViewController.swift */; };
 		8D4EBD4E20C17B0D00897BA9 /* MapKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EBD4D20C17B0D00897BA9 /* MapKit+Extension.swift */; };
 		8D4EBD5020C17BC600897BA9 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EBD4F20C17BC600897BA9 /* AnnotationPin.swift */; };
 		8D4EBD5220C1CACE00897BA9 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EBD5120C1CACE00897BA9 /* CustomTabBarController.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		8D30B95A2058401A0042B568 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		8D478F1320CDA3BF00442F2F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		8D4EBD4D20C17B0D00897BA9 /* MapKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKit+Extension.swift"; sourceTree = "<group>"; };
 		8D4EBD4F20C17BC600897BA9 /* AnnotationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPin.swift; sourceTree = "<group>"; };
 		8D4EBD5120C1CACE00897BA9 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
+		8D478F1220CDA39900442F2F /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				8D478F1320CDA3BF00442F2F /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		8D9AD8F72037B7890045A06C = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 			children = (
 				8D9AD9032037B7890045A06C /* AppDelegate.swift */,
 				8D4EBD5120C1CACE00897BA9 /* CustomTabBarController.swift */,
+				8D478F1220CDA39900442F2F /* Favorites */,
 				8D43A96320C4E3D6002BE494 /* Info */,
 				8D43A96220C4E3A8002BE494 /* Home */,
 				8D43A96120C4E335002BE494 /* Gallery */,
@@ -265,6 +276,7 @@
 				8DAB901120CB0117008D3CB6 /* DisplayCell.swift in Sources */,
 				8D4EBD5620C22A2600897BA9 /* InformationVC.swift in Sources */,
 				8D9AD9042037B7890045A06C /* AppDelegate.swift in Sources */,
+				8D478F1420CDA3BF00442F2F /* FavoritesViewController.swift in Sources */,
 				8D9AD9162038BE8F0045A06C /* ConstrainsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
