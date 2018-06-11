@@ -10,8 +10,11 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     
+    var favorites: BuildingGallery!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
+        print(favorites)
     }
 }

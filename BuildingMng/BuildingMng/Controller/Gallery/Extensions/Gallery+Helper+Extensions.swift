@@ -35,9 +35,18 @@ extension GalleryVC: UITableViewDelegate, UITableViewDataSource  {
     
     // MARK: - Favorite button action tapped block
     @objc func favoriteAction(sender: UIButton){
-        print("Favorite button")
+//        print("Favorite button")
         let index = galleryInfo[sender.tag]
-        print(index)
+        let favoriteViewController = FavoritesViewController()
+        favoriteViewController.favorites = index
+        navigationController?.pushViewController(favoriteViewController, animated: true)
+        if sender.tag == 0 {
+            print("Photo 1")
+        } else if sender.tag == 1 {
+            print("Photo 2")
+        } else if sender.tag == 2 {
+            print("Photo 3")
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
