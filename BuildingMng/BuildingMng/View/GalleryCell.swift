@@ -12,10 +12,10 @@ class GalleryCell: UITableViewCell {
     
     var titleGallery: BuildingGallery? {
         didSet {
-            guard let title = titleGallery?.title else {return}
-            titleLabel.text = title
+            guard let title = titleGallery?.title,
+                  let address = titleGallery?.address else {return}
             
-            guard let address = titleGallery?.address else {return}
+            titleLabel.text = title
             descriptionLabel.text = address
         }
     }
@@ -50,10 +50,8 @@ class GalleryCell: UITableViewCell {
     
     let favoriteButton: UIButton = {
         let btn = UIButton()
-//        btn.setTitle("fav", for: .normal)
         btn.setImage(UIImage(named: "heart"), for: .normal)
         btn.setTitleColor(.black, for: .normal)
-//        btn.backgroundColor = .red
         return btn
     }()
     

@@ -47,15 +47,5 @@ class CustomTabBarController: UITabBarController {
     }
 }
 
-extension UITabBarController {
-    
-    func setTabBarController(viewController: UIViewController, itemImage: String, title: String)->UINavigationController{
-        let viewController = viewController
-        let navController = UINavigationController(rootViewController: viewController)
-        navController.tabBarItem.image = UIImage(named: itemImage)
-        navController.title = title
-        
-        return navController
-    }
-}
+
 

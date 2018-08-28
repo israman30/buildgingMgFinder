@@ -6,17 +6,16 @@
 //  Copyright © 2018 Israel Manzo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class MyCell: UICollectionViewCell {
     
     var buildingImages: BuildingInfo? {
         didSet {
-            guard let image = buildingImages?.imagePhoto else {return}
-            imagePhotoView.image = UIImage(named: image)
+            guard let image = buildingImages?.imagePhoto,
+                  let title = buildingImages?.title else {return}
             
-            guard let title = buildingImages?.title else {return}
+            imagePhotoView.image = UIImage(named: image)
             titleLabel.text = title
         }
     }
@@ -49,7 +48,7 @@ class MyCell: UICollectionViewCell {
     
     func setView(){
         
-        [imagePhotoView, titleLabel].forEach({addSubview($0)})
+        [imagePhotoView, titleLabel].forEach { addSubview($0) }
         
         let gradient = CAGradientLayer()
         gradient.frame = imagePhotoView.bounds
