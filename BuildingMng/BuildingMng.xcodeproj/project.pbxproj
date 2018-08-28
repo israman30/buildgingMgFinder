@@ -10,6 +10,7 @@
 		8D30B95B2058401A0042B568 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D30B95A2058401A0042B568 /* MyCell.swift */; };
 		8D33BC342134DE43009FB533 /* ToolBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33BC332134DE43009FB533 /* ToolBar+Extension.swift */; };
 		8D33BC362134DEC1009FB533 /* MainView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33BC352134DEC1009FB533 /* MainView+Extension.swift */; };
+		8D33BC382135ABC3009FB533 /* DetailsView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33BC372135ABC3009FB533 /* DetailsView+Extension.swift */; };
 		8D478F1420CDA3BF00442F2F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D478F1320CDA3BF00442F2F /* FavoritesViewController.swift */; };
 		8D4EBD4E20C17B0D00897BA9 /* MapKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EBD4D20C17B0D00897BA9 /* MapKit+Extension.swift */; };
 		8D4EBD5020C17BC600897BA9 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EBD4F20C17BC600897BA9 /* AnnotationPin.swift */; };
@@ -37,6 +38,7 @@
 		8D30B95A2058401A0042B568 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		8D33BC332134DE43009FB533 /* ToolBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolBar+Extension.swift"; sourceTree = "<group>"; };
 		8D33BC352134DEC1009FB533 /* MainView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView+Extension.swift"; sourceTree = "<group>"; };
+		8D33BC372135ABC3009FB533 /* DetailsView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsView+Extension.swift"; sourceTree = "<group>"; };
 		8D478F1320CDA3BF00442F2F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		8D4EBD4D20C17B0D00897BA9 /* MapKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKit+Extension.swift"; sourceTree = "<group>"; };
 		8D4EBD4F20C17BC600897BA9 /* AnnotationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPin.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				8D9AD90C2037B7890045A06C /* LaunchScreen.storyboard */,
 				8D9AD9152038BE8E0045A06C /* ConstrainsExtension.swift */,
 				8D33BC352134DEC1009FB533 /* MainView+Extension.swift */,
+				8D33BC372135ABC3009FB533 /* DetailsView+Extension.swift */,
 				8D30B95A2058401A0042B568 /* MyCell.swift */,
 				8DAB900E20CB001C008D3CB6 /* GalleryCell.swift */,
 				8DAB901020CB0117008D3CB6 /* DisplayCell.swift */,
@@ -269,6 +272,7 @@
 				8DB47A3D20BCE87D0043126B /* Detail+Helper+Extensions.swift in Sources */,
 				8D33BC342134DE43009FB533 /* ToolBar+Extension.swift in Sources */,
 				8D82066620C2F59A0000CF17 /* GalleryDisplay.swift in Sources */,
+				8D33BC382135ABC3009FB533 /* DetailsView+Extension.swift in Sources */,
 				8DAB900D20C9A6E1008D3CB6 /* DisplayGalleryPhoto.swift in Sources */,
 				8D781C84204057780080E66C /* BuildingInfo.swift in Sources */,
 				8D82065720C2F10C0000CF17 /* BuildingGallery.swift in Sources */,
