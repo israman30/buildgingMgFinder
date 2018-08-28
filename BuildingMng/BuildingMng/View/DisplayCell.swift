@@ -10,6 +10,13 @@ import UIKit
 
 class DisplayCell: UICollectionViewCell {
     
+    var gallery: BuildingGallery? {
+        didSet {
+            guard let image = gallery?.gallery else { return }
+            imageView.image = UIImage(string: image)
+        }
+    }
+    
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit

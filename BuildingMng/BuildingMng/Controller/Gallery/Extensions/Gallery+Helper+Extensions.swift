@@ -69,6 +69,7 @@ extension GalleryDisplay: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "displayCell", for: indexPath) as! DisplayCell
         let gallery = UIImage(named: (displayGalleries?.gallery![indexPath.item])!)
         cell.imageView.image = gallery
+//        cell.gallery = UIImage(named: (displayGalleries?.gallery![indexPath.item])!)
         
         return cell
     }

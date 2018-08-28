@@ -11,6 +11,7 @@
 		8D33BC342134DE43009FB533 /* ToolBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33BC332134DE43009FB533 /* ToolBar+Extension.swift */; };
 		8D33BC362134DEC1009FB533 /* MainView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33BC352134DEC1009FB533 /* MainView+Extension.swift */; };
 		8D33BC382135ABC3009FB533 /* DetailsView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33BC372135ABC3009FB533 /* DetailsView+Extension.swift */; };
+		8D33BC3A2135ADC6009FB533 /* GalleryView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33BC392135ADC6009FB533 /* GalleryView+Extension.swift */; };
 		8D478F1420CDA3BF00442F2F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D478F1320CDA3BF00442F2F /* FavoritesViewController.swift */; };
 		8D4EBD4E20C17B0D00897BA9 /* MapKit+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EBD4D20C17B0D00897BA9 /* MapKit+Extension.swift */; };
 		8D4EBD5020C17BC600897BA9 /* AnnotationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4EBD4F20C17BC600897BA9 /* AnnotationPin.swift */; };
@@ -39,6 +40,7 @@
 		8D33BC332134DE43009FB533 /* ToolBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolBar+Extension.swift"; sourceTree = "<group>"; };
 		8D33BC352134DEC1009FB533 /* MainView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView+Extension.swift"; sourceTree = "<group>"; };
 		8D33BC372135ABC3009FB533 /* DetailsView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsView+Extension.swift"; sourceTree = "<group>"; };
+		8D33BC392135ADC6009FB533 /* GalleryView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryView+Extension.swift"; sourceTree = "<group>"; };
 		8D478F1320CDA3BF00442F2F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		8D4EBD4D20C17B0D00897BA9 /* MapKit+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKit+Extension.swift"; sourceTree = "<group>"; };
 		8D4EBD4F20C17BC600897BA9 /* AnnotationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationPin.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				8D30B95A2058401A0042B568 /* MyCell.swift */,
 				8DAB900E20CB001C008D3CB6 /* GalleryCell.swift */,
 				8DAB901020CB0117008D3CB6 /* DisplayCell.swift */,
+				8D33BC392135ADC6009FB533 /* GalleryView+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				8D4EBD5020C17BC600897BA9 /* AnnotationPin.swift in Sources */,
 				8DAB901320CB0178008D3CB6 /* Gallery+Helper+Extensions.swift in Sources */,
 				8D4EBD4E20C17B0D00897BA9 /* MapKit+Extension.swift in Sources */,
+				8D33BC3A2135ADC6009FB533 /* GalleryView+Extension.swift in Sources */,
 				8DAB900F20CB001D008D3CB6 /* GalleryCell.swift in Sources */,
 				8DAB901120CB0117008D3CB6 /* DisplayCell.swift in Sources */,
 				8D4EBD5620C22A2600897BA9 /* InformationVC.swift in Sources */,

@@ -24,7 +24,7 @@ extension DetailsVC {
          titleLabelBuilding,
          addressBuildingBtn,
          lineDividerView,
-         contactBuildingBtn].forEach({view.addSubview($0)})
+         contactBuildingBtn].forEach { view.addSubview($0) }
         
         addressBuildingBtn.addSubview(addressLabelBuilding)
         
