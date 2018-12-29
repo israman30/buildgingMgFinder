@@ -30,7 +30,6 @@ class GalleryVC: UIViewController {
                 self.tableView.reloadData()
             }
         }
-        
         setTableView()
         setDelegatesGalleryViewController()
     }

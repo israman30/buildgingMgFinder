@@ -15,6 +15,8 @@ class ViewController: UIViewController {
 
     var pin: AnnotationPin!
     
+    let mainViewCell = "cell"
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 12
@@ -41,7 +43,6 @@ class ViewController: UIViewController {
             }
         }
     }
-
 }
 
 

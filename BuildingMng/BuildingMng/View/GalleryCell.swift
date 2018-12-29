@@ -43,7 +43,6 @@ class GalleryCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .darkGray
         label.font = UIFont.systemFont(ofSize: 15)
-        label.text = "hola mundo en espaniol, porque me gusta el espanol"
         label.numberOfLines = 2
         return label
     }()

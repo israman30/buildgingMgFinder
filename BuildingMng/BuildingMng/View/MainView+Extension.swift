@@ -26,12 +26,15 @@ extension ViewController {
     
     // MARK: - Setting the table view
     func setView(){
+        
         view.backgroundColor = .white
-        view.addSubview(mapView)
-        view.addSubview(collectionView)
+        
+        [mapView, collectionView].forEach { view.addSubview($0) }
+        
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(MyCell.self, forCellWithReuseIdentifier: "cell")
+        
+        collectionView.register(MyCell.self, forCellWithReuseIdentifier: mainViewCell)
         
         mapView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         

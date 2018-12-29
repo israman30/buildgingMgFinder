@@ -31,7 +31,7 @@ class GalleryDisplay: UIViewController {
         return pc
     }()
     
-    private let displayCell = "displayCell"
+    let displayCell = "displayCell"
     
     var displayGalleries: BuildingGallery?
     

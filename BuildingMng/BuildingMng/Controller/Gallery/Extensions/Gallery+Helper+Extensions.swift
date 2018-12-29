@@ -42,21 +42,24 @@ extension GalleryVC: UITableViewDelegate, UITableViewDataSource  {
 extension GalleryDisplay: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return (displayGalleries?.gallery?.count)!
+        if let gallery = displayGalleries?.gallery?.count {
+            return gallery
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "displayCell", for: indexPath) as! DisplayCell
-        let gallery = UIImage(named: (displayGalleries?.gallery![indexPath.item])!)
-        cell.imageView.image = gallery
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: displayCell, for: indexPath) as! DisplayCell
+        if let gallery = UIImage(named: (displayGalleries?.gallery![indexPath.item])!) {
+            cell.imageView.image = gallery
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let displayPhotoGallery = DisplayGalleryPhoto()
-        displayPhotoGallery.photoDisplay = displayGalleries?.gallery![indexPath.item]
+        guard let displayGalleries = displayGalleries?.gallery![indexPath.item] else { return }
+        displayPhotoGallery.photoDisplay = displayGalleries
         displayPhotoGallery.modalTransitionStyle = .crossDissolve
         displayPhotoGallery.modalPresentationStyle = .overCurrentContext
         
