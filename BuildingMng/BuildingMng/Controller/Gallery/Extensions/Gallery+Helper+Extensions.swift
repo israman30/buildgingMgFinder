@@ -27,26 +27,7 @@ extension GalleryVC: UITableViewDelegate, UITableViewDataSource  {
         cell.titleGallery = galleryList
         cell.selectionStyle = .none
         
-        cell.favoriteButton.tag = indexPath.item
-        cell.favoriteButton.addTarget(self, action: #selector(favoriteAction), for: .touchUpInside)
-        
         return cell
-    }
-    
-    // MARK: - Favorite button action tapped block
-    @objc func favoriteAction(sender: UIButton){
-//        print("Favorite button")
-        let index = galleryInfo[sender.tag]
-        let favoriteViewController = FavoritesViewController()
-        favoriteViewController.favorites = index
-        navigationController?.pushViewController(favoriteViewController, animated: true)
-//        if sender.tag == 0 {
-//            print("Photo 1")
-//        } else if sender.tag == 1 {
-//            print("Photo 2")
-//        } else if sender.tag == 2 {
-//            print("Photo 3")
-//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -69,7 +50,6 @@ extension GalleryDisplay: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "displayCell", for: indexPath) as! DisplayCell
         let gallery = UIImage(named: (displayGalleries?.gallery![indexPath.item])!)
         cell.imageView.image = gallery
-//        cell.gallery = UIImage(named: (displayGalleries?.gallery![indexPath.item])!)
         
         return cell
     }

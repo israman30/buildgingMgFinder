@@ -48,22 +48,16 @@ class GalleryCell: UITableViewCell {
         return label
     }()
     
-    let favoriteButton: UIButton = {
-        let btn = UIButton()
-        btn.setImage(UIImage(named: "heart"), for: .normal)
-        btn.setTitleColor(.black, for: .normal)
-        return btn
-    }()
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: "cell")
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setGalleryTableViewCell()
     }
     
     private func setGalleryTableViewCell(){
+        
         addSubview(containerView)
-        containerView.addSubview(titleLabel)
-        containerView.addSubview(descriptionLabel)
+        
+        [titleLabel, descriptionLabel].forEach { containerView.addSubview($0) }
         
         containerView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
         
