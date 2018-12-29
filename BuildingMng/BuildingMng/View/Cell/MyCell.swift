@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyCell: UICollectionViewCell {
+class MyCell: Cell {
     
     var buildingImages: BuildingInfo? {
         didSet {
@@ -41,8 +41,8 @@ class MyCell: UICollectionViewCell {
         return lb
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func setCellView() {
+        super.setCellView()
         setView()
     }
     
@@ -59,9 +59,5 @@ class MyCell: UICollectionViewCell {
         imagePhotoView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 5, paddingLeft: 5, paddingBottom: 8, paddingRight: 5)
         
         titleLabel.setAnchor(top: nil, left: imagePhotoView.leftAnchor, bottom: imagePhotoView.bottomAnchor, right: imagePhotoView.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 8, paddingRight: 10, width: 150, height: 45)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

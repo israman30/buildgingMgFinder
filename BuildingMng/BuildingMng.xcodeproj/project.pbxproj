@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D16EF8721D726EE00F50DBA /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D16EF8621D726EE00F50DBA /* Cell.swift */; };
 		8D30B95B2058401A0042B568 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D30B95A2058401A0042B568 /* MyCell.swift */; };
 		8D33BC342134DE43009FB533 /* ToolBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33BC332134DE43009FB533 /* ToolBar+Extension.swift */; };
 		8D33BC362134DEC1009FB533 /* MainView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33BC352134DEC1009FB533 /* MainView+Extension.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D16EF8621D726EE00F50DBA /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		8D30B95A2058401A0042B568 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		8D33BC332134DE43009FB533 /* ToolBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolBar+Extension.swift"; sourceTree = "<group>"; };
 		8D33BC352134DEC1009FB533 /* MainView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView+Extension.swift"; sourceTree = "<group>"; };
@@ -77,6 +79,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D16EF8421D7266200F50DBA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8D16EF8621D726EE00F50DBA /* Cell.swift */,
+				8D30B95A2058401A0042B568 /* MyCell.swift */,
+				8DAB900E20CB001C008D3CB6 /* GalleryCell.swift */,
+				8DAB901020CB0117008D3CB6 /* DisplayCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8D16EF8521D7268800F50DBA /* SetView */ = {
+			isa = PBXGroup;
+			children = (
+				8D9AD9152038BE8E0045A06C /* ConstrainsExtension.swift */,
+				8D33BC352134DEC1009FB533 /* MainView+Extension.swift */,
+				8D33BC372135ABC3009FB533 /* DetailsView+Extension.swift */,
+				8D33BC392135ADC6009FB533 /* GalleryView+Extension.swift */,
+			);
+			path = SetView;
+			sourceTree = "<group>";
+		};
 		8D43A96120C4E335002BE494 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,15 +182,10 @@
 		8D9AD9182038BF310045A06C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8D16EF8521D7268800F50DBA /* SetView */,
+				8D16EF8421D7266200F50DBA /* Cell */,
 				8D9AD90A2037B7890045A06C /* Assets.xcassets */,
 				8D9AD90C2037B7890045A06C /* LaunchScreen.storyboard */,
-				8D9AD9152038BE8E0045A06C /* ConstrainsExtension.swift */,
-				8D33BC352134DEC1009FB533 /* MainView+Extension.swift */,
-				8D33BC372135ABC3009FB533 /* DetailsView+Extension.swift */,
-				8D30B95A2058401A0042B568 /* MyCell.swift */,
-				8DAB900E20CB001C008D3CB6 /* GalleryCell.swift */,
-				8DAB901020CB0117008D3CB6 /* DisplayCell.swift */,
-				8D33BC392135ADC6009FB533 /* GalleryView+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,6 +301,7 @@
 				8DB47A3A20BCE6950043126B /* MainViewController+Extensions.swift in Sources */,
 				8D33BC362134DEC1009FB533 /* MainView+Extension.swift in Sources */,
 				8D4EBD5220C1CACE00897BA9 /* CustomTabBarController.swift in Sources */,
+				8D16EF8721D726EE00F50DBA /* Cell.swift in Sources */,
 				8D30B95B2058401A0042B568 /* MyCell.swift in Sources */,
 				8D4EBD5420C1CF8400897BA9 /* GalleryVC.swift in Sources */,
 				8D4EBD5020C17BC600897BA9 /* AnnotationPin.swift in Sources */,
