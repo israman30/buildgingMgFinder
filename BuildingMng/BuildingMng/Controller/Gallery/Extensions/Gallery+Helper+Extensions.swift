@@ -40,13 +40,13 @@ extension GalleryVC: UITableViewDelegate, UITableViewDataSource  {
         let favoriteViewController = FavoritesViewController()
         favoriteViewController.favorites = index
         navigationController?.pushViewController(favoriteViewController, animated: true)
-        if sender.tag == 0 {
-            print("Photo 1")
-        } else if sender.tag == 1 {
-            print("Photo 2")
-        } else if sender.tag == 2 {
-            print("Photo 3")
-        }
+//        if sender.tag == 0 {
+//            print("Photo 1")
+//        } else if sender.tag == 1 {
+//            print("Photo 2")
+//        } else if sender.tag == 2 {
+//            print("Photo 3")
+//        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

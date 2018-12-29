@@ -12,7 +12,7 @@ class DisplayCell: UICollectionViewCell {
     
     var gallery: BuildingGallery? {
         didSet {
-//            guard let imageGallery = gallery. else { return }
+//            guard let imageGallery = gallery.else { return }
 //            imageView.image = imageGallery
         }
     }
