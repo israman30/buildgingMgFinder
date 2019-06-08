@@ -8,6 +8,11 @@
 
 import UIKit
 
+/*
+  - Cell Mockup for protopypes
+  - The cell can be used as super class for layout, using setCellView()
+ */
+
 class Cell: UICollectionViewCell {
     
     override init(frame: CGRect) {

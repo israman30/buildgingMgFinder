@@ -30,6 +30,7 @@ class DisplayCell: Cell {
         setGalleryDetails()
     }
     
+    // Sub.MARK: - Constraints Block
     private func setGalleryDetails(){
         addSubview(imageView)
         imageView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)

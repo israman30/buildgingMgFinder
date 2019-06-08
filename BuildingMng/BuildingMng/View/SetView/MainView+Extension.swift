@@ -10,7 +10,7 @@ import UIKit
 
 extension ViewController {
     
-    //MARK: - Setting the navbar controller
+    // MARK: - Setting the navbar controller
     func setNavBar(){
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -25,6 +25,7 @@ extension ViewController {
     }
     
     // MARK: - Setting the table view
+    // Sub.MARK: - Constraints Block
     func setView(){
         
         view.backgroundColor = .white

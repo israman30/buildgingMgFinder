@@ -8,9 +8,13 @@
 
 import UIKit
 
+/*
+ MARK: - Set Tab Controller extension method
+ - setTabController function can add many tab views as needed
+*/
 extension UITabBarController {
     
-    func setTabBarController(viewController: UIViewController, itemImage: String, title: String)->UINavigationController{
+    func setTabBarController(viewController: UIViewController, itemImage: String, title: String)-> UINavigationController {
         let viewController = viewController
         let navController = UINavigationController(rootViewController: viewController)
         navController.tabBarItem.image = UIImage(named: itemImage)

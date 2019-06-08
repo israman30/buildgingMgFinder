@@ -52,6 +52,7 @@ class GalleryCell: UITableViewCell {
         setGalleryTableViewCell()
     }
     
+    // Sub.MARK: - Constraints Block
     private func setGalleryTableViewCell(){
         
         addSubview(containerView)

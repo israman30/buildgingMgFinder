@@ -46,6 +46,7 @@ class MyCell: Cell {
         setView()
     }
     
+    // Sub.MARK: - Constraints Block
     func setView(){
         
         [imagePhotoView, titleLabel].forEach { addSubview($0) }
