@@ -28,11 +28,4 @@ class InformationVC: UIViewController {
     }
 }
 
-// MARK: - Transparency Navigation Bar Extension
-extension UIViewController {
-    func setTransparencyNavBar() {
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-    }
-}
+

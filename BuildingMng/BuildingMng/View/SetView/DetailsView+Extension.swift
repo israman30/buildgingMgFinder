@@ -11,13 +11,6 @@ import UIKit
 // MARK: - Detail View Controller Set Main View Extension
 extension DetailsVC {
     
-    // Sub.MARK: - Nav Bar
-    func navBarSetUp(){
-        let shareIcon = UIImage(named: "share")
-        let rightBarButton = UIBarButtonItem(image: shareIcon, style: .plain, target: self, action: #selector(shareButton))
-        navigationItem.rightBarButtonItem = rightBarButton
-    }
-    
     // Sub.MARK: - Constraints Block
     func setDetailView(){
         view.backgroundColor = .white

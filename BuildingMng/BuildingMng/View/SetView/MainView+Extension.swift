@@ -9,21 +9,6 @@
 import UIKit
 
 extension HomeController {
-    
-    // MARK: - Setting the navbar controller
-    func setNavBar(){
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name:"Marker Felt", size:25.0)!, NSAttributedString.Key.foregroundColor:UIColor.black
-        ]
-        navigationItem.title = "Hob Lux"
-        navigationController?.navigationBar.tintColor = .white
-        
-    }
-    
     // MARK: - Setting the table view
     // Sub.MARK: - Constraints Block
     func setView(){
