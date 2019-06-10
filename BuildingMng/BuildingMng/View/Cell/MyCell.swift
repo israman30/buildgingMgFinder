@@ -53,7 +53,9 @@ class MyCell: Cell {
         
         let gradient = CAGradientLayer()
         gradient.frame = imagePhotoView.bounds
-        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor, UIColor.black.cgColor, UIColor.clear.cgColor]
+        gradient.colors = [
+            UIColor.clear.cgColor, UIColor.black.cgColor, UIColor.black.cgColor, UIColor.clear.cgColor
+        ]
         imagePhotoView.layer.mask = gradient
         imagePhotoView.layer.addSublayer(gradient)
         
