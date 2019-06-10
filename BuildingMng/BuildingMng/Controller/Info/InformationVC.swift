@@ -37,10 +37,10 @@ class InformationVC: UIViewController {
         if site != "http://israelmanzo.com" {
             AlertController.alert(self, title: "🤖", message: "404 Not Found")
         }
-        openSafaryViewController(for: site)
+        openSafariViewController(for: site)
     }
     
-    func openSafaryViewController(for url: String) {
+    func openSafariViewController(for url: String) {
         guard let url = URL(string: url) else {
             AlertController.alert(self, title: "🤖", message: "404 Not Found")
             return
@@ -48,7 +48,6 @@ class InformationVC: UIViewController {
         let safariViewController = SFSafariViewController(url: url)
         present(safariViewController, animated: true, completion: nil)
     }
-    
     // ================================================================
     // ================================================================
     
