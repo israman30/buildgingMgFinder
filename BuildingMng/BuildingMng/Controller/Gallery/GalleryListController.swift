@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GalleryVC: UIViewController {
+class GalleryListController: UIViewController {
     
     let cell = "cell"
     

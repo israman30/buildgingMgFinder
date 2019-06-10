@@ -44,3 +44,12 @@ extension DetailsVC {
         navigationItem.rightBarButtonItem = rightBarButton
     }
 }
+
+extension GalleryPagesDisplayController {
+    
+    // MARK: - Set navbar
+    func navBarForGalleryViewController(){
+        setTransparencyNavBar()
+    }
+    
+}

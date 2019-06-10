@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension GalleryVC {
+extension GalleryListController {
     // MARK: - Set table view list gallery
     func setTableView(){
         view.addSubview(tableView)

@@ -29,7 +29,7 @@ class CustomTabBarController: UITabBarController {
         nav.tabBarItem.image = UIImage(named: "home")
         
         // MARK: - Grallery viewcontroller
-        let secondTabVC = setTabBarController(viewController: GalleryVC(), itemImage: "galleries", title: "gallery")
+        let secondTabVC = setTabBarController(viewController: GalleryListController(), itemImage: "galleries", title: "gallery")
         
         // MARK: - Information view controller
         let thirdVC = setTabBarController(viewController: InformationVC(), itemImage: "information", title: "info")

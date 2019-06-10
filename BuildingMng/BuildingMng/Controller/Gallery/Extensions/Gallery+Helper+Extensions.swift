@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - Gallery Main View Controller Delegates and Data Source Extension Methods
-extension GalleryVC: UITableViewDelegate, UITableViewDataSource  {
+extension GalleryListController: UITableViewDelegate, UITableViewDataSource  {
     
     func setDelegatesGalleryViewController() {
         tableView.delegate = self
@@ -31,7 +31,7 @@ extension GalleryVC: UITableViewDelegate, UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let galleryDisplay = GalleryDisplay()
+        let galleryDisplay = GalleryPagesDisplayController()
         galleryDisplay.displayGalleries = galleryInfo[indexPath.row]
         navigationController?.pushViewController(galleryDisplay, animated: true)
     }
@@ -39,7 +39,7 @@ extension GalleryVC: UITableViewDelegate, UITableViewDataSource  {
 }
 
 // MARK: - Gallery Display Delegates and Data Source Extension Methods
-extension GalleryDisplay: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
+extension GalleryPagesDisplayController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let gallery = displayGalleries?.gallery?.count {
