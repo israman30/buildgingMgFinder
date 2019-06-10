@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class HomeController: UIViewController {
     
     var buildingInfo: [BuildingInfo]!
 

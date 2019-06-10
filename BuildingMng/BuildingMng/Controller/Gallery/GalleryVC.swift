@@ -25,6 +25,8 @@ class GalleryVC: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
+        setTransparencyNavBar()
         galleryInfo = BuildingGallery.sharedGallery.setGalleryPhotos {
             DispatchQueue.main.async {
                 self.tableView.reloadData()

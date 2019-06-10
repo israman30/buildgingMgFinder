@@ -23,7 +23,7 @@ class CustomTabBarController: UITabBarController {
         tabBar.tintColor = .black
         
         // MARK: - Main view controller
-        let vc = ViewController()
+        let vc = HomeController()
         let nav = UINavigationController(rootViewController: vc)
         nav.title = "main"
         nav.tabBarItem.image = UIImage(named: "home")

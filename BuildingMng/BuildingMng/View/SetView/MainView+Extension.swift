@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController {
+extension HomeController {
     
     // MARK: - Setting the navbar controller
     func setNavBar(){
@@ -17,7 +17,7 @@ extension ViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         
         navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedStringKey.font: UIFont(name:"Marker Felt", size:25.0)!, NSAttributedStringKey.foregroundColor:UIColor.black
+            NSAttributedString.Key.font: UIFont(name:"Marker Felt", size:25.0)!, NSAttributedString.Key.foregroundColor:UIColor.black
         ]
         navigationItem.title = "Hob Lux"
         navigationController?.navigationBar.tintColor = .white

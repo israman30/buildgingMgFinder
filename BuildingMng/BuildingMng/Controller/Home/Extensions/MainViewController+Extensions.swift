@@ -17,7 +17,7 @@ import UIKit
  ============================================ */
 
 // MARK: - TABLE VIEW DATA SOURCE & DELEGATES
-extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return buildingInfo.count
