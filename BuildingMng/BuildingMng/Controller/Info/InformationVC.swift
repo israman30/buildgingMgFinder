@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class InformationVC: UIViewController {
     
@@ -18,13 +19,43 @@ class InformationVC: UIViewController {
         return label
     }()
     
+    lazy var websiteLabel: UILabel = {
+        let label = UILabel()
+        label.text = "israelmanzo814@gmail.com"
+        label.textAlignment = .center
+        label.textColor = .lightGray
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleInfoWebsite)))
+        return label
+    }()
+    var site = "http://israelmanzo.com"
+    @objc func handleInfoWebsite(){
+        if site != "http://israelmanzo.com" {
+            AlertController.alert(self, title: "🤖", message: "404 Not Found")
+        }
+        openSafaryViewController(for: site)
+    }
+    
+    func openSafaryViewController(for url: String) {
+        guard let url = URL(string: url) else {
+            AlertController.alert(self, title: "🤖", message: "404 Not Found")
+            return
+        }
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setTransparencyNavBar()
         view.backgroundColor = .white
         view.addSubview(nameLabel)
+        view.addSubview(websiteLabel)
         nameLabel.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 100, paddingLeft: 100, paddingBottom: 100, paddingRight: 100)
+        
+        websiteLabel.setAnchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 50, paddingBottom: 100, paddingRight: 50)
     }
 }
 

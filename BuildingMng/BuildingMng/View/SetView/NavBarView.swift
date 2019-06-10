@@ -19,12 +19,12 @@ extension UIViewController {
     
 }
 
+// MARK: - Setting the navbar controller
 extension HomeController {
-    // MARK: - Setting the navbar controller
+    
     func setNavBar(){
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        // Sub.MARK: - Calling nav bar transparency extension method
+        setTransparencyNavBar()
         
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont(name:"Marker Felt", size:25.0)!, NSAttributedString.Key.foregroundColor:UIColor.black
@@ -35,8 +35,9 @@ extension HomeController {
     }
 }
 
+// MARK: - Set DetailController Nav Bar
 extension DetailsVC {
-    // Sub.MARK: - Nav Bar
+    
     func navBarSetUp(){
         let shareIcon = UIImage(named: "share")
         let rightBarButton = UIBarButtonItem(image: shareIcon, style: .plain, target: self, action: #selector(shareButton))
