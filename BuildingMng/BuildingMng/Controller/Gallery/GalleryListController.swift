@@ -24,8 +24,6 @@ class GalleryListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-        
         setTransparencyNavBar()
         galleryInfo = BuildingGallery.sharedGallery.setGalleryPhotos {
             DispatchQueue.main.async {

@@ -11,6 +11,8 @@ import UIKit
 extension GalleryListController {
     // MARK: - Set table view list gallery
     func setTableView(){
+        
+        view.backgroundColor = .white
         view.addSubview(tableView)
         
         tableView.register(GalleryCell.self, forCellReuseIdentifier: cell)
