@@ -60,13 +60,13 @@ extension DetailsVC {
             let lat = location.coordinate.latitude
             let long = location.coordinate.longitude
             
-            self.centerMapOnLocation(address: address, regionDistance: 1000, latitude: lat, longitude: long)
+            self.centerMapOnLocationWithMarker(address: address, regionDistance: 1000, latitude: lat, longitude: long)
         }
     }
     
 
     // MARK: - Center map and place a marker on location
-    func centerMapOnLocation(address: String, regionDistance: CLLocationDistance, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+    func centerMapOnLocationWithMarker(address: String, regionDistance: CLLocationDistance, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
         
         let regionDistance: CLLocationDistance = 1000
         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
