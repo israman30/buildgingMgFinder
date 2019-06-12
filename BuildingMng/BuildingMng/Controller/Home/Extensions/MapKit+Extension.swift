@@ -86,8 +86,7 @@ extension HomeController: MKMapViewDelegate, CLLocationManagerDelegate {
          maxwell].forEach { mapView.addAnnotation($0) }
         
     }
-    
-    
+        
 }
 
 // MARK: - Marker Customized PopUp View

@@ -11,7 +11,7 @@ import UIKit
 extension HomeController {
     // MARK: - Setting the table view
     // Sub.MARK: - Constraints Block
-    func setView(){
+    func setHomeView(){
         
         view.backgroundColor = .white
         
