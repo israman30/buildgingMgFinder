@@ -36,11 +36,11 @@ extension DetailsVC {
     
     // MARK: - This block handles the location when use tap the address detail
     @objc func addressAction(){
-        guard let address = buildingInfoDetail?.address else {return}
-        print(address)
+        guard let buildingAddress = buildingInfoDetail?.address else {return}
+        print(buildingAddress)
         let geo = CLGeocoder()
-        geo.geocodeAddressString(address) { (placemark, error) in
-            self.setLocation(address: address)
+        geo.geocodeAddressString(buildingAddress) { (placemark, error) in
+            self.setLocation(address: buildingAddress)
         }
         
     }
@@ -57,28 +57,32 @@ extension DetailsVC {
             let lat = location.coordinate.latitude
             let long = location.coordinate.longitude
             
-            let regionDistance: CLLocationDistance = 1000
-            let coordinates = CLLocationCoordinate2DMake(lat, long)
-            let regionSpan = MKCoordinateRegion.init(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
-            
-            let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate:regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
-            
-            let placemark = MKPlacemark(coordinate: coordinates)
-            let mapItem = MKMapItem(placemark: placemark)
-            mapItem.name = address
-            mapItem.openInMaps(launchOptions: options)
+            self.centerMapOnLocation(address: address, regionDistance: 1000, latitude: lat, longitude: long)
         }
     }
     
-//    let regionRadius: CLLocationDistance = 1000
-//    func centerMapOnLocation(location: CLLocation) {
-//        let coordinateRegion = MKCoordinateRegion(
-//            center: location.coordinate,
-//            latitudinalMeters: 1000,
-//            longitudinalMeters: 1000
-//        )
-//        mapView.setRegion(coordinateRegion, animated: true)
-//    }
+
+    // MARK: - Center map and place a marker on location
+    func centerMapOnLocation(address: String, regionDistance: CLLocationDistance, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        
+        let regionDistance: CLLocationDistance = 1000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegion.init(
+            center: coordinates,
+            latitudinalMeters: regionDistance,
+            longitudinalMeters: regionDistance
+        )
+        
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        
+        let placemark = MKPlacemark(coordinate: coordinates)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = address
+        mapItem.openInMaps(launchOptions: options)
+    }
     
 
 }
