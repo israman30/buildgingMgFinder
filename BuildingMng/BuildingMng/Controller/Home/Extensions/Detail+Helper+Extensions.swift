@@ -59,6 +59,7 @@ extension DetailsVC {
         mapItem.openInMaps(launchOptions: options)
     }
     
+
 }
 
 class ViewHelper {
