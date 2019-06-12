@@ -30,7 +30,7 @@ extension DetailsVC {
     
     // MARK: - Contact Action will open the building website using SafariViewcontroller
     @objc func contactAction(){
-        guard let webSite = buildingInfoDetail?.contact else {return}
+        guard let webSite = buildingInfoDetail?.contact else { return }
         guard let url = URL(string: webSite) else { return }
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
@@ -40,11 +40,7 @@ extension DetailsVC {
     @objc func addressAction(){
         guard let buildingAddress = buildingInfoDetail?.address else {return}
         print(buildingAddress)
-        let geo = CLGeocoder()
-        geo.geocodeAddressString(buildingAddress) { (placemark, error) in
-            self.setLocation(address: buildingAddress)
-        }
-        
+        setLocation(address: buildingAddress)
     }
     
     // MARK: - Function takes location address String and converted into a latitude & longitude, using GLGeocoder
@@ -67,8 +63,7 @@ extension DetailsVC {
 
     // MARK: - Center map and place a marker on location
     func centerMapOnLocationWithMarker(address: String, regionDistance: CLLocationDistance, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-        
-        let regionDistance: CLLocationDistance = 1000
+
         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
         let regionSpan = MKCoordinateRegion.init(
             center: coordinates,

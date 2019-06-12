@@ -38,7 +38,7 @@ extension HomeController {
 // MARK: - Set DetailController Nav Bar
 extension DetailsVC {
     
-    func navBarSetUp(){
+    func navBarShareButtonDetailView(){
         let shareIcon = UIImage(named: "share")
         let rightBarButton = UIBarButtonItem(image: shareIcon, style: .plain, target: self, action: #selector(shareButton))
         navigationItem.rightBarButtonItem = rightBarButton
