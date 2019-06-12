@@ -21,16 +21,18 @@ import SafariServices
 
 extension DetailsVC {
     
-    // MARK: - Share button action
+    // MARK: - Share button action using ActivityViewController
     @objc func shareButton(){
         let activityVC = UIActivityViewController(activityItems: [imageBuildingPhotoDetail, titleLabelBuilding], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = view
         present(activityVC, animated: true, completion: nil)
     }
     
+    // MARK: - Contact Action will open the building website using SafariViewcontroller
     @objc func contactAction(){
         guard let webSite = buildingInfoDetail?.contact else {return}
-        let safariVC = SFSafariViewController(url: URL(string: webSite)!)
+        guard let url = URL(string: webSite) else { return }
+        let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
     }
     
@@ -45,6 +47,7 @@ extension DetailsVC {
         
     }
     
+    // MARK: - Function takes location address String and converted into a latitude & longitude, using GLGeocoder
     func setLocation(address: String) {
         let getCoder = CLGeocoder()
         getCoder.geocodeAddressString(address) { (placemarks, error) in
