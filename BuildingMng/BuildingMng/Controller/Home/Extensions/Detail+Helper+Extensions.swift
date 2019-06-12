@@ -36,31 +36,54 @@ extension DetailsVC {
     
     // MARK: - This block handles the location when use tap the address detail
     @objc func addressAction(){
-        let latitude:CLLocationDegrees = 40.756352
-        let longitude:CLLocationDegrees = -74.033755
-        
         guard let address = buildingInfoDetail?.address else {return}
+        print(address)
         let geo = CLGeocoder()
         geo.geocodeAddressString(address) { (placemark, error) in
-            guard let placemarker = placemark,
-                let location = placemark?.first?.location else {return}
-            print(placemarker, location)
+            self.setLocation(address: address)
         }
         
-        let regionDistance:CLLocationDistance = 1000
-        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
-        let regionSpan = MKCoordinateRegion.init(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
-        
-        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate:regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
-        
-        let placemark = MKPlacemark(coordinate: coordinates)
-        let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = address
-        mapItem.openInMaps(launchOptions: options)
     }
+    
+    func setLocation(address: String) {
+        let getCoder = CLGeocoder()
+        getCoder.geocodeAddressString(address) { (placemarks, error) in
+            if let error = error {
+                print("Could not get address", error)
+                return
+            }
+            guard let placemarks = placemarks,
+                  let location = placemarks.first?.location else { return }
+            let lat = location.coordinate.latitude
+            let long = location.coordinate.longitude
+            
+            let regionDistance: CLLocationDistance = 1000
+            let coordinates = CLLocationCoordinate2DMake(lat, long)
+            let regionSpan = MKCoordinateRegion.init(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+            
+            let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate:regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+            
+            let placemark = MKPlacemark(coordinate: coordinates)
+            let mapItem = MKMapItem(placemark: placemark)
+            mapItem.name = address
+            mapItem.openInMaps(launchOptions: options)
+        }
+    }
+    
+//    let regionRadius: CLLocationDistance = 1000
+//    func centerMapOnLocation(location: CLLocation) {
+//        let coordinateRegion = MKCoordinateRegion(
+//            center: location.coordinate,
+//            latitudinalMeters: 1000,
+//            longitudinalMeters: 1000
+//        )
+//        mapView.setRegion(coordinateRegion, animated: true)
+//    }
     
 
 }
+
+
 
 class ViewHelper {
     static let imagePhotoView: UIImageView = {
