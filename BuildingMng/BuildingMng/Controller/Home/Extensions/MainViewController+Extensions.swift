@@ -28,15 +28,8 @@ extension HomeController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         let collectionBuilding = buildingInfo[indexPath.item]
         
         cell.buildingImages = collectionBuilding
-        
-        cell.layer.cornerRadius = 15
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOpacity = 1
-        cell.layer.shadowOffset = CGSize.zero
-        cell.layer.shadowOpacity = 0.40
-        cell.layer.shadowRadius = 10
+        cell.customCell()
         cell.layer.shadowPath = UIBezierPath(rect: cell.bounds).cgPath
-        cell.layer.shouldRasterize = false
         
         return cell
     }

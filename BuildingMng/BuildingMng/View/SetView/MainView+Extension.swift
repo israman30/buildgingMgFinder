@@ -27,3 +27,17 @@ extension HomeController {
         collectionView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: view.frame.height / 2, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
 }
+
+
+extension UICollectionViewCell {
+    
+    func customCell(){
+        layer.cornerRadius = 15
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 1
+        layer.shadowOffset = CGSize.zero
+        layer.shadowOpacity = 0.40
+        layer.shadowRadius = 10
+        layer.shouldRasterize = false
+    }
+}
