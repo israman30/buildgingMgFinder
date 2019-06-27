@@ -20,7 +20,7 @@ extension HomeController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(MyCell.self, forCellWithReuseIdentifier: mainViewCell)
+        collectionView.register(MyCell.self, forCellWithReuseIdentifier: CellID.homeCell.rawValue)
         
         mapView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         

@@ -10,8 +10,6 @@ import UIKit
 
 class GalleryListController: UIViewController {
     
-    let cell = "cell"
-    
     var galleryInfo: [BuildingGallery]!
     
     let tableView: UITableView = {

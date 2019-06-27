@@ -15,7 +15,7 @@ extension GalleryListController {
         view.backgroundColor = .white
         view.addSubview(tableView)
         
-        tableView.register(GalleryCell.self, forCellReuseIdentifier: cell)
+        tableView.register(GalleryCell.self, forCellReuseIdentifier: CellID.galleryCell.rawValue)
         tableView.separatorStyle = .none
         
         // Sub.MARK: - Constraints Block

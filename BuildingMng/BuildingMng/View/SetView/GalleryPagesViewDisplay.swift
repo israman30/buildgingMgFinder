@@ -18,7 +18,7 @@ extension GalleryPagesDisplayController {
         collectionView.dataSource = self
         collectionView.isPagingEnabled = true
         
-        collectionView.register(DisplayCell.self, forCellWithReuseIdentifier: displayCell)
+        collectionView.register(DisplayCell.self, forCellWithReuseIdentifier: CellID.displayCell.rawValue)
         
         collectionView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
         

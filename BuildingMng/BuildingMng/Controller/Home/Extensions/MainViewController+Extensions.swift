@@ -24,7 +24,7 @@ extension HomeController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mainViewCell, for: indexPath) as! MyCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.homeCell.rawValue, for: indexPath) as! MyCell
         let collectionBuilding = buildingInfo[indexPath.item]
         
         cell.buildingImages = collectionBuilding

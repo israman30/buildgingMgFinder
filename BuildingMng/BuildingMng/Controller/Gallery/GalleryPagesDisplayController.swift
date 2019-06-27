@@ -31,8 +31,6 @@ class GalleryPagesDisplayController: UIViewController {
         return pc
     }()
     
-    let displayCell = "displayCell"
-    
     var displayGalleries: BuildingGallery?
     
     override func viewDidLoad() {

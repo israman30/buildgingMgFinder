@@ -21,7 +21,7 @@ extension GalleryListController: UITableViewDelegate, UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cell) as! GalleryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellID.galleryCell.rawValue) as! GalleryCell
         
         let galleryList = galleryInfo[indexPath.row]
         cell.titleGallery = galleryList
@@ -49,7 +49,7 @@ extension GalleryPagesDisplayController: UICollectionViewDelegateFlowLayout, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: displayCell, for: indexPath) as! DisplayCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.displayCell.rawValue, for: indexPath) as! DisplayCell
         if let gallery = UIImage(named: (displayGalleries?.gallery![indexPath.item])!) {
             cell.imageView.image = gallery
         }
