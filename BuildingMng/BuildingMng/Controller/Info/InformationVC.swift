@@ -53,24 +53,11 @@ class InformationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setTransparencyNavBar()
         setInfoView()
-        
     }
 }
 
-extension InformationVC {
-    
-    func setInfoView() {
-        view.backgroundColor = .white
-        
-        [nameLabel, websiteLabel].forEach { view.addSubview($0) }
-        
-        nameLabel.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 100, paddingLeft: 100, paddingBottom: 100, paddingRight: 100)
-        
-        websiteLabel.setAnchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 50, paddingBottom: 100, paddingRight: 50)
-    }
-}
+
 
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D87B28322C52674000E5AA3 /* CellID+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D87B28222C52674000E5AA3 /* CellID+Enum.swift */; };
+		4D87B28522C52A9B000E5AA3 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D87B28422C52A9B000E5AA3 /* InfoView.swift */; };
 		4DBD3F2022AEC1C5007AC2F6 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD3F1F22AEC1C5007AC2F6 /* NavBarView.swift */; };
 		4DBD3F2222AECA41007AC2F6 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD3F2122AECA41007AC2F6 /* AlertController.swift */; };
 		4DBD3F2422AF16EE007AC2F6 /* GalleryPagesViewDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD3F2322AF16EE007AC2F6 /* GalleryPagesViewDisplay.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		4D87B28222C52674000E5AA3 /* CellID+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellID+Enum.swift"; sourceTree = "<group>"; };
+		4D87B28422C52A9B000E5AA3 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		4DBD3F1F22AEC1C5007AC2F6 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		4DBD3F2122AECA41007AC2F6 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		4DBD3F2322AF16EE007AC2F6 /* GalleryPagesViewDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPagesViewDisplay.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				8D33BC392135ADC6009FB533 /* GalleryView+Extension.swift */,
 				4DBD3F2322AF16EE007AC2F6 /* GalleryPagesViewDisplay.swift */,
 				4DBD3F1F22AEC1C5007AC2F6 /* NavBarView.swift */,
+				4D87B28422C52A9B000E5AA3 /* InfoView.swift */,
 			);
 			path = SetView;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				8D9AD9042037B7890045A06C /* AppDelegate.swift in Sources */,
 				8D478F1420CDA3BF00442F2F /* FavoritesViewController.swift in Sources */,
 				4D87B28322C52674000E5AA3 /* CellID+Enum.swift in Sources */,
+				4D87B28522C52A9B000E5AA3 /* InfoView.swift in Sources */,
 				8D9AD9162038BE8F0045A06C /* ConstrainsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

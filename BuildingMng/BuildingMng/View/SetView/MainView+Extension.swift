@@ -13,9 +13,7 @@ extension HomeController {
     // Sub.MARK: - Constraints Block
     func setHomeView(){
         
-        view.backgroundColor = .white
-        
-        [mapView, collectionView].forEach { view.addSubview($0) }
+        view.addSubViews(mapView, collectionView)
         
         collectionView.delegate = self
         collectionView.dataSource = self

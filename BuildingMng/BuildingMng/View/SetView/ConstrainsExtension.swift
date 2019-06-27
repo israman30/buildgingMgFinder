@@ -9,6 +9,12 @@
 import UIKit
 
 extension UIView {
+    func addSubViews(_ views: UIView...) {
+        views.forEach { addSubview($0) }
+    }
+}
+
+extension UIView {
     
     func setCellShadow() {
         self.layer.shadowColor = UIColor.black.cgColor

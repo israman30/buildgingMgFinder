@@ -12,7 +12,7 @@ extension GalleryPagesDisplayController {
     
     func setViewPagesDisplay(){
         
-        [collectionView, pageControl].forEach { view.addSubview($0) }
+        view.addSubViews(collectionView, pageControl)
         
         collectionView.delegate = self
         collectionView.dataSource = self

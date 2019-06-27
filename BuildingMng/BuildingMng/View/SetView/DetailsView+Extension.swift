@@ -13,13 +13,12 @@ extension DetailsVC {
     
     // Sub.MARK: - Constraints Block
     func setDetailView(){
-        view.backgroundColor = .white
         
-        [imageBuildingPhotoDetail,
-         titleLabelBuilding,
-         addressBuildingBtn,
-         lineDividerView,
-         contactBuildingBtn].forEach { view.addSubview($0) }
+        view.addSubViews(imageBuildingPhotoDetail,
+                         titleLabelBuilding,
+                         addressBuildingBtn,
+                         lineDividerView,
+                         contactBuildingBtn)
         
         addressBuildingBtn.addSubview(addressLabelBuilding)
         
