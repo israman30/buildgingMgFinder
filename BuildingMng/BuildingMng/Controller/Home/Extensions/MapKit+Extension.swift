@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Contacts
 
 /* ================= INFO ===================
  
@@ -19,11 +20,14 @@ import MapKit
 
 extension HomeController: MKMapViewDelegate, CLLocationManagerDelegate {
     
+    // MARK: - Set Up MapView with location and annotation marker
     func setMapView(){
+        // Sub.MARK: - MapView initial position
         let coordinate = CLLocationCoordinate2D(latitude: 40.7356, longitude: -74.0291)
         let region = MKCoordinateRegion.init(center: coordinate, latitudinalMeters: 2700, longitudinalMeters: 2700)
         
         mapView.setRegion(region, animated: true)
+        mapView.delegate = self
         
         pin = AnnotationPin(title: "Hoboken", subtitle: "Path train station", coordinate: coordinate)
         
@@ -61,6 +65,7 @@ extension HomeController: MKMapViewDelegate, CLLocationManagerDelegate {
         
         let maxwell = AnnotationPin(title: "Maxell's", subtitle: "1039 Washington St, Hoboken, NJ 07030", coordinate: CLLocationCoordinate2D(latitude: 40.749239, longitude: -74.023640))//40.749239, -74.023640
         
+        // Sub.MARK: - Adding the subview Annotations Pin to the mapView
         [pin,
          artisan,
          artisanClinton,
@@ -79,23 +84,43 @@ extension HomeController: MKMapViewDelegate, CLLocationManagerDelegate {
          grandAdams,
          ssPark,
          maxwell].forEach { mapView.addAnnotation($0) }
+        
     }
+        
+}
+
+// MARK: - Marker Customized PopUp View
+extension HomeController {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        if !(annotation is MKPointAnnotation) {
-            return nil
+        // Create an annotation
+        guard let annotation = annotation as? AnnotationPin else { return nil }
+        // Give an id to the MKAnnotaitonView
+        let identifier = "marker"
+        var view: MKMarkerAnnotationView
+        // Use the MkAnnotationView checking with id
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+            as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            // Popup the view if exits one + add a button
+            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
-        
-        let annotationView = MKAnnotationView(annotation: pin, reuseIdentifier: "pinH")
-        annotationView.image = UIImage(named: "ap")
-        
-        let transform = CGAffineTransform(translationX: 0.1, y: 0.1)
-        
-        annotationView.transform = transform
-        
-        return annotationView
+        return view
     }
     
+    // MARK: - Open marker annotation view with the Map App
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
+                 calloutAccessoryControlTapped control: UIControl) {
+        let location = view.annotation as! AnnotationPin
+        let launchOptions = [
+            MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving
+        ]
+        location.mapItem().openInMaps(launchOptions: launchOptions)
+    }
     
 }

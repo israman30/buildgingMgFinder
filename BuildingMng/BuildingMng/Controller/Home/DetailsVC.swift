@@ -79,7 +79,7 @@ class DetailsVC: UIViewController {
         
         setDetailView()
         
-        navBarSetUp()
+        navBarShareButtonDetailView()
     }
     
 }

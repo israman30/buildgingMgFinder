@@ -21,37 +21,60 @@ import SafariServices
 
 extension DetailsVC {
     
-    // MARK: - Share button action
+    // MARK: - Share button action using ActivityViewController
     @objc func shareButton(){
         let activityVC = UIActivityViewController(activityItems: [imageBuildingPhotoDetail, titleLabelBuilding], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = view
         present(activityVC, animated: true, completion: nil)
     }
     
+    // MARK: - Contact Action will open the building website using SafariViewcontroller
     @objc func contactAction(){
-        guard let webSite = buildingInfoDetail?.contact else {return}
-        let safariVC = SFSafariViewController(url: URL(string: webSite)!)
+        guard let webSite = buildingInfoDetail?.contact else { return }
+        guard let url = URL(string: webSite) else { return }
+        let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true, completion: nil)
     }
     
     // MARK: - This block handles the location when use tap the address detail
     @objc func addressAction(){
-        let latitude:CLLocationDegrees = 40.756352
-        let longitude:CLLocationDegrees = -74.033755
-        
-        guard let address = buildingInfoDetail?.address else {return}
-        let geo = CLGeocoder()
-        geo.geocodeAddressString(address) { (placemark, error) in
-            guard let placemarker = placemark,
-                let location = placemark?.first?.location else {return}
-            print(placemarker, location)
+        guard let buildingAddress = buildingInfoDetail?.address else {return}
+        print(buildingAddress)
+        setLocation(address: buildingAddress)
+    }
+    
+    // MARK: - Function takes location address String and converted into a latitude & longitude, using GLGeocoder
+    func setLocation(address: String) {
+        let getCoder = CLGeocoder()
+        getCoder.geocodeAddressString(address) { (placemarks, error) in
+            if let error = error {
+                print("Could not get address", error)
+                return
+            }
+            guard let placemarks = placemarks,
+                  let location = placemarks.first?.location else { return }
+            let lat = location.coordinate.latitude
+            let long = location.coordinate.longitude
+            
+            self.centerMapOnLocationWithMarker(address: address, regionDistance: 1000, latitude: lat, longitude: long)
         }
-        
-        let regionDistance:CLLocationDistance = 1000
+    }
+    
+
+    // MARK: - Center map and place a marker on location
+    func centerMapOnLocationWithMarker(address: String, regionDistance: CLLocationDistance, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+
         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
-        let regionSpan = MKCoordinateRegion.init(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let regionSpan = MKCoordinateRegion.init(
+            center: coordinates,
+            latitudinalMeters: regionDistance,
+            longitudinalMeters: regionDistance
+        )
         
-        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate:regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
         
         let placemark = MKPlacemark(coordinate: coordinates)
         let mapItem = MKMapItem(placemark: placemark)
@@ -59,7 +82,10 @@ extension DetailsVC {
         mapItem.openInMaps(launchOptions: options)
     }
     
+
 }
+
+
 
 class ViewHelper {
     static let imagePhotoView: UIImageView = {

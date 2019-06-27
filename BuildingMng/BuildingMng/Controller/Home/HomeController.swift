@@ -34,7 +34,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
+        setHomeView()
         setNavBar()
         setMapView()
         buildingInfo = BuildingInfo.shared.setData {
