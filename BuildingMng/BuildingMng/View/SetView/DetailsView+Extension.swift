@@ -14,11 +14,13 @@ extension DetailsVC {
     // Sub.MARK: - Constraints Block
     func setDetailView(){
         
-        view.addSubViews(imageBuildingPhotoDetail,
-                         titleLabelBuilding,
-                         addressBuildingBtn,
-                         lineDividerView,
-                         contactBuildingBtn)
+        view.addSubViews(
+            imageBuildingPhotoDetail,
+            titleLabelBuilding,
+            addressBuildingBtn,
+            lineDividerView,
+            contactBuildingBtn
+        )
         
         addressBuildingBtn.addSubview(addressLabelBuilding)
         

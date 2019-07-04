@@ -57,7 +57,7 @@ class GalleryCell: UITableViewCell {
         
         addSubview(containerView)
         
-        [titleLabel, descriptionLabel].forEach { containerView.addSubview($0) }
+        containerView.addSubViews(titleLabel, descriptionLabel)
         
         containerView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10)
         

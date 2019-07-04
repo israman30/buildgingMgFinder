@@ -27,11 +27,11 @@ extension HomeController {
         setTransparencyNavBar()
         
         navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont(name:"Marker Felt", size:25.0)!, NSAttributedString.Key.foregroundColor:UIColor.black
+            .font : UIFont(name:"Marker Felt", size:25.0)!,
+            .foregroundColor : UIColor.black
         ]
         navigationItem.title = "Hob Lux"
         navigationController?.navigationBar.tintColor = .white
-        
     }
 }
 
@@ -40,7 +40,12 @@ extension DetailsVC {
     
     func navBarShareButtonDetailView(){
         let shareIcon = UIImage(named: "share")
-        let rightBarButton = UIBarButtonItem(image: shareIcon, style: .plain, target: self, action: #selector(shareButton))
+        let rightBarButton = UIBarButtonItem(
+            image: shareIcon,
+            style: .plain,
+            target: self,
+            action: #selector(shareButton)
+        )
         navigationItem.rightBarButtonItem = rightBarButton
     }
 }

@@ -9,8 +9,10 @@
 import UIKit
 
 /*
-  - Cell Mockup for protopypes
+    ================== UICollectionViewCell Base =====================
+  - Cell Mockup for protopypes cells
   - The cell can be used as super class for layout, using setCellView()
+    ===================================================================
  */
 
 class Cell: UICollectionViewCell {

@@ -49,7 +49,7 @@ class MyCell: Cell {
     // Sub.MARK: - Constraints Block
     func setView(){
         
-        [imagePhotoView, titleLabel].forEach { addSubview($0) }
+        addSubViews(imagePhotoView, titleLabel)
         
         let gradient = CAGradientLayer()
         gradient.frame = imagePhotoView.bounds
