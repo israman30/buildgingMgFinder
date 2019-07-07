@@ -37,5 +37,6 @@ extension UICollectionViewCell {
         layer.shadowOpacity = 0.40
         layer.shadowRadius = 10
         layer.shouldRasterize = false
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
     }
 }

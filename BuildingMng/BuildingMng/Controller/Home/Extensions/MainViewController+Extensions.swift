@@ -29,7 +29,6 @@ extension HomeController: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         
         cell.buildingImages = collectionBuilding
         cell.customCell()
-        cell.layer.shadowPath = UIBezierPath(rect: cell.bounds).cgPath
         
         return cell
     }
