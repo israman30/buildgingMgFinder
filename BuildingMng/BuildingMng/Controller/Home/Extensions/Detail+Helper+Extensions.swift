@@ -40,11 +40,11 @@ extension DetailsVC {
     @objc func addressAction(){
         guard let buildingAddress = buildingInfoDetail?.address else {return}
         print(buildingAddress)
-        setLocation(address: buildingAddress)
+        setLocation(for: buildingAddress)
     }
     
     // MARK: - Function takes location address String and converted into a latitude & longitude, using GLGeocoder
-    func setLocation(address: String) {
+    func setLocation(for address: String) {
         let getCoder = CLGeocoder()
         getCoder.geocodeAddressString(address) { (placemarks, error) in
             if let error = error {
