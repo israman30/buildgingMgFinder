@@ -16,7 +16,7 @@ struct BuildingGallery {
     
     static let sharedGallery = BuildingGallery()
     
-    func setGalleryPhotos(completion: @escaping()->())-> [BuildingGallery]{
+    func setGalleryPhotos(completion: @escaping()->())-> [BuildingGallery] {
         let buildingGallery = [
             BuildingGallery(title: "ARTISAN", gallery: ["artisan1", "artisan2", "artisan3", "artisan4", "artisan5", "artisan6"], address: "1100 Jefferson St, Hoboken, NJ 07030"),
             

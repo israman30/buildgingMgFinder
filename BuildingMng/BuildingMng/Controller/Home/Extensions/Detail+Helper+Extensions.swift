@@ -72,8 +72,8 @@ extension DetailsVC {
         )
         
         let options = [
-            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
-            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+            MKLaunchOptionsMapCenterKey : NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey : NSValue(mkCoordinateSpan: regionSpan.span)
         ]
         
         let placemark = MKPlacemark(coordinate: coordinates)

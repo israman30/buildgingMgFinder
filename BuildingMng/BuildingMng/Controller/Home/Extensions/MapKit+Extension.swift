@@ -66,24 +66,24 @@ extension HomeController: MKMapViewDelegate, CLLocationManagerDelegate {
         let maxwell = AnnotationPin(title: "Maxell's", subtitle: "1039 Washington St, Hoboken, NJ 07030", coordinate: CLLocationCoordinate2D(latitude: 40.749239, longitude: -74.023640))//40.749239, -74.023640
         
         // Sub.MARK: - Adding the subview Annotations Pin to the mapView
-        [pin,
-         artisan,
-         artisanClinton,
-         artisanGrand,
-         artisanMadison,
-         theJordan,
-         theRivington,
-         observerPark,
-         theHarllow,
-         theSovereign,
-         southIndepence,
-         theVanguard,
-         theVine,
-         theLex,
-         riverSt,
-         grandAdams,
-         ssPark,
-         maxwell].forEach { mapView.addAnnotation($0) }
+            [pin,
+             artisan,
+             artisanClinton,
+             artisanGrand,
+             artisanMadison,
+             theJordan,
+             theRivington,
+             observerPark,
+             theHarllow,
+             theSovereign,
+             southIndepence,
+             theVanguard,
+             theVine,
+             theLex,
+             riverSt,
+             grandAdams,
+             ssPark,
+             maxwell].forEach { mapView.addAnnotation($0) }
         
     }
         
@@ -118,7 +118,7 @@ extension HomeController {
                  calloutAccessoryControlTapped control: UIControl) {
         let location = view.annotation as! AnnotationPin
         let launchOptions = [
-            MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving
+            MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving
         ]
         location.mapItem().openInMaps(launchOptions: launchOptions)
     }
