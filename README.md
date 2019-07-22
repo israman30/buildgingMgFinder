@@ -12,3 +12,16 @@ Displaying a list of buildings where the user can select and navigate a gallery 
     <img src="/img/list.png" width="250"> <img src="/img/page.png" width="250"> <img src="/img/four.png" width="250">
 </p>
 
+## Thecnology
+
+- Xcode :computer:
+
+- Swift :robot:
+
+- MakKit :map:
+
+## Author
+-  [Israel Manzo ®](http://israelmanzo.com)
+- [LinkedIn](https://www.linkedin.com/in/israel-manzo/)
+- [Twitter](https://twitter.com/israman30)
+
