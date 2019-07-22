@@ -27,7 +27,7 @@ Displaying a list of buildings where the user can select and navigate a gallery 
 
 ## Author
 -  [Israel Manzo ®](http://israelmanzo.com)
-![GitHub Logo](/img/in.png)
-- [LinkedIn](https://www.linkedin.com/in/israel-manzo/)
+
+- [LinkedIn](https://www.linkedin.com/in/israel-manzo/) <p width="20">![GitHub Logo](/img/in.png)</p>
 - [Twitter](https://twitter.com/israman30)
 
