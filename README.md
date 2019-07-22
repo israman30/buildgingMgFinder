@@ -25,6 +25,9 @@ Displaying a list of buildings where the user can select and navigate a gallery 
 
 - UIKit & MapKit
 
+### Launch
+Under proccess 
+
 ## Author
 -  [Israel Manzo ®](http://israelmanzo.com)
 - [LinkedIn](https://www.linkedin.com/in/israel-manzo/) 
