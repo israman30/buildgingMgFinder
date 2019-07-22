@@ -18,11 +18,9 @@ Displaying a list of buildings where the user can select and navigate a gallery 
 
 ## Thecnology
 
-- Xcode :computer:
+- Xcode & Swift
 
-- Swift :robot:
-
-- MapKit :earth_americas:
+- UIKit & MapKit
 
 ## Author
 -  [Israel Manzo ®](http://israelmanzo.com)
