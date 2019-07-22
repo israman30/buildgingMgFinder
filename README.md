@@ -1,3 +1,3 @@
 # Hob Lux
 
-Appartment finder application
+The apartment finder application is exclusive for luxury buildings in Hoboken, NJ
