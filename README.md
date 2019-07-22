@@ -4,7 +4,6 @@ The apartment finder application is exclusive for luxury buildings in Hoboken, N
 
 > MapKit, Collection view, Geo location, MK annotation
 
-![](https://placehold.it/150x30/009955/fff?text=XCODE)
 
 <p align="center">
     <img src="/img/main.png" width="250"> <img src="/img/two.png" width="250"> <img src="/img/map.png" width="250">
