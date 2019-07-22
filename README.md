@@ -6,6 +6,7 @@ The apartment finder application is exclusive for luxury buildings in Hoboken, N
 
 ```Swift
 var pin: AnnotationPin! 
+MKMapViewDelegate, CLLocationManagerDelegate
 ```
 
 <p align="center">
