@@ -4,7 +4,7 @@ The apartment finder application is exclusive for luxury buildings in Hoboken, N
 
 > MapKit, Collection view, Geo location, MK annotation
 
-
+---
 
 <p align="center">
     <img src="/img/main.png" width="250"> <img src="/img/two.png" width="250"> <img src="/img/map.png" width="250">
@@ -14,10 +14,11 @@ The apartment finder application is exclusive for luxury buildings in Hoboken, N
 Displaying a list of buildings where the user can select and navigate a gallery of photos.
 
 > Collection view, Paging, Scrollview
+---
 
 <p align="center">
     <img src="/img/list.png" width="250"> <img src="/img/page.png" width="250"> <img src="/img/four.png" width="250">
-</p>
+</p>  
 
 ## Thecnology
 
