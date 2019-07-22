@@ -25,7 +25,7 @@ Displaying a list of buildings where the user can select and navigate a gallery 
 
 - UIKit & MapKit
 
-### Launch
+### Launch :rocket:
 Under proccess 
 
 ## Author
