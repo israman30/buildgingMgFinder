@@ -18,7 +18,7 @@ Displaying a list of buildings where the user can select and navigate a gallery 
 
 - Swift :robot:
 
-- MakKit :map:
+- MapKit :map:
 
 ## Author
 -  [Israel Manzo ®](http://israelmanzo.com)
