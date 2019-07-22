@@ -16,23 +16,23 @@ MKMapViewDelegate, CLLocationManagerDelegate
 ```Swift
 func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 // Create an annotation
-guard let annotation = annotation as? AnnotationPin else { return nil }
-// Give an id to the MKAnnotaitonView
-let identifier = "marker"
-var view: MKMarkerAnnotationView
-// Use the MkAnnotationView checking with id
-if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+    guard let annotation = annotation as? AnnotationPin else { return nil }
+    // Give an id to the MKAnnotaitonView
+    let identifier = "marker"
+    var view: MKMarkerAnnotationView
+    // Use the MkAnnotationView checking with id
+    if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
 as? MKMarkerAnnotationView {
-dequeuedView.annotation = annotation
-view = dequeuedView
-} else {
-// Popup the view if exits one + add a button
-view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-view.canShowCallout = true
-view.calloutOffset = CGPoint(x: -5, y: 5)
-view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-}
-return view
+        dequeuedView.annotation = annotation
+        view = dequeuedView
+        } else {
+        // Popup the view if exits one + add a button
+        view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        view.canShowCallout = true
+        view.calloutOffset = CGPoint(x: -5, y: 5)
+        view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+    return view
 }
 
 // MARK: - Open marker annotation view with the Map App
