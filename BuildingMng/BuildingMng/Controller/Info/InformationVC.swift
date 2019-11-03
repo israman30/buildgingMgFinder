@@ -33,7 +33,7 @@ class InformationVC: UIViewController {
     // ========= MARK: - Open information site function block ========
     // ================================================================
     var site = "http://israelmanzo.com"
-    @objc func handleInfoWebsite(){
+    @objc func handleInfoWebsite() {
         if site != "http://israelmanzo.com" {
             AlertController.alert(self, title: "🤖", message: "404 Not Found")
         }

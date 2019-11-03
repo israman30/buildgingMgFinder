@@ -38,7 +38,7 @@ extension DetailsVC {
     
     // MARK: - This block handles the location when use tap the address detail
     @objc func addressAction(){
-        guard let buildingAddress = buildingInfoDetail?.address else {return}
+        guard let buildingAddress = buildingInfoDetail?.address else { return }
         print(buildingAddress)
         setLocation(for: buildingAddress)
     }
