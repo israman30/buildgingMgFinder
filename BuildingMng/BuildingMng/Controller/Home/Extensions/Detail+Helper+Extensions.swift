@@ -22,7 +22,7 @@ import SafariServices
 extension DetailsVC {
     
     // MARK: - Share button action using ActivityViewController
-    @objc func shareButton(){
+    @objc func shareButton() {
         let activityVC = UIActivityViewController(activityItems: [imageBuildingPhotoDetail, titleLabelBuilding], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = view
         present(activityVC, animated: true, completion: nil)
@@ -37,7 +37,7 @@ extension DetailsVC {
     }
     
     // MARK: - This block handles the location when use tap the address detail
-    @objc func addressAction(){
+    @objc func addressAction() {
         guard let buildingAddress = buildingInfoDetail?.address else { return }
         print(buildingAddress)
         setLocation(for: buildingAddress)
