@@ -8,8 +8,8 @@
 
 import UIKit
 
+// MARK: - Set CollectionViewon MapKit
 extension HomeController {
-    // MARK: - Setting the table view
     // Sub.MARK: - Constraints Block
     func setHomeView(){
         
@@ -26,10 +26,10 @@ extension HomeController {
     }
 }
 
-
+// MARK: - Set CollectionView custom cell
 extension UICollectionViewCell {
     
-    func customCell(){
+    func customCell() {
         layer.cornerRadius = 15
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 1
